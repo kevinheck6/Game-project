@@ -17,62 +17,29 @@ class Game {
 
 private:
     //variable
-    //Window
     sf::RenderWindow* window;
-    sf::VideoMode videoMode;
-    sf::Event event;
+    sf::Event sfEvent;
+    sf::Clock dtClock;
 
-    //Mouse Positions
-    sf::Vector2i mousePosWindow;
-    sf::Vector2f mousePosView;
-
-    //Resources
-    sf::Font font;
-
-    //Text
-    sf::Text uiText;
-
-    //game logic
-    bool endGame;
-    unsigned points;
-    float enemySpawnTimer;
-    float enemySpawnTimerMax;
-    int maxEnemies;
-    bool mouseHeld;
-    int health;
-
-    //game objects
-    std::vector<sf::RectangleShape> enemies;
-    sf::RectangleShape enemy;
+    float dt; // Delta time
 
     //private functions
     void initVariable(); //initialize Variables
     void initWindow(); //initialize Window
-    void intEnemies(); //initialize Enemies
-    void initFonts(); //initialize Fonts
-    void initText(); //initialize Text
 
 public:
     Game(); //Constructor
     virtual ~Game(); //Destructor
 
     //Accessors
-    const bool running() const;
-    const bool getEndGame() const;
 
     //Functions
-    void spawnEnemy();
-    void pollEvents();
-
-    void updateText();
-    void updateMousePositions();
-    void updateEnemies();
+    void updateSFMLEvents();
     void update();
+    void updateDT();
 
-    void renderEnemies(sf::RenderTarget& target);
     void render();
-    void renderText(sf::RenderTarget& target);
-
+    void run();
 };
 
 
