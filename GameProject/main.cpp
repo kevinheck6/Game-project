@@ -9,14 +9,6 @@ int main() {
     //initialize game engine;
     Game game;
 
-//Game loop
-    while (game.running() && !game.getEndGame()) {
-        //Update
-    game.update();
-        // Render
-    game.render();
-        //Draw game
-    }
-
+    game.run();
     return 0;
 }
