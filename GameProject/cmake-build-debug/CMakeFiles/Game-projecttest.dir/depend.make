@@ -4,9 +4,13 @@
 CMakeFiles/Game-projecttest.dir/Entities/Entity.cpp.o: \
  ../Entities/Entity.cpp \
  ../Entities/Entity.h
+CMakeFiles/Game-projecttest.dir/Resources/Button.cpp.o: \
+ ../Resources/Button.cpp \
+ ../Resources/Button.h
 CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o: \
  ../Entities/Entity.h \
  ../Head\ Files/Game.h \
+ ../Resources/Button.h \
  ../Source\ Files/Game.cpp \
  ../States/GameState.h \
  ../States/MainMenuState.h \
@@ -14,6 +18,7 @@ CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o: \
 CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o: \
  ../Entities/Entity.h \
  ../Head\ Files/Game.h \
+ ../Resources/Button.h \
  ../Source\ Files/main.cpp \
  ../States/GameState.h \
  ../States/MainMenuState.h \
@@ -25,6 +30,7 @@ CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o: \
  ../States/State.h
 CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o: \
  ../Entities/Entity.h \
+ ../Resources/Button.h \
  ../States/GameState.h \
  ../States/MainMenuState.cpp \
  ../States/MainMenuState.h \

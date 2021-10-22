@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Entities/Entity.cpp.o"
+  "/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Resources/Button.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/Game.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/main.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o"
