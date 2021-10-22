@@ -129,6 +129,30 @@ Game-projecttest/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/build
 .PHONY : Game-projecttest/fast
 
+Entities/Entity.o: Entities/Entity.cpp.o
+.PHONY : Entities/Entity.o
+
+# target to build an object file
+Entities/Entity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Entities/Entity.cpp.o
+.PHONY : Entities/Entity.cpp.o
+
+Entities/Entity.i: Entities/Entity.cpp.i
+.PHONY : Entities/Entity.i
+
+# target to preprocess a source file
+Entities/Entity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Entities/Entity.cpp.i
+.PHONY : Entities/Entity.cpp.i
+
+Entities/Entity.s: Entities/Entity.cpp.s
+.PHONY : Entities/Entity.s
+
+# target to generate assembly for a file
+Entities/Entity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Entities/Entity.cpp.s
+.PHONY : Entities/Entity.cpp.s
+
 Source_Files/Game.o: Source_Files/Game.cpp.o
 .PHONY : Source_Files/Game.o
 
@@ -234,6 +258,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Game-projecttest"
+	@echo "... Entities/Entity.o"
+	@echo "... Entities/Entity.i"
+	@echo "... Entities/Entity.s"
 	@echo "... Source_Files/Game.o"
 	@echo "... Source_Files/Game.i"
 	@echo "... Source_Files/Game.s"

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../States/State.h"
 #include "../States/GameState.h"
 
 // Class that will work as game Engine
@@ -16,10 +15,14 @@ private:
 
     std::stack<State*> states;
 
+    std::map<std::string , int> supportedKeys;
+
     //Initialization
     void initVariable(); //initialize Variables
     void initWindow(); //initialize Window
+    void initKeys(); // initialize Keys
     void initStates(); //initialize States
+
 
 public:
     //   Constructor/Destructor

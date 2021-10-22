@@ -33,14 +33,34 @@ void Game::initWindow() {
 
 }
 
+void Game::initKeys() {
+    std::ifstream ifs("/home/kevin/CLionProjects/Game-projecttest/GameProject/Config/Supported_keys.ini");
+    if (ifs.is_open()) {
+        std::string key = "";
+        int key_value = 0;
+        while (ifs >> key >> key_value) {
+            this->supportedKeys[key] = key_value;
+        }
+    }
+    ifs.close();
+
+    //DEBUG
+
+    for (auto i :this->supportedKeys) {
+        std::cout << i.first << " " << i.second << "\n";
+    }
+
+}
+
 void Game::initStates() {
-    this->states.push(new GameState(this->window));
+    this->states.push(new GameState(this->window,&this->supportedKeys));
 }
 
 
 //Constructor/Destructor
 Game::Game() {
     this->initWindow();
+    this->initKeys();
     this->initStates();
 }
 
@@ -126,6 +146,7 @@ void Game::run() {
         this->render();
     }
 }
+
 
 
 
