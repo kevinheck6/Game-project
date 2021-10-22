@@ -1,6 +1,7 @@
 #pragma once
 
-#include "../States/GameState.h"
+#include "../States/MainMenuState.h"
+//#include "../States/GameState.h"
 
 // Class that will work as game Engine
 class Game {

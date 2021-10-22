@@ -8,6 +8,11 @@ void Game::initVariable() {
     //Game logic
 }
 
+void Game::initStates() {
+    this->states.push(new MainMenuState(this->window,&this->supportedKeys));
+    this->states.push(new GameState(this->window,&this->supportedKeys));
+}
+
 void Game::initWindow() {
     //create SFML window using options from a window.ini file
 
@@ -52,9 +57,6 @@ void Game::initKeys() {
 
 }
 
-void Game::initStates() {
-    this->states.push(new GameState(this->window,&this->supportedKeys));
-}
 
 
 //Constructor/Destructor
