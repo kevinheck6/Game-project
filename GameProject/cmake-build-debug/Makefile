@@ -117,65 +117,113 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named GameProject
+# Target rules for targets named Game-projecttest
 
 # Build rule for target.
-GameProject: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 GameProject
-.PHONY : GameProject
+Game-projecttest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Game-projecttest
+.PHONY : Game-projecttest
 
 # fast build rule for target.
-GameProject/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/build
-.PHONY : GameProject/fast
+Game-projecttest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/build
+.PHONY : Game-projecttest/fast
 
-Game.o: Game.cpp.o
-.PHONY : Game.o
-
-# target to build an object file
-Game.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/Game.cpp.o
-.PHONY : Game.cpp.o
-
-Game.i: Game.cpp.i
-.PHONY : Game.i
-
-# target to preprocess a source file
-Game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/Game.cpp.i
-.PHONY : Game.cpp.i
-
-Game.s: Game.cpp.s
-.PHONY : Game.s
-
-# target to generate assembly for a file
-Game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/Game.cpp.s
-.PHONY : Game.cpp.s
-
-main.o: main.cpp.o
-.PHONY : main.o
+Source_Files/Game.o: Source_Files/Game.cpp.o
+.PHONY : Source_Files/Game.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/main.cpp.o
-.PHONY : main.cpp.o
+Source_Files/Game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o
+.PHONY : Source_Files/Game.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+Source_Files/Game.i: Source_Files/Game.cpp.i
+.PHONY : Source_Files/Game.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/main.cpp.i
-.PHONY : main.cpp.i
+Source_Files/Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.i
+.PHONY : Source_Files/Game.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+Source_Files/Game.s: Source_Files/Game.cpp.s
+.PHONY : Source_Files/Game.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameProject.dir/build.make CMakeFiles/GameProject.dir/main.cpp.s
-.PHONY : main.cpp.s
+Source_Files/Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.s
+.PHONY : Source_Files/Game.cpp.s
+
+Source_Files/main.o: Source_Files/main.cpp.o
+.PHONY : Source_Files/main.o
+
+# target to build an object file
+Source_Files/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o
+.PHONY : Source_Files/main.cpp.o
+
+Source_Files/main.i: Source_Files/main.cpp.i
+.PHONY : Source_Files/main.i
+
+# target to preprocess a source file
+Source_Files/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.i
+.PHONY : Source_Files/main.cpp.i
+
+Source_Files/main.s: Source_Files/main.cpp.s
+.PHONY : Source_Files/main.s
+
+# target to generate assembly for a file
+Source_Files/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.s
+.PHONY : Source_Files/main.cpp.s
+
+States/GameState.o: States/GameState.cpp.o
+.PHONY : States/GameState.o
+
+# target to build an object file
+States/GameState.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o
+.PHONY : States/GameState.cpp.o
+
+States/GameState.i: States/GameState.cpp.i
+.PHONY : States/GameState.i
+
+# target to preprocess a source file
+States/GameState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/States/GameState.cpp.i
+.PHONY : States/GameState.cpp.i
+
+States/GameState.s: States/GameState.cpp.s
+.PHONY : States/GameState.s
+
+# target to generate assembly for a file
+States/GameState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/States/GameState.cpp.s
+.PHONY : States/GameState.cpp.s
+
+States/State.o: States/State.cpp.o
+.PHONY : States/State.o
+
+# target to build an object file
+States/State.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/States/State.cpp.o
+.PHONY : States/State.cpp.o
+
+States/State.i: States/State.cpp.i
+.PHONY : States/State.i
+
+# target to preprocess a source file
+States/State.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/States/State.cpp.i
+.PHONY : States/State.cpp.i
+
+States/State.s: States/State.cpp.s
+.PHONY : States/State.s
+
+# target to generate assembly for a file
+States/State.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/States/State.cpp.s
+.PHONY : States/State.cpp.s
 
 # Help Target
 help:
@@ -185,13 +233,19 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... GameProject"
-	@echo "... Game.o"
-	@echo "... Game.i"
-	@echo "... Game.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Game-projecttest"
+	@echo "... Source_Files/Game.o"
+	@echo "... Source_Files/Game.i"
+	@echo "... Source_Files/Game.s"
+	@echo "... Source_Files/main.o"
+	@echo "... Source_Files/main.i"
+	@echo "... Source_Files/main.s"
+	@echo "... States/GameState.o"
+	@echo "... States/GameState.i"
+	@echo "... States/GameState.s"
+	@echo "... States/State.o"
+	@echo "... States/State.i"
+	@echo "... States/State.s"
 .PHONY : help
 
 

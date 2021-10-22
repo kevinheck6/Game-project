@@ -1,16 +1,7 @@
 #pragma once
 
-#include <iostream>
-#include <vector>
-#include <ctime>
-#include <sstream>
-
-#include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Network.hpp>
-
+#include "../States/State.h"
+#include "../States/GameState.h"
 
 // Class that will work as game Engine
 class Game {
@@ -19,26 +10,35 @@ private:
     //variable
     sf::RenderWindow* window;
     sf::Event sfEvent;
-    sf::Clock dtClock;
 
+    sf::Clock dtClock;
     float dt; // Delta time
 
-    //private functions
+    std::stack<State*> states;
+
+    //Initialization
     void initVariable(); //initialize Variables
     void initWindow(); //initialize Window
+    void initStates(); //initialize States
 
 public:
-    Game(); //Constructor
-    virtual ~Game(); //Destructor
+    //   Constructor/Destructor
+    Game();
+    virtual ~Game();
 
-    //Accessors
+    //   Functions
+    //Regular
+    void endApplication();
 
-    //Functions
+    //Update
     void updateSFMLEvents();
     void update();
     void updateDT();
 
+    //Render
     void render();
+
+    //Core
     void run();
 };
 

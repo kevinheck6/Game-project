@@ -37,8 +37,8 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="GameProject">
-				<Option output="/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/GameProject" prefix_auto="0" extension_auto="0"/>
+			<Target title="Game-projecttest">
+				<Option output="/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/Game-projecttest" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -53,14 +53,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 GameProject"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 Game-projecttest"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="GameProject/fast">
-				<Option output="/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/GameProject" prefix_auto="0" extension_auto="0"/>
+			<Target title="Game-projecttest/fast">
+				<Option output="/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/Game-projecttest" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -75,7 +75,7 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 GameProject/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 Game-projecttest/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -83,13 +83,13 @@
 			</Target>
 		</Build>
 		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/Game.cpp">
-			<Option target="GameProject"/>
+			<Option target="Game-projecttest"/>
 		</Unit>
 		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/Game.h">
-			<Option target="GameProject"/>
+			<Option target="Game-projecttest"/>
 		</Unit>
 		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/main.cpp">
-			<Option target="GameProject"/>
+			<Option target="Game-projecttest"/>
 		</Unit>
 		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
