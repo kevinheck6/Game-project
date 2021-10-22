@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/kevin/CLionProjects/GameProject/Game.cpp
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Game.cpp
 Game.h
-/home/kevin/CLionProjects/GameProject/Game.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Game.h
 
-/home/kevin/CLionProjects/GameProject/Game.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Game.h
 iostream
 -
 vector
@@ -29,4 +29,10 @@ SFML/Audio.hpp
 -
 SFML/Network.hpp
 -
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/main.cpp
+iostream
+-
+Game.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Game.h
 

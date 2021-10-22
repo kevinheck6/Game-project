@@ -1,3 +1,3 @@
-/home/kevin/CLionProjects/GameProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/kevin/CLionProjects/GameProject/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/kevin/CLionProjects/GameProject/cmake-build-debug/CMakeFiles/GameProject.dir
+/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/GameProject.dir
