@@ -2,8 +2,10 @@
 
 //Initializer functions
 
-void Game::initVariable() {
+void Game::initVariables() {
     this->window = nullptr;
+    this->fullscreen = false;
+    this->dt = 0.f;
 
     //Game logic
 }
@@ -15,22 +17,35 @@ void Game::initStates() {
 void Game::initWindow() {
     //create SFML window using options from a window.ini file
 
-    std::ifstream ifs("Config/window.ini");
+    std::ifstream ifs("../Config/Window.ini");
+    this->videoModes = sf::VideoMode::getFullscreenModes();
 
     std::string title = "None";
-    sf::VideoMode window_bounds(800,600);
+    sf::VideoMode window_bounds = sf::VideoMode::getDesktopMode();
+    bool fullscreen = false;
     unsigned framerate_limit = 60;
     bool vertical_sync_enable = false;
+    unsigned antialiasing_level = 0;
 
     if(ifs.is_open()) {
         std::getline(ifs, title);
         ifs >> window_bounds.width >> window_bounds.height;
+        ifs >> fullscreen;
         ifs >> framerate_limit;
         ifs >> vertical_sync_enable;
+        ifs >> antialiasing_level;
     }
-    this->window = new sf::RenderWindow(window_bounds,title,
-                                        sf::Style::Titlebar | sf::Style::Close);
+    ifs.close();
 
+    this->fullscreen = fullscreen;
+    this->windowSettings.antialiasingLevel = antialiasing_level;
+    if(this->fullscreen) {
+        this->window = new sf::RenderWindow(window_bounds,title,sf::Style::Fullscreen, windowSettings);
+    } else {
+        this->window = new sf::RenderWindow(window_bounds,title, sf::Style::Titlebar | sf::Style::Close,
+                                            windowSettings);
+
+    }
     this->window->setFramerateLimit(framerate_limit);
     this->window->setVerticalSyncEnabled(vertical_sync_enable);
 
@@ -38,7 +53,7 @@ void Game::initWindow() {
 }
 
 void Game::initKeys() {
-    std::ifstream ifs("/home/kevin/CLionProjects/Game-projecttest/GameProject/Config/Supported_keys.ini");
+    std::ifstream ifs("../Config/Supported_keys.ini");
     if (ifs.is_open()) {
         std::string key = "";
         int key_value = 0;
