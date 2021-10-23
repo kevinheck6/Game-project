@@ -9,7 +9,7 @@ void Game::initVariable() {
 }
 
 void Game::initStates() {
-    this->states.push(new MainMenuState(this->window,&this->supportedKeys));
+    this->states.push(new MainMenuState(this->window,&this->supportedKeys, &this->states));
 }
 
 void Game::initWindow() {

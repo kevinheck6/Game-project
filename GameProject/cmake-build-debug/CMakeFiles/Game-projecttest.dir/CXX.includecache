@@ -6,9 +6,33 @@
 
 #IncludeRegexTransform: 
 
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.cpp
-Button.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
+iostream
+-
+ctime
+-
+vector
+-
+cstdlib
+-
+fstream
+-
+sstream
+-
+stack
+-
+map
+-
+SFML/Graphics.hpp
+-
+SFML/System.hpp
+-
+SFML/Window.hpp
+-
+SFML/Audio.hpp
+-
+SFML/Network.hpp
+-
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
 iostream
@@ -27,4 +51,22 @@ SFML/Window.hpp
 -
 SFML/Audio.hpp
 -
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
+State.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.cpp
+MainMenuState.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
+GameState.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
+../Resources/Button.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
+../Entities/Entity.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
 
