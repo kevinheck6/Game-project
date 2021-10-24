@@ -153,6 +153,30 @@ Entities/Entity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Entities/Entity.cpp.s
 .PHONY : Entities/Entity.cpp.s
 
+Entities/Player.o: Entities/Player.cpp.o
+.PHONY : Entities/Player.o
+
+# target to build an object file
+Entities/Player.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Entities/Player.cpp.o
+.PHONY : Entities/Player.cpp.o
+
+Entities/Player.i: Entities/Player.cpp.i
+.PHONY : Entities/Player.i
+
+# target to preprocess a source file
+Entities/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Entities/Player.cpp.i
+.PHONY : Entities/Player.cpp.i
+
+Entities/Player.s: Entities/Player.cpp.s
+.PHONY : Entities/Player.s
+
+# target to generate assembly for a file
+Entities/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Entities/Player.cpp.s
+.PHONY : Entities/Player.cpp.s
+
 Resources/Button.o: Resources/Button.cpp.o
 .PHONY : Resources/Button.o
 
@@ -309,6 +333,9 @@ help:
 	@echo "... Entities/Entity.o"
 	@echo "... Entities/Entity.i"
 	@echo "... Entities/Entity.s"
+	@echo "... Entities/Player.o"
+	@echo "... Entities/Player.i"
+	@echo "... Entities/Player.s"
 	@echo "... Resources/Button.o"
 	@echo "... Resources/Button.i"
 	@echo "... Resources/Button.s"

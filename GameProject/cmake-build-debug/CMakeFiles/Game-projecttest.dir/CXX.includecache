@@ -34,10 +34,6 @@ SFML/Audio.hpp
 SFML/Network.hpp
 -
 
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/Game.h
-../States/MainMenuState.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
-
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
 iostream
 -
@@ -56,13 +52,13 @@ SFML/Window.hpp
 SFML/Audio.hpp
 -
 
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/Game.cpp
-../Head Files/Game.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/Game.h
-
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
 State.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.cpp
+MainMenuState.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
 GameState.h

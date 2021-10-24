@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include <iostream>
 #include <ctime>
 #include <vector>
@@ -10,7 +9,6 @@
 #include <stack>
 #include <map>
 
-
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
@@ -19,14 +17,20 @@
 
 class Entity {
 private:
+    void initVariables();
 
 protected:
-    sf::RectangleShape shape;
+    sf::Texture* texture;
+    sf::Sprite* sprite;
+
     float movementSpeed;
 
 public:
     Entity();
     virtual ~Entity();
+
+    //Components Functions
+    void createSprite(sf::Texture* texture);
 
     //Functions
     virtual void move(const float& dt, const float x, const float y);

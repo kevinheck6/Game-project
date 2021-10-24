@@ -7,7 +7,7 @@
 
 void GameState::initKeyBinds() {
 
-    std::ifstream ifs("/home/kevin/CLionProjects/Game-projecttest/GameProject/Config/GameState_KeyBind.ini");
+    std::ifstream ifs("../Config/GameState_KeyBind.ini");
     if (ifs.is_open()) {
         std::string key = "";
         std::string key2 = "";
@@ -28,13 +28,8 @@ GameState::~GameState() {
 
 }
 
-void GameState::endState() {
-    std::cout << "Ending game State" << "\n";
-}
 
 void GameState::updateInput(const float &dt) {
-    this->checkForQuit();
-
 
     //playerInput
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("MOVE_LEFT")))) {
@@ -48,6 +43,10 @@ void GameState::updateInput(const float &dt) {
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("MOVE_DOWN")))) {
         this->player.move(dt, 0.f, 1.f);
+    }
+
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("CLOSE")))) {
+        this->endState();
     }
 }
 

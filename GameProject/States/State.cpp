@@ -20,15 +20,10 @@ const bool &State::getQuit() const {
     return this->quit;
 }
 
-void State::checkForQuit() {
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("CLOSE")))){
-        this->quit = true;
-    }
-}
 
 
 void State::endState() {
-
+    this->quit = true;
 }
 
 void State::updateMousePosition() {

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Game-projecttest.dir/Entities/Entity.cpp.o"
+  "CMakeFiles/Game-projecttest.dir/Entities/Player.cpp.o"
   "CMakeFiles/Game-projecttest.dir/Resources/Button.cpp.o"
   "CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o"
   "CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o"
