@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
 iostream
 -
 ctime
@@ -34,19 +34,15 @@ SFML/Audio.hpp
 SFML/Network.hpp
 -
 
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
+../Components/MovementComponent.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.cpp
+Player.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
+
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
 Entity.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
-
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.cpp
-GameState.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
-
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
-State.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
-
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
-../Entities/Player.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
 

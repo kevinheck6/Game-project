@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.cpp">
+			<Option target="Game-projecttest"/>
+		</Unit>
+		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h">
+			<Option target="Game-projecttest"/>
+		</Unit>
 		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.cpp">
 			<Option target="Game-projecttest"/>
 		</Unit>

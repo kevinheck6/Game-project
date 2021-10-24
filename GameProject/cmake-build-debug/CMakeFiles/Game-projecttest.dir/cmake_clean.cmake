@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Game-projecttest.dir/Components/MovementComponent.cpp.o"
   "CMakeFiles/Game-projecttest.dir/Entities/Entity.cpp.o"
   "CMakeFiles/Game-projecttest.dir/Entities/Player.cpp.o"
   "CMakeFiles/Game-projecttest.dir/Resources/Button.cpp.o"

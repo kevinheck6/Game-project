@@ -129,6 +129,30 @@ Game-projecttest/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/build
 .PHONY : Game-projecttest/fast
 
+Components/MovementComponent.o: Components/MovementComponent.cpp.o
+.PHONY : Components/MovementComponent.o
+
+# target to build an object file
+Components/MovementComponent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Components/MovementComponent.cpp.o
+.PHONY : Components/MovementComponent.cpp.o
+
+Components/MovementComponent.i: Components/MovementComponent.cpp.i
+.PHONY : Components/MovementComponent.i
+
+# target to preprocess a source file
+Components/MovementComponent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Components/MovementComponent.cpp.i
+.PHONY : Components/MovementComponent.cpp.i
+
+Components/MovementComponent.s: Components/MovementComponent.cpp.s
+.PHONY : Components/MovementComponent.s
+
+# target to generate assembly for a file
+Components/MovementComponent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Components/MovementComponent.cpp.s
+.PHONY : Components/MovementComponent.cpp.s
+
 Entities/Entity.o: Entities/Entity.cpp.o
 .PHONY : Entities/Entity.o
 
@@ -330,6 +354,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Game-projecttest"
+	@echo "... Components/MovementComponent.o"
+	@echo "... Components/MovementComponent.i"
+	@echo "... Components/MovementComponent.s"
 	@echo "... Entities/Entity.o"
 	@echo "... Entities/Entity.i"
 	@echo "... Entities/Entity.s"

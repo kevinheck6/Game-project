@@ -17,7 +17,6 @@ void GameState::initKeyBinds() {
         }
     }
     ifs.close();
-
 }
 
 void GameState::initTextures() {
