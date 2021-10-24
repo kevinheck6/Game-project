@@ -21,8 +21,7 @@ void GameState::initKeyBinds() {
 }
 
 void GameState::initTextures() {
-
-    if(this->textures["PLAYER_IDLE"].loadFromFile("../Resources/Images/Sprites/Player/Skeleton.png")) {
+    if(!this->textures["PLAYER_IDLE"].loadFromFile("../Resources/Images/Sprites/Player/Skeleton.png")) {
         throw "ERROR - GAMESTATE::InitTextures FAIL TO LOAD PLAYER_IDLE TEXTURE";
     }
 }

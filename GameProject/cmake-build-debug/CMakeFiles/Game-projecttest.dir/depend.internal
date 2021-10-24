@@ -4,11 +4,16 @@
 CMakeFiles/Game-projecttest.dir/Entities/Entity.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.cpp
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
+CMakeFiles/Game-projecttest.dir/Entities/Player.cpp.o
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.cpp
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
 CMakeFiles/Game-projecttest.dir/Resources/Button.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.cpp
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
 CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/Game.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/Game.cpp
@@ -17,6 +22,7 @@ CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
 CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/Game.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/main.cpp
@@ -25,11 +31,13 @@ CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
 CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.cpp
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
 CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.cpp
@@ -37,5 +45,6 @@ CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
 CMakeFiles/Game-projecttest.dir/States/State.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.cpp
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
