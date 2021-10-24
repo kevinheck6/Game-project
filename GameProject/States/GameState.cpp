@@ -27,7 +27,7 @@ void GameState::initTextures() {
 
 
 void GameState::initPlayers() {
-    this->player = new Player(0, 0, &this->textures["PLAYER_IDLE"]);
+    this->player = new Player(0, 0, this->textures["PLAYER_IDLE"]);
 }
 
 
