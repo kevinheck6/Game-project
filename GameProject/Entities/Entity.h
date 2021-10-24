@@ -33,6 +33,7 @@ public:
     void createSprite(sf::Texture* texture);
 
     //Functions
+    void setPositions(const float x, const float y);
     virtual void move(const float& dt, const float x, const float y);
 
     virtual void update(const float& dt);
