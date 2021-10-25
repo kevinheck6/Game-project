@@ -7,6 +7,7 @@ class GameState :
 
 private:
     Player* player;
+    sf::Texture texture;
 
     //Functions
     void initKeyBinds();
