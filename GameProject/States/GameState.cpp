@@ -20,14 +20,14 @@ void GameState::initKeyBinds() {
 }
 
 void GameState::initTextures() {
-    if(!this->textures["PLAYER_IDLE"].loadFromFile("../Resources/Images/Sprites/Player/Skeleton.png")) {
+    if(!this->textures["PLAYER_SHEET"].loadFromFile("../Resources/Images/Sprites/Player/Test.png")) {
         throw "ERROR - GAMESTATE::InitTextures FAIL TO LOAD PLAYER_IDLE TEXTURE";
     }
 }
 
 
 void GameState::initPlayers() {
-    this->player = new Player(0, 0, this->textures["PLAYER_IDLE"]);
+    this->player = new Player(0, 0, this->textures["PLAYER_SHEET"]);
 }
 
 
