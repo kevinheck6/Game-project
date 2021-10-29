@@ -20,7 +20,7 @@ void GameState::initKeyBinds() {
 }
 
 void GameState::initTextures() {
-    if(!this->textures["PLAYER_SHEET"].loadFromFile("../Resources/Images/Sprites/Player/Idle2.png")) {
+    if(!this->textures["PLAYER_SHEET"].loadFromFile("../Resources/Images/Sprites/Player/Idle3.png")) {
         throw "ERROR - GAMESTATE::InitTextures FAIL TO LOAD PLAYER_IDLE TEXTURE";
     }
 }

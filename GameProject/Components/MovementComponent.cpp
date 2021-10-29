@@ -13,6 +13,10 @@ sprite(sprite), maxVelocity(maxVelocity), acceleration(acceleration), decelerati
 MovementComponent::~MovementComponent() {
 
 }
+//Accessors
+const float &MovementComponent::getMaxVelocity() const {
+    return this->maxVelocity;
+}
 
 const sf::Vector2f &MovementComponent::getVelocity() const {
     return this->velocity;
@@ -117,6 +121,8 @@ void MovementComponent::update(const float &dt) {
     //Final Move
     this->sprite.move(this->velocity * dt); // Uses velocity
 }
+
+
 
 
 

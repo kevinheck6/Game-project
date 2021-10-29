@@ -32,6 +32,10 @@ Player::Player(float x, float y,sf::Texture& texture_sheet) {
     this->animationComponent->addAnimation("WALK", 10.f,
                                            2, 1,
                                            7, 1, 180, 180);
+
+    this->animationComponent->addAnimation("ATTACK", 9.f,
+                                           0, 2,
+                                           6, 2, 180, 180);
 }
 
 Player::~Player() {
@@ -48,18 +52,22 @@ void Player::update(const float &dt) {
     } else if(this->movementComponent->getState(MOVING_RIGHT)) {
         this->sprite.setOrigin(0.f, .0f);
         this->sprite.setScale(1.f,1.f);
-        this->animationComponent->play("WALK", dt);
+        this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x,
+                                       this->movementComponent->getMaxVelocity());
 
     } else if (this->movementComponent->getState(MOVING_LEFT)) {
         this->sprite.setOrigin(200.f, .0f);
         this->sprite.setScale(-1.f, 1.f);
-        this->animationComponent->play("WALK", dt);
+        this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x,
+                                       this->movementComponent->getMaxVelocity());
 
     } else if (this->movementComponent->getState(MOVING_UP)) {
-        this->animationComponent->play("WALK", dt);
+        this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().y,
+                                       this->movementComponent->getMaxVelocity());
 
     } else if (this->movementComponent->getState(MOVING_DOWN)) {
-        this->animationComponent->play("WALK", dt);
+        this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().y,
+                                       this->movementComponent->getMaxVelocity());
 
     }
 
