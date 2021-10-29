@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Game-projecttest.dir/Resources/Button.cpp.o"
   "CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o"
   "CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o"
+  "CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o"
   "CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o"
   "CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o"
   "CMakeFiles/Game-projecttest.dir/States/State.cpp.o"

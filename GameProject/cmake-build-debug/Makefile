@@ -297,6 +297,30 @@ Source_Files/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.s
 .PHONY : Source_Files/main.cpp.s
 
+States/EditorState.o: States/EditorState.cpp.o
+.PHONY : States/EditorState.o
+
+# target to build an object file
+States/EditorState.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o
+.PHONY : States/EditorState.cpp.o
+
+States/EditorState.i: States/EditorState.cpp.i
+.PHONY : States/EditorState.i
+
+# target to preprocess a source file
+States/EditorState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.i
+.PHONY : States/EditorState.cpp.i
+
+States/EditorState.s: States/EditorState.cpp.s
+.PHONY : States/EditorState.s
+
+# target to generate assembly for a file
+States/EditorState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.s
+.PHONY : States/EditorState.cpp.s
+
 States/GameState.o: States/GameState.cpp.o
 .PHONY : States/GameState.o
 
@@ -399,6 +423,9 @@ help:
 	@echo "... Source_Files/main.o"
 	@echo "... Source_Files/main.i"
 	@echo "... Source_Files/main.s"
+	@echo "... States/EditorState.o"
+	@echo "... States/EditorState.i"
+	@echo "... States/EditorState.s"
 	@echo "... States/GameState.o"
 	@echo "... States/GameState.i"
 	@echo "... States/GameState.s"

@@ -29,6 +29,7 @@ CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/Game.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/Game.cpp
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
@@ -40,6 +41,18 @@ CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/Game.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/main.cpp
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
+CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.cpp
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
@@ -57,6 +70,7 @@ CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.cpp
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h

@@ -121,6 +121,12 @@
 		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/main.cpp">
 			<Option target="Game-projecttest"/>
 		</Unit>
+		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.cpp">
+			<Option target="Game-projecttest"/>
+		</Unit>
+		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h">
+			<Option target="Game-projecttest"/>
+		</Unit>
 		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.cpp">
 			<Option target="Game-projecttest"/>
 		</Unit>
