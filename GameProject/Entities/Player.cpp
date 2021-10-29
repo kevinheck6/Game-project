@@ -6,7 +6,7 @@
 
 //Initializers
 void Player::initVariables() {
-
+    this->attacking = false;
 }
 
 void Player::initComponents() {
@@ -46,6 +46,13 @@ Player::~Player() {
 void Player::update(const float &dt) {
 
     this->movementComponent->update(dt);
+
+    //if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+    //    this->attacking = true;
+    //}
+    if(this->attacking) {
+        this->animationComponent->play("ATTACK", dt, true);
+    }
     if(this->movementComponent ->getState(IDLE)) {
         this->animationComponent->play("IDLE", dt);
 

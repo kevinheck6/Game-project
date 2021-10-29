@@ -27,30 +27,75 @@ this->animations[key] = new Animation(this->sprite, this->textureSheet, animatio
 }
 
 void AnimationComponent::play(const std::string key, const float &dt, const bool priority) {
+    if (this->priorityAnimation) { //if exist priority animation
+        if (this->priorityAnimation == this->animations[key]) {
+            if(this->lastAnimation != this->animations[key]) {
+                if(this->lastAnimation == nullptr) {
+                    this->lastAnimation = this->animations[key];
+                } else {
+                    this->lastAnimation->reset();
+                    this->lastAnimation = this->animations[key];
+                }
+            }
+            this->animations[key]->play(dt);
+        }
+    } else {
+        //If this is priority animation, set it
+        if(priority) {
+            this->priorityAnimation = this->animations[key];
+        }
 
-    if(this->lastAnimation != this->animations[key]) {
-        if(this->lastAnimation == nullptr) {
-            this->lastAnimation = this->animations[key];
-        } else {
-            this->lastAnimation->reset();
-            this->lastAnimation = this->animations[key];
+        if(this->lastAnimation != this->animations[key]) {
+            if(this->lastAnimation == nullptr) {
+                this->lastAnimation = this->animations[key];
+            } else {
+                this->lastAnimation->reset();
+                this->lastAnimation = this->animations[key];
+            }
+        }
+        //If priority animation is done, remove it
+        if(this->animations[key]->play(dt)) {
+            this->priorityAnimation = nullptr;
         }
     }
-    this->animations[key]->play(dt);
+
+
 }
 
 void AnimationComponent::play(const std::string key, const float &dt,
                               const float &modifier, const float &modifier_max,
                               const bool priority) {
-    if(this->lastAnimation != this->animations[key]) {
-        if(this->lastAnimation == nullptr) {
-            this->lastAnimation = this->animations[key];
-        } else {
-            this->lastAnimation->reset();
-            this->lastAnimation = this->animations[key];
+
+    if (this->priorityAnimation) { //if exist priority animation
+        if (this->priorityAnimation == this->animations[key]) {
+            if(this->lastAnimation != this->animations[key]) {
+                if(this->lastAnimation == nullptr) {
+                    this->lastAnimation = this->animations[key];
+                } else {
+                    this->lastAnimation->reset();
+                    this->lastAnimation = this->animations[key];
+                }
+            }
+            this->animations[key]->play(dt, abs((modifier / modifier_max)));
+        }
+    } else {
+        //If this is priority animation, set it
+        if(priority) {
+            this->priorityAnimation = this->animations[key];
+        }
+        if (this->lastAnimation != this->animations[key]) {
+            if (this->lastAnimation == nullptr) {
+                this->lastAnimation = this->animations[key];
+            } else {
+                this->lastAnimation->reset();
+                this->lastAnimation = this->animations[key];
+            }
+        }
+        //If priority animation is done, remove it
+        if(this->animations[key]->play(dt, abs((modifier / modifier_max)))) {
+            this->priorityAnimation = nullptr;
         }
     }
-    this->animations[key]->play(dt, abs((modifier / modifier_max)));
 
 }
 

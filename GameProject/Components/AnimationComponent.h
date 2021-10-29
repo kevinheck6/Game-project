@@ -44,8 +44,9 @@ private:
         }
 
         //Functions
-        void play(const float & dt) {
+        bool play(const float& dt) {
             //update timer
+            bool done = false;
             this->timer += 100.f * dt;
             if(this->timer >= this->animationTimer) {
                 //reset timer
@@ -55,13 +56,16 @@ private:
                     this->currentRect.left += this->width;
                 } else { // Reset it
                     this->currentRect.left = this->startRect.left;
+                    done = true;
                 }
                 this->sprite.setTextureRect(this->currentRect);
             }
+            return done;
         }
 
-        void play(const float & dt, float    mod_percentage) {
+        bool play(const float& dt, float    mod_percentage) {
             //update timer
+            bool done = false;
             if(mod_percentage < 0.5f) {
                 mod_percentage = 0.5f;
             }
@@ -74,9 +78,11 @@ private:
                     this->currentRect.left += this->width;
                 } else { // Reset it
                     this->currentRect.left = this->startRect.left;
+                    done = true;
                 }
                 this->sprite.setTextureRect(this->currentRect);
             }
+            return done;
         }
 
         void reset() {
