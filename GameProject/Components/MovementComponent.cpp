@@ -19,6 +19,13 @@ const sf::Vector2f &MovementComponent::getVelocity() const {
 }
 
 //Functions
+const bool MovementComponent::idle() const {
+    if(this->velocity.x == 0.f && this->velocity.y == 0.f) {
+        return true;
+    }
+    return false;
+}
+
 void MovementComponent::move(const float dir_x, const float dir_y, const float& dt) {
     //Accelerating a sprite until max velocity
     this->velocity.x += this->acceleration * dir_x;
@@ -75,6 +82,7 @@ void MovementComponent::update(const float &dt) {
     //Final Move
     this->sprite.move(this->velocity * dt); // Uses velocity
 }
+
 
 
 
