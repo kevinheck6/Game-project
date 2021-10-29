@@ -4,16 +4,21 @@
 CMakeFiles/Game-projecttest.dir/Components/AnimationComponent.cpp.o: \
  ../Components/AnimationComponent.cpp \
  ../Components/AnimationComponent.h
+CMakeFiles/Game-projecttest.dir/Components/HitBoxComponent.cpp.o: \
+ ../Components/HitBoxComponent.cpp \
+ ../Components/HitBoxComponent.h
 CMakeFiles/Game-projecttest.dir/Components/MovementComponent.cpp.o: \
  ../Components/MovementComponent.cpp \
  ../Components/MovementComponent.h
 CMakeFiles/Game-projecttest.dir/Entities/Entity.cpp.o: \
  ../Components/AnimationComponent.h \
+ ../Components/HitBoxComponent.h \
  ../Components/MovementComponent.h \
  ../Entities/Entity.cpp \
  ../Entities/Entity.h
 CMakeFiles/Game-projecttest.dir/Entities/Player.cpp.o: \
  ../Components/AnimationComponent.h \
+ ../Components/HitBoxComponent.h \
  ../Components/MovementComponent.h \
  ../Entities/Entity.h \
  ../Entities/Player.cpp \
@@ -23,6 +28,7 @@ CMakeFiles/Game-projecttest.dir/Resources/Button.cpp.o: \
  ../Resources/Button.h
 CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o: \
  ../Components/AnimationComponent.h \
+ ../Components/HitBoxComponent.h \
  ../Components/MovementComponent.h \
  ../Entities/Entity.h \
  ../Entities/Player.h \
@@ -35,6 +41,7 @@ CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o: \
  ../States/State.h
 CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o: \
  ../Components/AnimationComponent.h \
+ ../Components/HitBoxComponent.h \
  ../Components/MovementComponent.h \
  ../Entities/Entity.h \
  ../Entities/Player.h \
@@ -47,6 +54,7 @@ CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o: \
  ../States/State.h
 CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o: \
  ../Components/AnimationComponent.h \
+ ../Components/HitBoxComponent.h \
  ../Components/MovementComponent.h \
  ../Entities/Entity.h \
  ../Entities/Player.h \
@@ -58,6 +66,7 @@ CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o: \
  ../States/State.h
 CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o: \
  ../Components/AnimationComponent.h \
+ ../Components/HitBoxComponent.h \
  ../Components/MovementComponent.h \
  ../Entities/Entity.h \
  ../Entities/Player.h \
@@ -66,6 +75,7 @@ CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o: \
  ../States/State.h
 CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o: \
  ../Components/AnimationComponent.h \
+ ../Components/HitBoxComponent.h \
  ../Components/MovementComponent.h \
  ../Entities/Entity.h \
  ../Entities/Player.h \
@@ -77,6 +87,7 @@ CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o: \
  ../States/State.h
 CMakeFiles/Game-projecttest.dir/States/State.cpp.o: \
  ../Components/AnimationComponent.h \
+ ../Components/HitBoxComponent.h \
  ../Components/MovementComponent.h \
  ../Entities/Entity.h \
  ../Entities/Player.h \

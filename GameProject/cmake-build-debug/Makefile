@@ -153,6 +153,30 @@ Components/AnimationComponent.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Components/AnimationComponent.cpp.s
 .PHONY : Components/AnimationComponent.cpp.s
 
+Components/HitBoxComponent.o: Components/HitBoxComponent.cpp.o
+.PHONY : Components/HitBoxComponent.o
+
+# target to build an object file
+Components/HitBoxComponent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Components/HitBoxComponent.cpp.o
+.PHONY : Components/HitBoxComponent.cpp.o
+
+Components/HitBoxComponent.i: Components/HitBoxComponent.cpp.i
+.PHONY : Components/HitBoxComponent.i
+
+# target to preprocess a source file
+Components/HitBoxComponent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Components/HitBoxComponent.cpp.i
+.PHONY : Components/HitBoxComponent.cpp.i
+
+Components/HitBoxComponent.s: Components/HitBoxComponent.cpp.s
+.PHONY : Components/HitBoxComponent.s
+
+# target to generate assembly for a file
+Components/HitBoxComponent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Components/HitBoxComponent.cpp.s
+.PHONY : Components/HitBoxComponent.cpp.s
+
 Components/MovementComponent.o: Components/MovementComponent.cpp.o
 .PHONY : Components/MovementComponent.o
 
@@ -405,6 +429,9 @@ help:
 	@echo "... Components/AnimationComponent.o"
 	@echo "... Components/AnimationComponent.i"
 	@echo "... Components/AnimationComponent.s"
+	@echo "... Components/HitBoxComponent.o"
+	@echo "... Components/HitBoxComponent.i"
+	@echo "... Components/HitBoxComponent.s"
 	@echo "... Components/MovementComponent.o"
 	@echo "... Components/MovementComponent.i"
 	@echo "... Components/MovementComponent.s"

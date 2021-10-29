@@ -120,7 +120,7 @@ void MainMenuState::update(const float& dt) {
 
 }
 
-void MainMenuState::renderButtons(sf::RenderTarget *target) {
+void MainMenuState::renderButtons(sf::RenderTarget &target) {
     for(auto it : this->buttons) {
         it.second->render(target);
     }
@@ -132,7 +132,7 @@ void MainMenuState::render(sf::RenderTarget* target) {
     }
     target->draw(this->background);
 
-    this->renderButtons(target);
+    this->renderButtons(*target);
 
     //SEE COORDENATES OF THE MOUSE, NOT INGAME THING
     /*sf::Text mouseText;

@@ -4,16 +4,21 @@
 CMakeFiles/Game-projecttest.dir/Components/AnimationComponent.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.cpp
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.h
+CMakeFiles/Game-projecttest.dir/Components/HitBoxComponent.cpp.o
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.cpp
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.h
 CMakeFiles/Game-projecttest.dir/Components/MovementComponent.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.cpp
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
 CMakeFiles/Game-projecttest.dir/Entities/Entity.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.cpp
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
 CMakeFiles/Game-projecttest.dir/Entities/Player.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.cpp
@@ -23,6 +28,7 @@ CMakeFiles/Game-projecttest.dir/Resources/Button.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
 CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
@@ -35,6 +41,7 @@ CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
 CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
@@ -47,6 +54,7 @@ CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
 CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
@@ -58,6 +66,7 @@ CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
 CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
@@ -66,6 +75,7 @@ CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
 CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
@@ -77,6 +87,7 @@ CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
 CMakeFiles/Game-projecttest.dir/States/State.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
