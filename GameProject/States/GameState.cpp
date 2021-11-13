@@ -19,12 +19,23 @@ void GameState::initKeyBinds() {
     ifs.close();
 }
 
+void GameState::initFonts() {
+    if(!this->font.loadFromFile("../Fonts/Amatic-Bold.ttf")) {
+        throw("ERROR - MainMenuState - Could not load");
+    }
+
+}
+
 void GameState::initTextures() {
     if(!this->textures["PLAYER_SHEET"].loadFromFile("../Resources/Images/Sprites/Player/Idle3.png")) {
         throw "ERROR - GAMESTATE::InitTextures FAIL TO LOAD PLAYER_IDLE TEXTURE";
     }
 }
 
+void GameState::initPauseMenu() {
+    this->pauseMenu = new PauseMenu(*this->window, this->font);
+    this->pauseMenu->addButton("EXIT", 500.f, "Exit");
+}
 
 void GameState::initPlayers() {
     this->player = new Player(0, 0, this->textures["PLAYER_SHEET"]);
@@ -35,16 +46,31 @@ void GameState::initPlayers() {
 GameState::GameState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states)
     : State(window, supportedKeys, states) {
     this->initKeyBinds();
+    this->initFonts();
     this->initTextures();
+    this->initPauseMenu();
+
     this->initPlayers();
 }
 
 GameState::~GameState() {
+    delete this->pauseMenu;
     delete this->player;
 }
 
-
 void GameState::updateInput(const float &dt) {
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("CLOSE")))) {
+        if(!this->pause) {
+            this->pauseState();
+            std::cout << "paused";
+        } else {
+         this->unpauseState();
+        }
+
+    }
+}
+
+void GameState::updatePlayerInput(const float &dt) {
 
     //playerInput
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("MOVE_LEFT")))) {
@@ -59,8 +85,10 @@ void GameState::updateInput(const float &dt) {
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("MOVE_DOWN")))) {
         this->player->move(0.f, 1.f, dt);
     }
+}
 
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("CLOSE")))) {
+void GameState::updatePauseMenuButtons() {
+    if(this->pauseMenu->isButtonPressed("EXIT")) {
         this->endState();
     }
 }
@@ -68,15 +96,31 @@ void GameState::updateInput(const float &dt) {
 void GameState::update(const float& dt) {
     this->updateMousePosition();
     this->updateInput(dt);
-    this->player->update(dt);
+
+    if(!this->pause) { // Unpause
+        this->updatePlayerInput(dt);
+
+        this->player->update(dt);
+    } else { // Pause update
+        this->pauseMenu->update(this->mousePosView);
+        this->updatePauseMenuButtons();
+    }
 }
 
 void GameState::render(sf::RenderTarget* target) {
     if(!target) {
         target = this->window;
-        this->player->render(*target);
+    }
+    this->player->render(*target);
+    if(this->pause) { //Pause menu
+        this->pauseMenu->render(*target);
     }
 }
+
+
+
+
+
 
 
 

@@ -23,6 +23,10 @@ CMakeFiles/Game-projecttest.dir/Entities/Player.cpp.o: \
  ../Entities/Entity.h \
  ../Entities/Player.cpp \
  ../Entities/Player.h
+CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.o: \
+ ../GUI/PauseMenu.cpp \
+ ../GUI/PauseMenu.h \
+ ../Resources/Button.h
 CMakeFiles/Game-projecttest.dir/Resources/Button.cpp.o: \
  ../Resources/Button.cpp \
  ../Resources/Button.h
@@ -32,6 +36,7 @@ CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o: \
  ../Components/MovementComponent.h \
  ../Entities/Entity.h \
  ../Entities/Player.h \
+ ../GUI/PauseMenu.h \
  ../Head\ Files/Game.h \
  ../Resources/Button.h \
  ../Source\ Files/Game.cpp \
@@ -45,6 +50,7 @@ CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o: \
  ../Components/MovementComponent.h \
  ../Entities/Entity.h \
  ../Entities/Player.h \
+ ../GUI/PauseMenu.h \
  ../Head\ Files/Game.h \
  ../Resources/Button.h \
  ../Source\ Files/main.cpp \
@@ -58,6 +64,7 @@ CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o: \
  ../Components/MovementComponent.h \
  ../Entities/Entity.h \
  ../Entities/Player.h \
+ ../GUI/PauseMenu.h \
  ../Resources/Button.h \
  ../States/EditorState.cpp \
  ../States/EditorState.h \
@@ -70,6 +77,8 @@ CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o: \
  ../Components/MovementComponent.h \
  ../Entities/Entity.h \
  ../Entities/Player.h \
+ ../GUI/PauseMenu.h \
+ ../Resources/Button.h \
  ../States/GameState.cpp \
  ../States/GameState.h \
  ../States/State.h
@@ -79,6 +88,7 @@ CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o: \
  ../Components/MovementComponent.h \
  ../Entities/Entity.h \
  ../Entities/Player.h \
+ ../GUI/PauseMenu.h \
  ../Resources/Button.h \
  ../States/EditorState.h \
  ../States/GameState.h \
@@ -93,3 +103,6 @@ CMakeFiles/Game-projecttest.dir/States/State.cpp.o: \
  ../Entities/Player.h \
  ../States/State.cpp \
  ../States/State.h
+CMakeFiles/Game-projecttest.dir/Tile/Tile.cpp.o: \
+ ../Tile/Tile.cpp \
+ ../Tile/Tile.h

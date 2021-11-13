@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Components/MovementComponent.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Entities/Entity.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Entities/Player.cpp.o"
+  "/home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Resources/Button.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/Game.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/main.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o"
@@ -20,6 +21,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/States/State.cpp.o"
+  "/home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Tile/Tile.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

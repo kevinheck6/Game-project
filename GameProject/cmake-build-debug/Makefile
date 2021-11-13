@@ -249,6 +249,30 @@ Entities/Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Entities/Player.cpp.s
 .PHONY : Entities/Player.cpp.s
 
+GUI/PauseMenu.o: GUI/PauseMenu.cpp.o
+.PHONY : GUI/PauseMenu.o
+
+# target to build an object file
+GUI/PauseMenu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.o
+.PHONY : GUI/PauseMenu.cpp.o
+
+GUI/PauseMenu.i: GUI/PauseMenu.cpp.i
+.PHONY : GUI/PauseMenu.i
+
+# target to preprocess a source file
+GUI/PauseMenu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.i
+.PHONY : GUI/PauseMenu.cpp.i
+
+GUI/PauseMenu.s: GUI/PauseMenu.cpp.s
+.PHONY : GUI/PauseMenu.s
+
+# target to generate assembly for a file
+GUI/PauseMenu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.s
+.PHONY : GUI/PauseMenu.cpp.s
+
 Resources/Button.o: Resources/Button.cpp.o
 .PHONY : Resources/Button.o
 
@@ -417,6 +441,30 @@ States/State.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/States/State.cpp.s
 .PHONY : States/State.cpp.s
 
+Tile/Tile.o: Tile/Tile.cpp.o
+.PHONY : Tile/Tile.o
+
+# target to build an object file
+Tile/Tile.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Tile/Tile.cpp.o
+.PHONY : Tile/Tile.cpp.o
+
+Tile/Tile.i: Tile/Tile.cpp.i
+.PHONY : Tile/Tile.i
+
+# target to preprocess a source file
+Tile/Tile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Tile/Tile.cpp.i
+.PHONY : Tile/Tile.cpp.i
+
+Tile/Tile.s: Tile/Tile.cpp.s
+.PHONY : Tile/Tile.s
+
+# target to generate assembly for a file
+Tile/Tile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Tile/Tile.cpp.s
+.PHONY : Tile/Tile.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -441,6 +489,9 @@ help:
 	@echo "... Entities/Player.o"
 	@echo "... Entities/Player.i"
 	@echo "... Entities/Player.s"
+	@echo "... GUI/PauseMenu.o"
+	@echo "... GUI/PauseMenu.i"
+	@echo "... GUI/PauseMenu.s"
 	@echo "... Resources/Button.o"
 	@echo "... Resources/Button.i"
 	@echo "... Resources/Button.s"
@@ -462,6 +513,9 @@ help:
 	@echo "... States/State.o"
 	@echo "... States/State.i"
 	@echo "... States/State.s"
+	@echo "... Tile/Tile.o"
+	@echo "... Tile/Tile.i"
+	@echo "... Tile/Tile.s"
 .PHONY : help
 
 
