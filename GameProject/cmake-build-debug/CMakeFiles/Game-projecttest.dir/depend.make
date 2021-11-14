@@ -43,6 +43,7 @@ CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o: \
  ../States/EditorState.h \
  ../States/GameState.h \
  ../States/MainMenuState.h \
+ ../States/SettingsState.h \
  ../States/State.h
 CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o: \
  ../Components/AnimationComponent.h \
@@ -57,6 +58,7 @@ CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o: \
  ../States/EditorState.h \
  ../States/GameState.h \
  ../States/MainMenuState.h \
+ ../States/SettingsState.h \
  ../States/State.h
 CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o: \
  ../Components/AnimationComponent.h \
@@ -70,6 +72,7 @@ CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o: \
  ../States/EditorState.h \
  ../States/GameState.h \
  ../States/MainMenuState.h \
+ ../States/SettingsState.h \
  ../States/State.h
 CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o: \
  ../Components/AnimationComponent.h \
@@ -94,6 +97,17 @@ CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o: \
  ../States/GameState.h \
  ../States/MainMenuState.cpp \
  ../States/MainMenuState.h \
+ ../States/SettingsState.h \
+ ../States/State.h
+CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.o: \
+ ../Components/AnimationComponent.h \
+ ../Components/HitBoxComponent.h \
+ ../Components/MovementComponent.h \
+ ../Entities/Entity.h \
+ ../Entities/Player.h \
+ ../Resources/Button.h \
+ ../States/SettingsState.cpp \
+ ../States/SettingsState.h \
  ../States/State.h
 CMakeFiles/Game-projecttest.dir/States/State.cpp.o: \
  ../Components/AnimationComponent.h \

@@ -1,15 +1,12 @@
 //
-// Created by kevin on 22.10.2021.
+// Created by kevin on 14.11.2021.
 //
-
 #pragma once
 
-#include "GameState.h"
-#include "EditorState.h"
+#include "State.h"
 #include "../Resources/Button.h"
-#include "SettingsState.h"
 
-class MainMenuState :
+class SettingsState :
         public State {
 
 private:
@@ -28,8 +25,9 @@ private:
     void initButtons();
 
 public:
-    MainMenuState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states);
-    virtual ~MainMenuState();
+    SettingsState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states);
+    virtual ~SettingsState();
+    //Accessors
 
     //Functions
     void updateInput(const float& dt);

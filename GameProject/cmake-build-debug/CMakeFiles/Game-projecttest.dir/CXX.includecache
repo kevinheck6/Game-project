@@ -82,36 +82,6 @@ SFML/Network.hpp
 Entity.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
 
-/home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.h
-iostream
--
-ctime
--
-vector
--
-cstdlib
--
-fstream
--
-sstream
--
-stack
--
-map
--
-SFML/Graphics.hpp
--
-SFML/System.hpp
--
-SFML/Window.hpp
--
-SFML/Audio.hpp
--
-SFML/Network.hpp
--
-../Resources/Button.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
-
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
 iostream
 -
@@ -130,15 +100,15 @@ SFML/Window.hpp
 SFML/Audio.hpp
 -
 
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.cpp
-GameState.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.cpp
+SettingsState.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.h
 
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.h
 State.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
-../GUI/PauseMenu.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.h
+../Resources/Button.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
 ../Entities/Player.h

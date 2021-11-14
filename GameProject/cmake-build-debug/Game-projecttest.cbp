@@ -151,6 +151,12 @@
 		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h">
 			<Option target="Game-projecttest"/>
 		</Unit>
+		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.cpp">
+			<Option target="Game-projecttest"/>
+		</Unit>
+		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.h">
+			<Option target="Game-projecttest"/>
+		</Unit>
 		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.cpp">
 			<Option target="Game-projecttest"/>
 		</Unit>

@@ -59,7 +59,7 @@ GameState::~GameState() {
 }
 
 void GameState::updateInput(const float &dt) {
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("CLOSE")))) {
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("CLOSE"))) && this->getKeyTime()) {
         if(!this->pause) {
             this->pauseState();
             std::cout << "paused";
@@ -95,7 +95,9 @@ void GameState::updatePauseMenuButtons() {
 
 void GameState::update(const float& dt) {
     this->updateMousePosition();
+    this->updateKeyTime(dt);
     this->updateInput(dt);
+
 
     if(!this->pause) { // Unpause
         this->updatePlayerInput(dt);

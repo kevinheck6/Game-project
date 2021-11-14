@@ -20,6 +20,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o"
+  "/home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/States/State.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Tile/Tile.cpp.o"
   )

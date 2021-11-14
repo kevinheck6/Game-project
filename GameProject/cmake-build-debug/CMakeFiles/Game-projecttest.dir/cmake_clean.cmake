@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o"
   "CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o"
   "CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o"
+  "CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.o"
   "CMakeFiles/Game-projecttest.dir/States/State.cpp.o"
   "CMakeFiles/Game-projecttest.dir/Tile/Tile.cpp.o"
   "Game-projecttest"
