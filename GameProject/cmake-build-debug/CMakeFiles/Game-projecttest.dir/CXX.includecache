@@ -93,6 +93,10 @@ State.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
 ../Resources/Button.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
+../GUI/PauseMenu.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.h
+../Map/TileMap.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
 State.h
@@ -101,12 +105,6 @@ State.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.h
 ../Map/TileMap.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
-
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.cpp
-../Head Files/PreCompiledHeaders.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-MainMenuState.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
 GameState.h

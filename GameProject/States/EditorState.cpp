@@ -22,7 +22,7 @@ void EditorState::initFonts() {
 
 void EditorState::initKeyBinds() {
 
-    std::ifstream ifs("../Config/EditorState_KeyBinds.ini");
+    std::ifstream ifs("../Config/EditorState_KeyBind.ini");
     if (ifs.is_open()) {
         std::string key = "";
         std::string key2 = "";
@@ -34,17 +34,24 @@ void EditorState::initKeyBinds() {
 }
 
 void EditorState::initButtons() {
+
+}
+
+void EditorState::initPauseMenu() {
+    this->pauseMenu = new PauseMenu(*this->window, this->font);
+    this->pauseMenu->addButton("EXIT", 500.f, "Exit");
 }
 
 
-EditorState::EditorState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states)
-        : State(window, supportedKeys, states) {
+EditorState::EditorState(StateData* state_data)
+        : State(state_data) {
 
-    this->initBackground();
     this->initVariables();
+    this->initBackground();
     this->initFonts();
     this->initKeyBinds();
     this->initButtons();
+    this->initPauseMenu();
 
 }
 
@@ -53,12 +60,18 @@ EditorState::~EditorState() {
     for (it = this->buttons.begin(); it != this->buttons.end(); ++it) {
         delete it->second;
     }
+
+    delete this->pauseMenu;
 }
 
-
+//Functions
 void EditorState::updateInput(const float &dt) {
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("CLOSE")))) {
-        this->endState();
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("CLOSE"))) && this->getKeyTime()) {
+        if(!this->pause) {
+            this->pauseState();
+        } else {
+            this->unpauseState();
+        }
     }
 }
 
@@ -69,16 +82,27 @@ void EditorState::updateButtons() {
     }
 }
 
+void EditorState::updatePauseMenu() {
+    if(this->pauseMenu->isButtonPressed("EXIT")) {
+        this->endState();
+    }
+}
+
 void EditorState::update(const float& dt) {
     this->updateMousePosition();
+    this->updateKeyTime(dt);
     this->updateInput(dt);
 
-    this->updateButtons();
-
+    if(!this->pause) { //Not paused
+        this->updateButtons();
+    } else { // Paused
+        this->pauseMenu->update(this->mousePosView);
+        this->updatePauseMenu();
+    }
 }
 
 void EditorState::renderButtons(sf::RenderTarget &target) {
-    for(auto it : this->buttons) {
+    for(auto &it : this->buttons) {
         it.second->render(target);
     }
 }
@@ -89,6 +113,12 @@ void EditorState::render(sf::RenderTarget* target) {
     }
 
     this->renderButtons(*target);
+
+    this->map.render(*target);
+
+    if(this->pause) {
+        this->pauseMenu->render(*target);
+    }
 
     //SEE COORDENATES OF THE MOUSE, NOT INGAME THING
     /*sf::Text mouseText;
@@ -102,3 +132,6 @@ void EditorState::render(sf::RenderTarget* target) {
      */
 
 }
+
+
+

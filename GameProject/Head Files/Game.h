@@ -10,6 +10,7 @@ private:
 
     //variable
     GraphSettings graphSettings;
+    StateData stateData;
     sf::RenderWindow* window;
     sf::Event sfEvent;
 
@@ -20,11 +21,14 @@ private:
 
     std::map<std::string, int> supportedKeys;
 
+    float gridSize;
+
     //Initialization
     void initVariables(); //initialize Variables
     void initGraphSettings(); // Initialize Graph settings
     void initWindow(); //initialize Window
     void initKeys(); // initialize Keys
+    void initStateData();// Initialize State data
     void initStates(); //initialize States
 
 

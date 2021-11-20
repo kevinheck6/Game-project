@@ -5,7 +5,7 @@
 #include "TileMap.h"
 
 TileMap::TileMap() {
-    this->gridSizeF = 50.f;
+    this->gridSizeF = 100.f;
     this->gridSizeU = static_cast<unsigned>(this->gridSizeF);
     this->mapSize.x = 10;
     this->mapSize.y = 10;

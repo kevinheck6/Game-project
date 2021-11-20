@@ -68,9 +68,8 @@ void MainMenuState::initButtons() {
 }
 
 
-MainMenuState::MainMenuState(sf::RenderWindow* window, GraphSettings& graphSettings,
-                             std::map<std::string, int>* supportedKeys, std::stack<State*>* states)
-        : State(window, supportedKeys, states), graphSettings(graphSettings ) {
+MainMenuState::MainMenuState(StateData* state_data)
+        : State(state_data) {
 
     this->initBackground();
     this->initVariables();
@@ -99,18 +98,17 @@ void MainMenuState::updateButtons() {
     }
     //New Game
     if(this->buttons["GAME_STATE"]->isPressed()) {
-        this->states->push(new GameState(this->window, this->supportedKeys, this->states));
+        this->states->push(new GameState(this->stateData));
     }
 
     //Settings
     if(this->buttons["SETTINGS_STATE"]->isPressed()) {
-        this->states->push(new SettingsState(this->window, this->graphSettings,
-                                             this->supportedKeys, this->states));
+        this->states->push(new SettingsState(this->stateData));
     }
 
     //Editor
     if(this->buttons["EDITOR_STATE"]->isPressed()) {
-        this->states->push(new EditorState(this->window, this->supportedKeys, this->states));
+        this->states->push(new EditorState(this->stateData));
     }
     //Quit The Game
     if(this->buttons["EXIT_STATE"]->isPressed()) {

@@ -15,7 +15,6 @@ class MainMenuState :
 
 private:
     //Variables
-    GraphSettings& graphSettings;
     sf::Texture backgroundTexture;
     sf::RectangleShape background;
     sf::Font font;
@@ -30,8 +29,7 @@ private:
     void initButtons();
 
 public:
-    MainMenuState(sf::RenderWindow* window, GraphSettings& graphSettings,
-                  std::map<std::string, int>* supportedKeys, std::stack<State*>* states);
+    MainMenuState(StateData* stateData);
     virtual ~MainMenuState();
 
     //Functions

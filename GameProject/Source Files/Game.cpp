@@ -6,18 +6,11 @@
 void Game::initVariables() {
     this->window = nullptr;
     this->dt = 0.f;
-
-    //Game logic
+    this->gridSize = 50.f;
 }
 
 void Game::initGraphSettings() {
     this->graphSettings.loadFile("../Config/Graphics.ini");
-}
-
-
-void Game::initStates() {
-    this->states.push(new MainMenuState(this->window, this->graphSettings,
-                                        &this->supportedKeys, &this->states));
 }
 
 void Game::initWindow() {
@@ -59,12 +52,25 @@ void Game::initKeys() {
 
 }
 
+void Game::initStateData() {
+    this->stateData.window = this->window;
+    this->stateData.graphSettings = &this->graphSettings;
+    this->stateData.supportedKeys = &this->supportedKeys;
+    this->stateData.states = &this->states;
+    this->stateData.gridSize = this->gridSize;
+}
+
+void Game::initStates() {
+    this->states.push(new MainMenuState(&this->stateData));
+}
+
 //Constructor/Destructor
 Game::Game() {
     this->initVariables();
     this->initGraphSettings();
     this->initWindow();
     this->initKeys();
+    this->initStateData();
     this->initStates();
 }
 
@@ -150,6 +156,7 @@ void Game::run() {
         this->render();
     }
 }
+
 
 
 

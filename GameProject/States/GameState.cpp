@@ -43,8 +43,8 @@ void GameState::initPlayers() {
 
 
 //Constructors
-GameState::GameState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states)
-    : State(window, supportedKeys, states) {
+GameState::GameState(StateData* state_data)
+    : State(state_data) {
     this->initKeyBinds();
     this->initFonts();
     this->initTextures();
@@ -66,7 +66,6 @@ void GameState::updateInput(const float &dt) {
         } else {
          this->unpauseState();
         }
-
     }
 }
 
@@ -98,7 +97,6 @@ void GameState::update(const float& dt) {
     this->updateKeyTime(dt);
     this->updateInput(dt);
 
-
     if(!this->pause) { // Unpause
         this->updatePlayerInput(dt);
 
@@ -114,7 +112,7 @@ void GameState::render(sf::RenderTarget* target) {
         target = this->window;
     }
     //Render map Tile
-    //this->map.render(*target);
+    //this->map.render(*target); TURN THIS ON LATER
     //Render player
     this->player->render(*target);
     //Render pause menu

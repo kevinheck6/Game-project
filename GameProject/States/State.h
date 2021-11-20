@@ -3,10 +3,27 @@
 #include "../Entities/Player.h"
 #include "../Resources/GraphicsSettings.h"
 
+class Player;
+class GraphSettings;
+class State;
+
+class StateData {
+public:
+    StateData() {};
+
+    //Variables
+    float gridSize;
+    sf::RenderWindow* window;
+    GraphSettings* graphSettings;
+    std::map<std::string, int>* supportedKeys;
+    std::stack<State*>* states;
+};
+
 class State {
 private:
 
 protected:
+    StateData* stateData;
     std::stack<State*>* states;
     sf::RenderWindow* window;
     std::map<std::string,int>* supportedKeys;
@@ -15,6 +32,7 @@ protected:
     bool pause;
     float keyTime;
     float keyTimeMax;
+    float gridSize;
 
     sf::Vector2i mousePosScreen;
     sf::Vector2i mousePosWindow;
@@ -27,7 +45,7 @@ protected:
     virtual void initKeyBinds() = 0;
 
 public:
-    State(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states);
+    State(StateData* state_data);
     virtual ~State();
 
     //Accessors
