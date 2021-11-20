@@ -1,53 +1,6 @@
 #include "../Head Files/PreCompiledHeaders.h"
 #include "../Head Files/Game.h"
 
-//Class Graph Settings
-Game::GraphSettings::GraphSettings() {
-    this->title = "DEFAULT_TITLE";
-    this->resolution = sf::VideoMode::getDesktopMode();
-    this->fullScreen = false;
-    this->verticalSync = false;
-    this->frameRateLimit = 90;
-    this->contextSettings.antialiasingLevel = 0;
-    this->videoModes = sf::VideoMode::getFullscreenModes();
-}
-
-Game::GraphSettings::~GraphSettings() {
-
-}
-//Functions
-void Game::GraphSettings::saveFile(const std::string path) {
-    std::ofstream ofs(path);
-
-    if(ofs.is_open()) {
-        ofs << this->title;
-        ofs << this->resolution.width << " " << this->resolution.height;
-        ofs << this->fullScreen;
-        ofs << this->frameRateLimit;
-        ofs << this->verticalSync;
-        ofs << this->contextSettings.antialiasingLevel;
-    }
-    ofs.close();
-}
-
-void Game::GraphSettings::loadFile(const std::string path) {
-    std::ifstream ifs(path);
-
-    if(ifs.is_open()) {
-        std::getline(ifs, this->title);
-        ifs >> this->resolution.width >> this->resolution.height;
-        ifs >> this->fullScreen;
-        ifs >> this->frameRateLimit;
-        ifs >> this->verticalSync;
-        ifs >> this->contextSettings.antialiasingLevel;
-    }
-    ifs.close();
-}
-
-
-
-//Others
-
 //Initializer functions
 
 void Game::initVariables() {
@@ -63,7 +16,8 @@ void Game::initGraphSettings() {
 
 
 void Game::initStates() {
-    this->states.push(new MainMenuState(this->window,&this->supportedKeys, &this->states));
+    this->states.push(new MainMenuState(this->window, this->graphSettings,
+                                        &this->supportedKeys, &this->states));
 }
 
 void Game::initWindow() {

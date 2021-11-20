@@ -72,8 +72,9 @@ void SettingsState::initText() {
     this->optionsText.setString("Resolution \n\n\nFullScreen\n\n\nVsync \n\n\nAntialiasing \n");
 }
 
-SettingsState::SettingsState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states)
-    : State(window, supportedKeys, states) {
+SettingsState::SettingsState(sf::RenderWindow* window, GraphSettings& graphSettings,
+                             std::map<std::string, int>* supportedKeys, std::stack<State*>* states)
+    : State(window, supportedKeys, states), graphSettings(graphSettings) {
 
     this->initBackground();
     this->initVariables();
@@ -120,8 +121,9 @@ void SettingsState::updateButtons(const float& dt) {
     if(this->buttons["APPLY"]->isPressed()) {
 
         //TESTING REMOVE
-        this->window->create(this->videoModes[this->dropDownLists["RESOLUTION"]->getActiveElementId()],
-                             "test", sf::Style::Default);
+        this->graphSettings.resolution = this->videoModes[this->dropDownLists["RESOLUTION"]->getActiveElementId()];
+        this->window->create(this->graphSettings.resolution, this->graphSettings.title,
+                             sf::Style::Default);
     }
 
     //Dropdown lists Part

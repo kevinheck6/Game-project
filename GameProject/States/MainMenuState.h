@@ -9,11 +9,13 @@
 #include "../Resources/Button.h"
 #include "SettingsState.h"
 
+
 class MainMenuState :
         public State {
 
 private:
     //Variables
+    GraphSettings& graphSettings;
     sf::Texture backgroundTexture;
     sf::RectangleShape background;
     sf::Font font;
@@ -28,7 +30,8 @@ private:
     void initButtons();
 
 public:
-    MainMenuState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states);
+    MainMenuState(sf::RenderWindow* window, GraphSettings& graphSettings,
+                  std::map<std::string, int>* supportedKeys, std::stack<State*>* states);
     virtual ~MainMenuState();
 
     //Functions

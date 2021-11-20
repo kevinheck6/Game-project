@@ -80,6 +80,8 @@ SFML/Network.hpp
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
 
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/GraphicsSettings.h
+
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/Game.cpp
 ../Head Files/PreCompiledHeaders.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
@@ -100,6 +102,12 @@ State.h
 ../Map/TileMap.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
 
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.cpp
+../Head Files/PreCompiledHeaders.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
+MainMenuState.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
+
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
 GameState.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
@@ -119,6 +127,8 @@ State.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
 ../Entities/Player.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
+../Resources/GraphicsSettings.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/GraphicsSettings.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.h
 iostream

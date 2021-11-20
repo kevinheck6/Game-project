@@ -11,6 +11,7 @@ class SettingsState :
 
 private:
     //Variables
+    GraphSettings& graphSettings;
     sf::Texture backgroundTexture;
     sf::RectangleShape background;
     sf::Font font;
@@ -30,7 +31,8 @@ private:
     void initText();
 
 public:
-    SettingsState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states);
+    SettingsState(sf::RenderWindow* window, GraphSettings& graphSettings,
+                  std::map<std::string, int>* supportedKeys, std::stack<State*>* states);
     virtual ~SettingsState();
     //Accessors
 

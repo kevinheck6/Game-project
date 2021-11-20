@@ -345,6 +345,30 @@ Resources/Button.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Resources/Button.cpp.s
 .PHONY : Resources/Button.cpp.s
 
+Resources/GraphicsSettings.o: Resources/GraphicsSettings.cpp.o
+.PHONY : Resources/GraphicsSettings.o
+
+# target to build an object file
+Resources/GraphicsSettings.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Resources/GraphicsSettings.cpp.o
+.PHONY : Resources/GraphicsSettings.cpp.o
+
+Resources/GraphicsSettings.i: Resources/GraphicsSettings.cpp.i
+.PHONY : Resources/GraphicsSettings.i
+
+# target to preprocess a source file
+Resources/GraphicsSettings.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Resources/GraphicsSettings.cpp.i
+.PHONY : Resources/GraphicsSettings.cpp.i
+
+Resources/GraphicsSettings.s: Resources/GraphicsSettings.cpp.s
+.PHONY : Resources/GraphicsSettings.s
+
+# target to generate assembly for a file
+Resources/GraphicsSettings.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Resources/GraphicsSettings.cpp.s
+.PHONY : Resources/GraphicsSettings.cpp.s
+
 Source_Files/Game.o: Source_Files/Game.cpp.o
 .PHONY : Source_Files/Game.o
 
@@ -573,6 +597,9 @@ help:
 	@echo "... Resources/Button.o"
 	@echo "... Resources/Button.i"
 	@echo "... Resources/Button.s"
+	@echo "... Resources/GraphicsSettings.o"
+	@echo "... Resources/GraphicsSettings.i"
+	@echo "... Resources/GraphicsSettings.s"
 	@echo "... Source_Files/Game.o"
 	@echo "... Source_Files/Game.i"
 	@echo "... Source_Files/Game.s"

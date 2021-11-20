@@ -45,6 +45,10 @@ CMakeFiles/Game-projecttest.dir/Resources/Button.cpp.o: \
  ../Head\ Files/PreCompiledHeaders.h \
  ../Resources/Button.cpp \
  ../Resources/Button.h
+CMakeFiles/Game-projecttest.dir/Resources/GraphicsSettings.cpp.o: \
+ ../Head\ Files/PreCompiledHeaders.h \
+ ../Resources/GraphicsSettings.cpp \
+ ../Resources/GraphicsSettings.h
 CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o: \
  ../Components/AnimationComponent.h \
  ../Components/HitBoxComponent.h \
@@ -56,6 +60,7 @@ CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o: \
  ../Head\ Files/PreCompiledHeaders.h \
  ../Map/TileMap.h \
  ../Resources/Button.h \
+ ../Resources/GraphicsSettings.h \
  ../Source\ Files/Game.cpp \
  ../States/EditorState.h \
  ../States/GameState.h \
@@ -74,6 +79,7 @@ CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o: \
  ../Head\ Files/PreCompiledHeaders.h \
  ../Map/TileMap.h \
  ../Resources/Button.h \
+ ../Resources/GraphicsSettings.h \
  ../Source\ Files/main.cpp \
  ../States/EditorState.h \
  ../States/GameState.h \
@@ -91,6 +97,7 @@ CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o: \
  ../Head\ Files/PreCompiledHeaders.h \
  ../Map/TileMap.h \
  ../Resources/Button.h \
+ ../Resources/GraphicsSettings.h \
  ../States/EditorState.cpp \
  ../States/EditorState.h \
  ../States/GameState.h \
@@ -108,6 +115,7 @@ CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o: \
  ../Head\ Files/PreCompiledHeaders.h \
  ../Map/TileMap.h \
  ../Resources/Button.h \
+ ../Resources/GraphicsSettings.h \
  ../States/GameState.cpp \
  ../States/GameState.h \
  ../States/State.h \
@@ -122,6 +130,7 @@ CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o: \
  ../Head\ Files/PreCompiledHeaders.h \
  ../Map/TileMap.h \
  ../Resources/Button.h \
+ ../Resources/GraphicsSettings.h \
  ../States/EditorState.h \
  ../States/GameState.h \
  ../States/MainMenuState.cpp \
@@ -137,6 +146,7 @@ CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.o: \
  ../Entities/Player.h \
  ../Head\ Files/PreCompiledHeaders.h \
  ../Resources/Button.h \
+ ../Resources/GraphicsSettings.h \
  ../States/SettingsState.cpp \
  ../States/SettingsState.h \
  ../States/State.h
@@ -147,6 +157,7 @@ CMakeFiles/Game-projecttest.dir/States/State.cpp.o: \
  ../Entities/Entity.h \
  ../Entities/Player.h \
  ../Head\ Files/PreCompiledHeaders.h \
+ ../Resources/GraphicsSettings.h \
  ../States/State.cpp \
  ../States/State.h
 CMakeFiles/Game-projecttest.dir/Tile/Tile.cpp.o: \

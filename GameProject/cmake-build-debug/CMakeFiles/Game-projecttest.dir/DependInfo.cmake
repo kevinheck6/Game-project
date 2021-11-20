@@ -17,6 +17,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Resources/Button.cpp.o"
+  "/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/GraphicsSettings.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Resources/GraphicsSettings.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/Game.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/main.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o"
   "/home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.cpp" "/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o"
