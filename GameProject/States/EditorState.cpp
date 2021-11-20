@@ -42,6 +42,17 @@ void EditorState::initPauseMenu() {
     this->pauseMenu->addButton("EXIT", 500.f, "Exit");
 }
 
+void EditorState::initGui() {
+    this->selectorRect.setSize(sf::Vector2f(this->stateData->gridSize, this->stateData->gridSize));
+    this->selectorRect.setFillColor(sf::Color::Transparent);
+    this->selectorRect.setOutlineThickness(1.f);
+    this->selectorRect.setOutlineColor(sf::Color::Green);
+}
+
+void EditorState::initTileMap() {
+    this->tileMap = new TileMap(this->stateData->gridSize, 10, 10);
+}
+
 
 EditorState::EditorState(StateData* state_data)
         : State(state_data) {
@@ -51,7 +62,9 @@ EditorState::EditorState(StateData* state_data)
     this->initFonts();
     this->initKeyBinds();
     this->initButtons();
+    this->initGui();
     this->initPauseMenu();
+    this->initTileMap();
 
 }
 
@@ -62,6 +75,7 @@ EditorState::~EditorState() {
     }
 
     delete this->pauseMenu;
+    delete this->tileMap;
 }
 
 //Functions
@@ -82,6 +96,10 @@ void EditorState::updateButtons() {
     }
 }
 
+void EditorState::updateGui() {
+    this->selectorRect.setPosition(this->mousePosView);
+}
+
 void EditorState::updatePauseMenu() {
     if(this->pauseMenu->isButtonPressed("EXIT")) {
         this->endState();
@@ -95,6 +113,7 @@ void EditorState::update(const float& dt) {
 
     if(!this->pause) { //Not paused
         this->updateButtons();
+        this->updateGui();
     } else { // Paused
         this->pauseMenu->update(this->mousePosView);
         this->updatePauseMenu();
@@ -107,21 +126,26 @@ void EditorState::renderButtons(sf::RenderTarget &target) {
     }
 }
 
+void EditorState::renderGui(sf::RenderTarget &target) {
+    target.draw(this->selectorRect);
+}
+
 void EditorState::render(sf::RenderTarget* target) {
     if(!target) {
         target = this->window;
     }
 
     this->renderButtons(*target);
+    this->renderGui(*target);
 
-    this->map.render(*target);
+    this->tileMap->render(*target);
 
     if(this->pause) {
         this->pauseMenu->render(*target);
     }
 
     //SEE COORDENATES OF THE MOUSE, NOT INGAME THING
-    /*sf::Text mouseText;
+    sf::Text mouseText;
     mouseText.setPosition(this->mousePosView.x, this->mousePosView.y - 50);
     mouseText.setFont(this->font);
     mouseText.setCharacterSize(30);
@@ -129,9 +153,17 @@ void EditorState::render(sf::RenderTarget* target) {
     ss << this->mousePosView.x << " " << this->mousePosView.y;
     mouseText.setString(ss.str());
     target->draw(mouseText);
-     */
+
 
 }
+
+
+
+
+
+
+
+
 
 
 

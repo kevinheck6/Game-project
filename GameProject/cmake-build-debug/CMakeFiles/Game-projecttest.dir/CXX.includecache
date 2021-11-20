@@ -74,6 +74,12 @@ SFML/Audio.hpp
 SFML/Network.hpp
 -
 
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.cpp
+../Head Files/PreCompiledHeaders.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
+TileMap.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
+
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
 ../Tile/Tile.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.h
@@ -88,6 +94,20 @@ SFML/Network.hpp
 ../Head Files/Game.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/Game.h
 
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/main.cpp
+../Head Files/PreCompiledHeaders.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
+../Head Files/Game.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/Game.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.cpp
+../Head Files/PreCompiledHeaders.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
+EditorState.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
+MainMenuState.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
+
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
 State.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
@@ -98,6 +118,12 @@ State.h
 ../Map/TileMap.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
 
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.cpp
+../Head Files/PreCompiledHeaders.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
+GameState.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
+
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
 State.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
@@ -105,6 +131,12 @@ State.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.h
 ../Map/TileMap.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.cpp
+../Head Files/PreCompiledHeaders.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
+MainMenuState.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
 GameState.h

@@ -4,11 +4,11 @@
 #include "../Head Files/PreCompiledHeaders.h"
 #include "TileMap.h"
 
-TileMap::TileMap() {
-    this->gridSizeF = 100.f;
+TileMap::TileMap(float gridSize, unsigned width, unsigned height) {
+    this->gridSizeF = gridSize;
     this->gridSizeU = static_cast<unsigned>(this->gridSizeF);
-    this->mapSize.x = 10;
-    this->mapSize.y = 10;
+    this->mapSize.x = width;
+    this->mapSize.y = height;
     this->layers = 1;
 
     this->map.resize(this->mapSize.x);
@@ -33,6 +33,15 @@ TileMap::~TileMap() {
 
 
 //Functions
+void TileMap::addTile() {
+
+}
+
+void TileMap::removeTile() {
+
+}
+
+
 void TileMap::update() {
 
 }
@@ -46,5 +55,6 @@ void TileMap::render(sf::RenderTarget &target) {
         }
     }
 }
+
 
 
