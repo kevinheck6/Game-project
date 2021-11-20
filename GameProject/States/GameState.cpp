@@ -113,8 +113,12 @@ void GameState::render(sf::RenderTarget* target) {
     if(!target) {
         target = this->window;
     }
+    //Render map Tile
+    //this->map.render(*target);
+    //Render player
     this->player->render(*target);
-    if(this->pause) { //Pause menu
+    //Render pause menu
+    if(this->pause) {
         this->pauseMenu->render(*target);
     }
 }
