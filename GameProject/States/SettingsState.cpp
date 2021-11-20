@@ -41,12 +41,14 @@ void SettingsState::initKeyBinds() {
 }
 
 void SettingsState::initButtons() {
-
-    this->buttons["EXIT_STATE"] = new Button(
+    this->buttons["EXIT_STATE"] = new gui::Button(
             620.f,600.f, 150.f, 50.f,
             &this->font,"Exit game",70,
             sf::Color(250, 70, 70, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50),
             sf::Color(70, 70, 70, 0), sf::Color(150, 150, 150, 0), sf::Color(20, 20, 20, 0));
+
+    std::string list[] = {"Test", "ting", "a", "f", "vvvvdddaa"};
+    this->dropDownList = new gui::DropDownList(100, 100, 200, 50, font, list, 5);
 }
 
 
@@ -66,6 +68,8 @@ SettingsState::~SettingsState() {
     for (it = this->buttons.begin(); it != this->buttons.end(); ++it) {
         delete it->second;
     }
+
+    delete this->dropDownList;
 }
 
 //Accessors
@@ -94,6 +98,8 @@ void SettingsState::update(const float& dt) {
 
     this->updateButtons();
 
+
+    this->dropDownList->update(this->mousePosView, dt);
 }
 
 void SettingsState::renderButtons(sf::RenderTarget &target) {
@@ -109,6 +115,8 @@ void SettingsState::render(sf::RenderTarget* target) {
     target->draw(this->background);
 
     this->renderButtons(*target);
+
+    this->dropDownList->render(*target);
 
     //SEE COORDENATES OF THE MOUSE, NOT INGAME THING
     /*sf::Text mouseText;

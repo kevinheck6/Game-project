@@ -12,7 +12,7 @@ private:
     //Variables
     sf::Font font;
 
-    std::map<std::string, Button*> buttons;
+    std::map<std::string, gui::Button*> buttons;
 
     //Functions
     void initVariables();

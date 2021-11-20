@@ -15,7 +15,9 @@ private:
     sf::RectangleShape background;
     sf::Font font;
 
-    std::map<std::string, Button*> buttons;
+    std::map<std::string, gui::Button*> buttons;
+
+    gui::DropDownList* dropDownList;
 
     //Functions
     void initVariables();

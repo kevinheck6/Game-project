@@ -4,7 +4,7 @@
 
 #include "Button.h"
 
-Button::Button(float x, float y, float width, float height,
+gui::Button::Button(float x, float y, float width, float height,
                sf::Font* font, std::string text, unsigned character_size,
                sf::Color text_idle_color, sf::Color text_hover_color, sf::Color text_active_color,
                sf::Color idle_color, sf::Color hover_color, sf::Color active_color) {
@@ -36,11 +36,12 @@ Button::Button(float x, float y, float width, float height,
 
 }
 
-Button::~Button() {
+gui::Button::~Button() {
 
 }
 
-const bool Button::isPressed() const {
+//Accessors
+const bool gui::Button::isPressed() const {
     if(this->buttonState == BTN_ACTIVE) {
         return true;
     } else {
@@ -48,8 +49,17 @@ const bool Button::isPressed() const {
     }
 }
 
+const std::string& gui::Button::getText() const{
+    return this->text.getString();
+}
+
+//Modifiers
+void gui::Button::setText(const std::string text) {
+    this->text.setString(text);
+}
+
 //Functions
-void Button::update(const sf::Vector2f& mousePos) {
+void gui::Button::update(const sf::Vector2f& mousePos) {
     //update the booleans for hover and pressed
 
     //IDLE
@@ -89,10 +99,84 @@ void Button::update(const sf::Vector2f& mousePos) {
     }
 }
 
-void Button::render(sf::RenderTarget& target) {
+void gui::Button::render(sf::RenderTarget& target) {
     target.draw(this->shape);
     target.draw(this->text);
 }
+
+
+//DropDownList PART..........................................
+
+gui::DropDownList::DropDownList(float x, float y, float width, float height,
+                                sf::Font& font, std::string list[], unsigned numberElements, unsigned default_index)
+    : font(font), showList(false), keyTimeMax(2.f), keyTime(0.f) {
+
+    //unsigned numberElements = (sizeof(list) / sizeof(std::string));
+
+    for (int i = 0; i < numberElements; ++i) {
+        this->list.push_back(
+                new gui::Button(
+                        x, (y + (i * height)), width, height,
+                        &this->font,list[i], 25,
+                        sf::Color(250, 70, 70, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50),
+                        sf::Color(70, 70, 70, 200), sf::Color(150, 150, 150, 200), sf::Color(150, 20, 20, 200))
+        );
+    }
+
+    this->activeElement = new Button(*this->list[default_index]);
+}
+
+gui::DropDownList::~DropDownList() {
+    delete this->activeElement;
+    for (int i = 0; i < this->list.size(); ++i) {
+        delete this->list[i];
+    }
+}
+
+//Accessories
+const bool gui::DropDownList::getKeyTime() {
+    if(this->keyTime >= keyTimeMax) {
+        this->keyTime = 0.f;
+        return true;
+    }
+    return false;
+}
+
+//Functions
+void gui::DropDownList::updateKeyTime(const float& dt) {
+    if(this->keyTime < this->keyTimeMax) {
+        this->keyTime += 10.f * dt;
+    }
+}
+
+void gui::DropDownList::update(const sf::Vector2f &mousePos, const float& dt) {
+    this->updateKeyTime(dt);
+    this->activeElement->update(mousePos);
+    //Show and hide the list of options
+    if(this->activeElement->isPressed() && this->getKeyTime()) {
+        if(this->showList) {
+            this->showList = false;
+        } else {
+            this->showList = true;
+        }
+    }
+    if(this->showList) {
+        for (auto &i : this->list) {
+            i->update(mousePos);
+        }
+    }
+}
+
+void gui::DropDownList::render(sf::RenderTarget &target) {
+    this->activeElement->render(target);
+    if(this->showList) {
+        for (auto &i : this->list) {
+            i->render(target);
+        }
+    }
+}
+
+
 
 
 
