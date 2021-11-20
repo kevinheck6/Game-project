@@ -273,6 +273,30 @@ GUI/PauseMenu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.s
 .PHONY : GUI/PauseMenu.cpp.s
 
+Map/TileMap.o: Map/TileMap.cpp.o
+.PHONY : Map/TileMap.o
+
+# target to build an object file
+Map/TileMap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.o
+.PHONY : Map/TileMap.cpp.o
+
+Map/TileMap.i: Map/TileMap.cpp.i
+.PHONY : Map/TileMap.i
+
+# target to preprocess a source file
+Map/TileMap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.i
+.PHONY : Map/TileMap.cpp.i
+
+Map/TileMap.s: Map/TileMap.cpp.s
+.PHONY : Map/TileMap.s
+
+# target to generate assembly for a file
+Map/TileMap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.s
+.PHONY : Map/TileMap.cpp.s
+
 Resources/Button.o: Resources/Button.cpp.o
 .PHONY : Resources/Button.o
 
@@ -516,6 +540,9 @@ help:
 	@echo "... GUI/PauseMenu.o"
 	@echo "... GUI/PauseMenu.i"
 	@echo "... GUI/PauseMenu.s"
+	@echo "... Map/TileMap.o"
+	@echo "... Map/TileMap.i"
+	@echo "... Map/TileMap.s"
 	@echo "... Resources/Button.o"
 	@echo "... Resources/Button.i"
 	@echo "... Resources/Button.s"

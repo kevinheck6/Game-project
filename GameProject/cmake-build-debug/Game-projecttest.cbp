@@ -121,6 +121,12 @@
 		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/Game.h">
 			<Option target="Game-projecttest"/>
 		</Unit>
+		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.cpp">
+			<Option target="Game-projecttest"/>
+		</Unit>
+		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h">
+			<Option target="Game-projecttest"/>
+		</Unit>
 		<Unit filename="/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.cpp">
 			<Option target="Game-projecttest"/>
 		</Unit>
