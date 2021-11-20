@@ -1,15 +1,66 @@
 #include "../Head Files/PreCompiledHeaders.h"
 #include "../Head Files/Game.h"
 
+//Class Graph Settings
+Game::GraphSettings::GraphSettings() {
+    this->title = "DEFAULT_TITLE";
+    this->resolution = sf::VideoMode::getDesktopMode();
+    this->fullScreen = false;
+    this->verticalSync = false;
+    this->frameRateLimit = 90;
+    this->contextSettings.antialiasingLevel = 0;
+    this->videoModes = sf::VideoMode::getFullscreenModes();
+}
+
+Game::GraphSettings::~GraphSettings() {
+
+}
+//Functions
+void Game::GraphSettings::saveFile(const std::string path) {
+    std::ofstream ofs(path);
+
+    if(ofs.is_open()) {
+        ofs << this->title;
+        ofs << this->resolution.width << " " << this->resolution.height;
+        ofs << this->fullScreen;
+        ofs << this->frameRateLimit;
+        ofs << this->verticalSync;
+        ofs << this->contextSettings.antialiasingLevel;
+    }
+    ofs.close();
+}
+
+void Game::GraphSettings::loadFile(const std::string path) {
+    std::ifstream ifs(path);
+
+    if(ifs.is_open()) {
+        std::getline(ifs, this->title);
+        ifs >> this->resolution.width >> this->resolution.height;
+        ifs >> this->fullScreen;
+        ifs >> this->frameRateLimit;
+        ifs >> this->verticalSync;
+        ifs >> this->contextSettings.antialiasingLevel;
+    }
+    ifs.close();
+}
+
+
+
+//Others
+
 //Initializer functions
 
 void Game::initVariables() {
     this->window = nullptr;
-    this->fullscreen = false;
     this->dt = 0.f;
 
     //Game logic
 }
+
+void Game::initGraphSettings() {
+    this->graphSettings.loadFile("../Config/Graphics.ini");
+}
+
 
 void Game::initStates() {
     this->states.push(new MainMenuState(this->window,&this->supportedKeys, &this->states));
@@ -18,38 +69,20 @@ void Game::initStates() {
 void Game::initWindow() {
     //create SFML window using options from a window.ini file
 
-    std::ifstream ifs("../Config/Window.ini");
-    this->videoModes = sf::VideoMode::getFullscreenModes();
-
-    std::string title = "None";
-    sf::VideoMode window_bounds = sf::VideoMode::getDesktopMode();
-    bool fullscreen = false;
-    unsigned framerate_limit = 90;
-    bool vertical_sync_enable = false;
-    unsigned antialiasing_level = 0;
-
-    if(ifs.is_open()) {
-        std::getline(ifs, title);
-        ifs >> window_bounds.width >> window_bounds.height;
-        ifs >> fullscreen;
-        ifs >> framerate_limit;
-        ifs >> vertical_sync_enable;
-        ifs >> antialiasing_level;
-    }
-    ifs.close();
-
-    this->fullscreen = fullscreen;
-    this->windowSettings.antialiasingLevel = antialiasing_level;
-    if(this->fullscreen) {
-        this->window = new sf::RenderWindow(window_bounds,title,sf::Style::Fullscreen, windowSettings);
+    if(this->graphSettings.fullScreen) {
+        this->window = new sf::RenderWindow(this->graphSettings.resolution,
+                                            this->graphSettings.title,
+                                            sf::Style::Fullscreen,
+                                            this->graphSettings.contextSettings);
     } else {
-        this->window = new sf::RenderWindow(window_bounds,title, sf::Style::Titlebar | sf::Style::Close,
-                                            windowSettings);
+        this->window = new sf::RenderWindow(this->graphSettings.resolution,
+                                            this->graphSettings.title,
+                                            sf::Style::Titlebar | sf::Style::Close,
+                                            this->graphSettings.contextSettings);
 
     }
-    this->window->setFramerateLimit(framerate_limit);
-    this->window->setVerticalSyncEnabled(vertical_sync_enable);
-
+    this->window->setFramerateLimit(this->graphSettings.frameRateLimit);
+    this->window->setVerticalSyncEnabled(this->graphSettings.verticalSync);
 
 }
 
@@ -72,10 +105,10 @@ void Game::initKeys() {
 
 }
 
-
-
 //Constructor/Destructor
 Game::Game() {
+    this->initVariables();
+    this->initGraphSettings();
     this->initWindow();
     this->initKeys();
     this->initStates();
@@ -163,26 +196,6 @@ void Game::run() {
         this->render();
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
