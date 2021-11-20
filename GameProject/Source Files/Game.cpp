@@ -23,7 +23,7 @@ void Game::initWindow() {
     std::string title = "None";
     sf::VideoMode window_bounds = sf::VideoMode::getDesktopMode();
     bool fullscreen = false;
-    unsigned framerate_limit = 60;
+    unsigned framerate_limit = 90;
     bool vertical_sync_enable = false;
     unsigned antialiasing_level = 0;
 
