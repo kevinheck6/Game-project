@@ -1,7 +1,7 @@
 //
 // Created by kevin on 14.11.2021.
 //
-
+#include "../Head Files/PreCompiledHeaders.h"
 #include "SettingsState.h"
 
 //Private Functions

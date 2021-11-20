@@ -1,7 +1,7 @@
 //
 // Created by kevin on 22.10.2021.
 //
-
+#include "../Head Files/PreCompiledHeaders.h"
 #include "State.h"
 
 State::State(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states) {

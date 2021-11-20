@@ -1,7 +1,7 @@
 //
 // Created by kevin on 25.10.2021.
 //
-
+#include "../Head Files/PreCompiledHeaders.h"
 #include "AnimationComponent.h"
 
 AnimationComponent::AnimationComponent(sf::Sprite &sprite, sf::Texture &texture_sheet)

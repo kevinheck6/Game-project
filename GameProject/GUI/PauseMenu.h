@@ -3,21 +3,6 @@
 //
 #pragma once
 
-#include <iostream>
-#include <ctime>
-#include <vector>
-#include <cstdlib>
-#include <fstream>
-#include <sstream>
-#include <stack>
-#include <map>
-
-#include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Network.hpp>
-
 #include "../Resources/Button.h"
 
 class PauseMenu {

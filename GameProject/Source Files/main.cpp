@@ -1,6 +1,5 @@
-#include <iostream>
+#include "../Head Files/PreCompiledHeaders.h"
 #include "../Head Files/Game.h"
-
 
 int main() {
     //initialize random seed

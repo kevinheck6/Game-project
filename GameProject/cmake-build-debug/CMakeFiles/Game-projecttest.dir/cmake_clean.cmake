@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Game-projecttest.dir/Entities/Entity.cpp.o"
   "CMakeFiles/Game-projecttest.dir/Entities/Player.cpp.o"
   "CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.o"
+  "CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.o"
   "CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.o"
   "CMakeFiles/Game-projecttest.dir/Resources/Button.cpp.o"
   "CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o"

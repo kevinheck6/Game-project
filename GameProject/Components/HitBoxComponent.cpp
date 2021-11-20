@@ -1,7 +1,7 @@
 //
 // Created by kevin on 29.10.2021.
 //
-
+#include "../Head Files/PreCompiledHeaders.h"
 #include "HitBoxComponent.h"
 
 HitBoxComponent::HitBoxComponent(sf::Sprite& sprite,
