@@ -18,23 +18,28 @@ class EditorState :
 private:
     //Variables
     sf::Font font;
+    sf::Text cursorText;
     PauseMenu* pauseMenu;
 
     std::map<std::string, gui::Button*> buttons;
 
     TileMap* tileMap;
 
+    sf::IntRect textureRect;
     sf::RectangleShape selectorRect;
+
+    gui::TextureSelector* textureSelector;
 
     //Functions
     void initVariables();
     void initBackground();
     void initFonts();
+    void initCursorText();
     void initKeyBinds();
     void initButtons();
     void initPauseMenu();
-    void initGui();
     void initTileMap();
+    void initGui();
 
 public:
     EditorState(StateData* state_data);

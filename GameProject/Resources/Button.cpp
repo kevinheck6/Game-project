@@ -216,9 +216,42 @@ void gui::DropDownList::render(sf::RenderTarget &target) {
 }
 
 
+//TextureSelector PART..........................................
 
+gui::TextureSelector::TextureSelector(float x, float y, float width, float height,
+                                      const sf::Texture *texture_sheet) {
+    this->bounds.setSize(sf::Vector2f(width, height));
+    this->bounds.setPosition(x, y);
+    this->bounds.setFillColor(sf::Color(50,50,50, 100));
+    this->bounds.setOutlineThickness(1.f);
+    this->bounds.setOutlineColor(sf::Color(255, 255, 255, 200));
 
+    this->texture.setTexture(*texture_sheet);
+    this->texture.setPosition(x, y);
 
+    if(this->texture.getGlobalBounds().width > this->bounds.getGlobalBounds().width) {
+        this->texture.setTextureRect(sf::IntRect(0, 0,
+                                                 this->bounds.getGlobalBounds().width,
+                                                 this->texture.getGlobalBounds().height));
+    }
+    if(this->texture.getGlobalBounds().height > this->bounds.getGlobalBounds().height) {
+        this->texture.setTextureRect(sf::IntRect(0, 0,
+                                                 this->texture.getGlobalBounds().width,
+                                                 this->bounds.getGlobalBounds().height));
+    }
+}
 
+gui::TextureSelector::~TextureSelector() {
 
+}
 
+//Functions
+
+void gui::TextureSelector::update() {
+
+}
+
+void gui::TextureSelector::render(sf::RenderTarget &target) {
+    target.draw(this->bounds);
+    target.draw(this->texture);
+}

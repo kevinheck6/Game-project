@@ -8,13 +8,15 @@ Tile::Tile() {
 
 }
 
-Tile::Tile(float x, float y, float gridSizeF, sf::Texture& texture) {
+Tile::Tile(float x, float y, float gridSizeF, const sf::Texture& texture, const sf::IntRect& rectangle_texture) {
     this->tile.setSize(sf::Vector2f(gridSizeF, gridSizeF));
-    this->tile.setFillColor(sf::Color::Green);
+    this->tile.setFillColor(sf::Color(255,255,255, 255));
     //this->tile.setOutlineThickness(1.f); // Black lines to see each square
     //this->tile.setOutlineColor(sf::Color::Black);
     this->tile.setPosition(x, y);
     this->tile.setTexture(&texture);
+    this->tile.setTextureRect(rectangle_texture);
+
 }
 
 Tile::~Tile() {
