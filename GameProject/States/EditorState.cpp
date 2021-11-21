@@ -89,6 +89,18 @@ void EditorState::updateInput(const float &dt) {
     }
 }
 
+void EditorState::updateEditorInput(const float &dt) {
+    //Add Tiles
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && this->getKeyTime()) {
+        this->tileMap->addTile(this->mousePosGrid.x, this->mousePosGrid.y, 0);
+    }
+    //Remove Tiles
+    else if (sf::Mouse::isButtonPressed(sf::Mouse::Right) && this->getKeyTime()) {
+        this->tileMap->removeTile(this->mousePosGrid.x, this->mousePosGrid.y, 0);
+    }
+}
+
+
 void EditorState::updateButtons() {
     //update all buttons on this state and handle their functionality
     for(auto &it : this->buttons) {
@@ -97,7 +109,8 @@ void EditorState::updateButtons() {
 }
 
 void EditorState::updateGui() {
-    this->selectorRect.setPosition(this->mousePosView);
+    this->selectorRect.setPosition(this->mousePosGrid.x * this->stateData->gridSize,
+                                   this->mousePosGrid.y * this->stateData->gridSize);
 }
 
 void EditorState::updatePauseMenu() {
@@ -114,6 +127,7 @@ void EditorState::update(const float& dt) {
     if(!this->pause) { //Not paused
         this->updateButtons();
         this->updateGui();
+        this->updateEditorInput(dt);
     } else { // Paused
         this->pauseMenu->update(this->mousePosView);
         this->updatePauseMenu();
@@ -156,6 +170,7 @@ void EditorState::render(sf::RenderTarget* target) {
 
 
 }
+
 
 
 
