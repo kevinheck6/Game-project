@@ -13,10 +13,11 @@ private:
     sf::Vector2u mapSize;
     unsigned layers;
     std::vector<std::vector<std::vector<Tile*>>> map; // the map is in form of (X, Y, Layer)
+    std::string textureFile;
     sf::Texture tileTexture;
 
 public:
-    TileMap(float gridSize, unsigned width, unsigned height);
+    TileMap(float gridSize, unsigned width, unsigned height, std::string texture_file);
     virtual ~TileMap();
 
     //Accessors
@@ -25,6 +26,9 @@ public:
     //Functions
     void addTile(const unsigned x, const unsigned y, const unsigned z, const sf::IntRect& rectangle_texture);
     void removeTile(const unsigned x, const unsigned y, const unsigned z);
+
+    void saveFile(const std::string file_name);
+    void loadFile(const std::string file_name);
 
     void update();
     void render(sf::RenderTarget& target);

@@ -25,6 +25,8 @@ private:
 
     TileMap* tileMap;
 
+    sf::RectangleShape sideBar;
+
     sf::IntRect textureRect;
     sf::RectangleShape selectorRect;
 
@@ -49,7 +51,7 @@ public:
     void updateInput(const float& dt);
     void updateEditorInput(const float& dt);
     void updateButtons();
-    void updateGui();
+    void updateGui(const float& dt);
     void updatePauseMenu();
     void update(const float& dt);
     void renderButtons(sf::RenderTarget& target);

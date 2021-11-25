@@ -3,22 +3,24 @@
 //
 #pragma once
 
-#include <iostream>
-#include <vector>
-#include <cstdlib>
-#include <fstream>
-#include <sstream>
+enum TileTypes {DEFAULT = 0};
 
 class Tile {
 private:
 protected:
     sf::RectangleShape tile;
+    bool collision;
+    short unsigned type; // Maybe will have to be only short type
+
 public:
     Tile();
-    Tile(float x, float y, float gridSizeF,const sf::Texture& texture, const sf::IntRect& rectangle_texture);
+    Tile(float x, float y, float gridSizeF,const sf::Texture& texture, const sf::IntRect& rectangle_texture,
+         bool collision = false, short unsigned type = TileTypes::DEFAULT);
     virtual ~Tile();
 
     //Functions
+    const std::string getString() const;
+
     void update();
     void render(sf::RenderTarget& target);
 
