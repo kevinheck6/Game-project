@@ -6,6 +6,14 @@
 
 //Initializer
 
+
+void GameState::initView() {
+    this->mainView.setSize(sf::Vector2f(this->stateData->graphSettings->resolution.width,
+                                        this->stateData->graphSettings->resolution.height));
+    this->mainView.setCenter(sf::Vector2f(this->stateData->graphSettings->resolution.width / 2.f,
+                                    this->stateData->graphSettings->resolution.height / 2.f));
+}
+
 void GameState::initKeyBinds() {
 
     std::ifstream ifs("../Config/GameState_KeyBind.ini");
@@ -44,12 +52,14 @@ void GameState::initPlayers() {
 void GameState::initTileMap() {
     this->tileMap = new TileMap(this->stateData->gridSize, 10, 10,
                                 "../Resources/Images/TextureGround/grassSheet.png");
+    this->tileMap->loadFile("../cmake-build-debug/SaveMap.mp");
 }
 
 
 //Constructors
 GameState::GameState(StateData* state_data)
     : State(state_data) {
+    this->initView();
     this->initKeyBinds();
     this->initFonts();
     this->initTextures();
@@ -62,6 +72,11 @@ GameState::~GameState() {
     delete this->pauseMenu;
     delete this->player;
     delete this->tileMap;
+}
+
+//Functions
+void GameState::updateView(const float &dt) {
+    this->mainView.setCenter(this->player->getPosition());
 }
 
 void GameState::updateInput(const float &dt) {
@@ -99,16 +114,18 @@ void GameState::updatePauseMenuButtons() {
 }
 
 void GameState::update(const float& dt) {
-    this->updateMousePosition();
+    this->updateMousePosition(&this->mainView);
     this->updateKeyTime(dt);
     this->updateInput(dt);
 
     if(!this->pause) { // Unpause
+        this->updateView(dt);
+
         this->updatePlayerInput(dt);
 
         this->player->update(dt);
     } else { // Pause update
-        this->pauseMenu->update(this->mousePosView);
+        this->pauseMenu->update(this->mousePosWindow);
         this->updatePauseMenuButtons();
     }
 }
@@ -117,16 +134,20 @@ void GameState::render(sf::RenderTarget* target) {
     if(!target) {
         target = this->window;
     }
+    target->setView(this->mainView);
     //Render map Tile
-    //this->map.render(*target); TURN THIS ON LATER
+    this->tileMap->render(*target);
     //Render player
     this->player->render(*target);
     //Render pause menu
     if(this->pause) {
+        target->setView(this->window->getDefaultView());
         this->pauseMenu->render(*target);
     }
 
 }
+
+
 
 
 

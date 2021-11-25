@@ -108,7 +108,7 @@ void SettingsState::updateButtons(const float& dt) {
 
     //Buttons
     for(auto &it : this->buttons) {
-        it.second->update(this->mousePosView);
+        it.second->update(this->mousePosWindow);
     }
     //Functionality
     //Quit The Game
@@ -128,7 +128,7 @@ void SettingsState::updateButtons(const float& dt) {
 
     //Dropdown lists Part
     for(auto &it : this->dropDownLists) {
-        it.second->update(this->mousePosView, dt);
+        it.second->update(this->mousePosWindow, dt);
     }
 }
 

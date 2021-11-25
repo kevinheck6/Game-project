@@ -10,7 +10,7 @@ Tile::Tile() {
 }
 
 Tile::Tile(unsigned grid_x, unsigned grid_y, float gridSizeF, const sf::Texture& texture, const sf::IntRect& rectangle_texture,
-           bool collision, short unsigned type) {
+           bool collision, short type) {
     this->tile.setSize(sf::Vector2f(gridSizeF, gridSizeF));
     this->tile.setFillColor(sf::Color(255,255,255, 255));
     //this->tile.setOutlineThickness(1.f); // Black lines to see each square

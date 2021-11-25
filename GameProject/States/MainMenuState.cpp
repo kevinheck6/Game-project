@@ -94,7 +94,7 @@ void MainMenuState::updateInput(const float &dt) {
 void MainMenuState::updateButtons() {
     //update all buttons on this state and handle their functionality
     for(auto &it : this->buttons) {
-        it.second->update(this->mousePosView);
+        it.second->update(this->mousePosWindow);
     }
     //New Game
     if(this->buttons["GAME_STATE"]->isPressed()) {
