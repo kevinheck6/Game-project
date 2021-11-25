@@ -7,6 +7,7 @@
 
 class TileMap {
 private:
+    void clearMemory();
 
     float gridSizeF;
     unsigned gridSizeU;
@@ -24,7 +25,8 @@ public:
     const sf::Texture* getTileTexture() const;
 
     //Functions
-    void addTile(const unsigned x, const unsigned y, const unsigned z, const sf::IntRect& rectangle_texture);
+    void addTile(const unsigned x, const unsigned y, const unsigned z, const sf::IntRect& rectangle_texture,
+                 const bool& collision, const short& type);
     void removeTile(const unsigned x, const unsigned y, const unsigned z);
 
     void saveFile(const std::string file_name);

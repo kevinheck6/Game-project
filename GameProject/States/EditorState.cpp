@@ -10,6 +10,8 @@ void EditorState::initVariables() {
     this->textureRect = sf::IntRect (0, 0,
                                       static_cast<int>(this->stateData->gridSize),
                                       static_cast<int>(this->stateData->gridSize));
+    this->collision = false;
+    this->type = TileTypes::DEFAULT;
 
 }
 
@@ -45,13 +47,13 @@ void EditorState::initKeyBinds() {
 }
 
 void EditorState::initButtons() {
-
 }
 
 void EditorState::initPauseMenu() {
     this->pauseMenu = new PauseMenu(*this->window, this->font);
-    this->pauseMenu->addButton("EXIT", 400.f, "Exit");
-    this->pauseMenu->addButton("SAVE", 600.f, "Save");
+    this->pauseMenu->addButton("EXIT", 600.f, "Exit");
+    this->pauseMenu->addButton("LOAD", 400.f, "Load Map");
+    this->pauseMenu->addButton("SAVE", 200.f, "Save");
 }
 
 void EditorState::initTileMap() {
@@ -125,7 +127,8 @@ void EditorState::updateEditorInput(const float &dt) {
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && this->getKeyTime()) {
         if(!this->sideBar.getGlobalBounds().contains(sf::Vector2f(this->mousePosWindow))) {
             if(!this->textureSelector->getActive()) {
-                this->tileMap->addTile(this->mousePosGrid.x, this->mousePosGrid.y, 0, this->textureRect);
+                this->tileMap->addTile(this->mousePosGrid.x, this->mousePosGrid.y, 0, this->textureRect,
+                                       this->collision, this->type);
             } else {
                 this->textureRect = this->textureSelector->getTextureRect();
             }
@@ -140,6 +143,25 @@ void EditorState::updateEditorInput(const float &dt) {
         }
     }
     //Change Tiles
+    //Switch Collision
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("COLLISION_SWITCH"))) &&
+        this->getKeyTime()) {
+        if(this->collision) {
+            collision = false;
+        } else {
+            collision = true;
+        }
+    }
+    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("TYPE_CHANGE_UP"))) &&
+    this->getKeyTime()) {
+        this->type++;
+    }
+    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("TYPE_CHANGE_DOWN"))) &&
+            this->getKeyTime()) {
+        if (this->type > 0) {
+            this->type--;
+        }
+    }
 
 }
 
@@ -164,7 +186,9 @@ void EditorState::updateGui(const float& dt) {
     std::stringstream ss;
     ss << this->mousePosView.x << " " << this->mousePosView.y << "\n" <<
         this->mousePosGrid.x << " " << this->mousePosGrid.y << "\n" <<
-        this->textureRect.left / 100 << " " << this->textureRect.top / 100;
+        this->textureRect.left / 100 << " " << this->textureRect.top / 100 << "\n" <<
+        "Collision: " << this->collision << "\n" <<
+        "Type: " << this->type << "\n";
     this->cursorText.setString(ss.str());
 
 }
@@ -175,6 +199,9 @@ void EditorState::updatePauseMenu() {
     }
     if(this->pauseMenu->isButtonPressed("SAVE")) {
         this->tileMap->saveFile("SaveMap.mp");
+    }
+    if(this->pauseMenu->isButtonPressed("LOAD")) {
+        this->tileMap->loadFile("../cmake-build-debug/SaveMap.mp");
     }
 }
 
