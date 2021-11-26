@@ -195,15 +195,15 @@ void TileMap::loadFile(const std::string file_name) {
 void TileMap::collisionChecker(Entity *entity) {
     //World Bound
     if(entity->getPosition().x < 0.f) {
-        entity->setPositions(0.f, entity->getPosition().y);
-    } else if (entity->getPosition().x > this->mapSizeWoldF.x) {
-        entity->setPositions(this->mapSizeWoldF.x, entity->getPosition().y);
+        entity->setPosition(0.f, entity->getPosition().y);
+    } else if (entity->getPosition().x + entity->getGlobalBounds().width > this->mapSizeWoldF.x) {
+        entity->setPosition(this->mapSizeWoldF.x - entity->getGlobalBounds().width , entity->getPosition().y);
     }
 
     if(entity->getPosition().y < 0.f) {
-        entity->setPositions(entity->getPosition().x, 0.f);
-    } else if (entity->getPosition().y > this->mapSizeWoldF.y) {
-        entity->setPositions(entity->getPosition().x, this->mapSizeWoldF.y);
+        entity->setPosition(entity->getPosition().x, 0.f);
+    } else if (entity->getPosition().y + entity->getGlobalBounds().height > this->mapSizeWoldF.y) {
+        entity->setPosition(entity->getPosition().x, this->mapSizeWoldF.y - entity->getGlobalBounds().height);
     }
 
     //Tile Bounds

@@ -18,7 +18,7 @@ void Player::initComponents() {
 Player::Player(float x, float y,sf::Texture& texture_sheet) {
     this->initVariables();
 
-    this->setPositions(x, y);
+    this->setPosition(x, y);
 
     this->createHitBoxComponent(this->sprite, 0.f, 0.f,
                                 20.f, 40.f);
@@ -103,6 +103,12 @@ void Player::update(const float &dt) {
     this->updateAttack();
     this->updateAnimations(dt);
     this->hitBoxComponent->update();
+}
+
+void Player::render(sf::RenderTarget &target) {
+    target.draw(this->sprite);
+
+    this->hitBoxComponent->render(target);
 }
 
 

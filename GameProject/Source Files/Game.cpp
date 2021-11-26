@@ -90,7 +90,7 @@ void Game::endApplication() {
 
 }
 //Updates
-void Game::updateDT() {
+    void Game::updateDT() {
     //update the dt variable with the time to take it to render and update one frame
     this->dt = this->dtClock.restart().asSeconds();
     
@@ -107,7 +107,7 @@ void Game::updateSFMLEvents() {
 void Game::update()  {
     this->updateSFMLEvents();
 
-    if(!this->states.empty()) {
+    if(!this->states.empty() && this->window->hasFocus()) { //HasFocus means if we tab the window it will not run the game
         this->states.top()->update(this->dt);
         if(this->states.top()->getQuit()) {
             //Here will be things to do before quitting the game like save, animations
