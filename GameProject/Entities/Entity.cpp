@@ -45,6 +45,7 @@ void Entity::createAnimationComponent(sf::Texture &texture_sheet) {
 //Accessors
 const sf::Vector2f &Entity::getPosition() const {
     return this->sprite.getPosition();
+
 }
 //Functions
 void Entity::setPositions(const float x, const float y) {

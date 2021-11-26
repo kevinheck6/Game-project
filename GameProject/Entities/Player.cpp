@@ -20,7 +20,7 @@ Player::Player(float x, float y,sf::Texture& texture_sheet) {
 
     this->setPositions(x, y);
 
-    this->createHitBoxComponent(this->sprite, 90.f, 70.f,
+    this->createHitBoxComponent(this->sprite, 0.f, 0.f,
                                 20.f, 40.f);
     this->createMovementComponent(300.f, 15.f, 10.f);
     this->createAnimationComponent(texture_sheet);
@@ -52,19 +52,19 @@ void Player::updateAttack() {
 void Player::updateAnimations(const float &dt) {
     if(this->attacking) {
         //Set origin depending on facing direction
-        /*if(this->sprite.getScale().x > 0.f) { //facing right
-            this->sprite.setOrigin(200,0.f);
+        if(this->sprite.getScale().x > 0.f) { //facing right
+            this->sprite.setOrigin(100,75.f);
         } else { // Facing left
-            this->sprite.setOrigin(200.f +90.f, 0.f);
-        }*/
+            this->sprite.setOrigin( 100.f, 75.f);
+        }
         //Animate and check for animation end
         if(this->animationComponent->play("ATTACK", dt, true)) {
-            this->attacking = false;/*
+            this->attacking = false;
             if(this->sprite.getScale().x > 0.f) { //facing right
-                this->sprite.setOrigin(200.f,0.f);
+                this->sprite.setOrigin(100.f,75.f);
             } else { // Facing left
-                this->sprite.setOrigin(200, 0.f);
-            }*/
+                this->sprite.setOrigin(120, 75.f);
+            }
         }
     }
     if(this->movementComponent ->getState(IDLE)) {
@@ -72,7 +72,7 @@ void Player::updateAnimations(const float &dt) {
 
     } else if(this->movementComponent->getState(MOVING_RIGHT)) {
         if (this->sprite.getScale().x < 0.f) {
-            this->sprite.setOrigin(0.f, .0f);
+            this->sprite.setOrigin(100.f, 75.f);
             this->sprite.setScale(1.f,1.f);
         }
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x,
@@ -80,7 +80,7 @@ void Player::updateAnimations(const float &dt) {
 
     } else if (this->movementComponent->getState(MOVING_LEFT)) {
         if (this->sprite.getScale().x > 0.f) {
-            this->sprite.setOrigin(200.f, .0f);
+            this->sprite.setOrigin(120.f, 75.f);
             this->sprite.setScale(-1.f, 1.f);
         }
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x,

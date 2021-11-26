@@ -6,12 +6,24 @@
 
 //Initializer
 
+void GameState::initDeferredRender() {
+    this->renderTexture.create(this->stateData->graphSettings->resolution.width,
+                               this->stateData->graphSettings->resolution.height);
+
+    this->renderSprite.setTexture(this->renderTexture.getTexture());
+    this->renderSprite.setTextureRect(sf::IntRect(0, 0,
+                                                  this->stateData->graphSettings->resolution.width,
+                                                  this->stateData->graphSettings->resolution.height));
+}
 
 void GameState::initView() {
     this->mainView.setSize(sf::Vector2f(this->stateData->graphSettings->resolution.width,
                                         this->stateData->graphSettings->resolution.height));
+
+    std::cout << this->stateData->graphSettings->resolution.width << " " <<  this->stateData->graphSettings->resolution.height;
+
     this->mainView.setCenter(sf::Vector2f(this->stateData->graphSettings->resolution.width / 2.f,
-                                    this->stateData->graphSettings->resolution.height / 2.f));
+                                    this->stateData->graphSettings->resolution.height  / 2.f));
 }
 
 void GameState::initKeyBinds() {
@@ -46,7 +58,9 @@ void GameState::initPauseMenu() {
 }
 
 void GameState::initPlayers() {
-    this->player = new Player(0, 0, this->textures["PLAYER_SHEET"]);
+    this->player = new Player(0,
+                              0,
+                              this->textures["PLAYER_SHEET"]);
 }
 
 void GameState::initTileMap() {
@@ -59,6 +73,7 @@ void GameState::initTileMap() {
 //Constructors
 GameState::GameState(StateData* state_data)
     : State(state_data) {
+    this->initDeferredRender();
     this->initView();
     this->initKeyBinds();
     this->initFonts();
@@ -76,7 +91,8 @@ GameState::~GameState() {
 
 //Functions
 void GameState::updateView(const float &dt) {
-    this->mainView.setCenter(this->player->getPosition());
+
+    this->mainView.setCenter(std::floor(this->player->getPosition().x), std::floor(this->player->getPosition().y));
 }
 
 void GameState::updateInput(const float &dt) {
@@ -124,6 +140,7 @@ void GameState::update(const float& dt) {
         this->updatePlayerInput(dt);
 
         this->player->update(dt);
+
     } else { // Pause update
         this->pauseMenu->update(this->mousePosWindow);
         this->updatePauseMenuButtons();
@@ -134,18 +151,37 @@ void GameState::render(sf::RenderTarget* target) {
     if(!target) {
         target = this->window;
     }
-    target->setView(this->mainView);
+
+    this->renderTexture.clear();
+
+    this->renderTexture.setView(this->mainView);
     //Render map Tile
-    this->tileMap->render(*target);
+    this->tileMap->render(this->renderTexture);
     //Render player
-    this->player->render(*target);
+    this->player->render(this->renderTexture);
     //Render pause menu
     if(this->pause) {
-        target->setView(this->window->getDefaultView());
-        this->pauseMenu->render(*target);
+        this->renderTexture.setView(this->renderTexture.getDefaultView());
+        this->pauseMenu->render(this->renderTexture);
     }
 
+    //Last Render
+    this->renderTexture.display();
+    this->renderSprite.setTexture(this->renderTexture.getTexture());
+    target->draw(this->renderSprite);
+
+    sf::Text mouseText;
+mouseText.setPosition(this->mousePosView.x, this->mousePosView.y - 50);
+mouseText.setFont(this->font);
+mouseText.setCharacterSize(30);
+std::stringstream ss;
+ss << this->mousePosView.x << " " << this->mousePosView.y;
+mouseText.setString(ss.str());
+target->draw(mouseText);
+
 }
+
+
 
 
 

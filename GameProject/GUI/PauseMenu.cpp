@@ -8,7 +8,7 @@ PauseMenu::PauseMenu(sf::RenderWindow& window, sf::Font& font)
 : font(font) {
     //Initialize Background
     this->background.setSize(sf::Vector2f(
-            static_cast<float>(window.getSize().x),
+            static_cast<float>(window.getSize().x) ,
             static_cast<float>(window.getSize().y)));
 
     this->background.setFillColor(sf::Color(20,20,20,100));
@@ -20,8 +20,9 @@ PauseMenu::PauseMenu(sf::RenderWindow& window, sf::Font& font)
 
     this->container.setFillColor(sf::Color(20,20,20,200));
     this->container.setPosition(
-            static_cast<float>(window.getSize().x) / 2.f - this->container.getSize().x,
+            static_cast<float>(window.getSize().x) / 2.f - this->container.getSize().x/2,
             30.f);
+
 
     //Init Text
     this->menuText.setFont(font);
@@ -54,7 +55,7 @@ const bool PauseMenu::isButtonPressed(const std::string key) {
 void PauseMenu::addButton(const std::string key, float y, const std::string text) {
     float width = 250.f;
     float height = 68.f;
-    float x = this->container.getPosition().x + this->container.getPosition().x / 2.f - width / 2.f;
+    float x = this->container.getPosition().x + this->container.getSize().x / 2.f - width / 2.f;
 
     this->buttons[key] = new gui::Button(
             x, y, width, height,
