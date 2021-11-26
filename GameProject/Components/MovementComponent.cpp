@@ -64,6 +64,22 @@ const bool MovementComponent::getState(const unsigned short state) const {
     return false;
 }
 
+void MovementComponent::noVelocity() {
+    //Makes velocity X and Y become zero
+    this->velocity.x = 0.f;
+    this->velocity.y = 0.f;
+
+}
+
+void MovementComponent::noVelocityY() {
+    //Makes velocity Y become zero
+    this->velocity.y = 0.f;
+}
+
+void MovementComponent::noVelocityX() {
+    //Makes velocity Y become zero
+    this->velocity.x = 0.f;
+}
 
 void MovementComponent::move(const float dir_x, const float dir_y, const float& dt) {
     //Accelerating a sprite until max velocity
@@ -121,6 +137,9 @@ void MovementComponent::update(const float &dt) {
     //Final Move
     this->sprite.move(this->velocity * dt); // Uses velocity
 }
+
+
+
 
 
 

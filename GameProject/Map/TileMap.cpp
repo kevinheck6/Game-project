@@ -196,14 +196,18 @@ void TileMap::collisionChecker(Entity *entity) {
     //World Bound
     if(entity->getPosition().x < 0.f) {
         entity->setPosition(0.f, entity->getPosition().y);
+        entity->noVelocityX();
     } else if (entity->getPosition().x + entity->getGlobalBounds().width > this->mapSizeWoldF.x) {
         entity->setPosition(this->mapSizeWoldF.x - entity->getGlobalBounds().width , entity->getPosition().y);
+        entity->noVelocityX();
     }
 
     if(entity->getPosition().y < 0.f) {
         entity->setPosition(entity->getPosition().x, 0.f);
+        entity->noVelocityY();
     } else if (entity->getPosition().y + entity->getGlobalBounds().height > this->mapSizeWoldF.y) {
         entity->setPosition(entity->getPosition().x, this->mapSizeWoldF.y - entity->getGlobalBounds().height);
+        entity->noVelocityY();
     }
 
     //Tile Bounds

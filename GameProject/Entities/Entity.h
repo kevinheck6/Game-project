@@ -32,6 +32,9 @@ public:
     void setPosition(const float x, const float y);
     //Functions
     virtual void move(const float x, const float y, const float& dt);
+    virtual void noVelocity();
+    virtual void noVelocityY();
+    virtual void noVelocityX();
 
     virtual void update(const float& dt) = 0;
     virtual void render(sf::RenderTarget& target) = 0;

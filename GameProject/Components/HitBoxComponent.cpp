@@ -9,6 +9,11 @@ HitBoxComponent::HitBoxComponent(sf::Sprite& sprite,
                                  float width, float height)
                                  : sprite(sprite), offsetX(offset_x), offsetY(offset_y) {
 
+    this->futurePosition.left = 0.f;
+    this->futurePosition.top = 0.f;
+    this->futurePosition.width = 0.f;
+    this->futurePosition.height = 0.f;
+
     this->hitBox.setPosition(this->sprite.getPosition().x + offset_x,
                              this->sprite.getPosition().y + offset_y);
     this->hitBox.setSize(sf::Vector2f(width, height));
@@ -28,6 +33,12 @@ const sf::Vector2f &HitBoxComponent::getPosition() const {
 
 const sf::FloatRect HitBoxComponent::getGlobalBounds() const {
     return this->hitBox.getGlobalBounds();
+}
+
+const sf::FloatRect &HitBoxComponent::getFuturePosition(const sf::Vector2f &velocity) {
+    this->futurePosition.left = this->hitBox.getPosition().x + velocity.x;
+    this->futurePosition.top = this->hitBox.getPosition().y + velocity.y;
+    return this->futurePosition;
 }
 
 //Modifiers
@@ -58,6 +69,8 @@ void HitBoxComponent::render(sf::RenderTarget &target) {
     target.draw(this->hitBox);
 
 }
+
+
 
 
 

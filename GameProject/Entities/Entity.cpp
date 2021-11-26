@@ -72,6 +72,26 @@ void Entity::move(const float dir_x, const float dir_y, const float& dt) {
     }
 }
 
+void Entity::noVelocity() {
+    //Makes velocity X and Y become zero
+    if(this->movementComponent) {
+        this->movementComponent->noVelocity();
+    }
+}
+
+void Entity::noVelocityY() {
+//Makes velocity Y become zero
+    if(this->movementComponent) {
+        this->movementComponent->noVelocityY();
+    }
+}
+
+void Entity::noVelocityX() {
+//Makes velocity X become zero
+    if(this->movementComponent) {
+        this->movementComponent->noVelocityX();
+    }
+}
 
 
 
