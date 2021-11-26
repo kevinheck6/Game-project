@@ -28,6 +28,17 @@ Tile::~Tile() {
 
 }
 
+
+//Accessors
+const bool &Tile::getCollision() const {
+    return this->collision;
+}
+
+const sf::Vector2f &Tile::getPosition() const {
+    return this->tile.getPosition();
+}
+
+
 //Functions
 const std::string Tile::getString() const {
     std::stringstream stringStream;
@@ -44,6 +55,8 @@ void Tile::update() {
 void Tile::render(sf::RenderTarget &target) {
     target.draw(this->tile);
 }
+
+
 
 
 

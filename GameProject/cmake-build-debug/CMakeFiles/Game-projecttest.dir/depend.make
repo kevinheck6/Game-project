@@ -37,6 +37,10 @@ CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.o: \
  ../Head\ Files/PreCompiledHeaders.cpp \
  ../Head\ Files/PreCompiledHeaders.h
 CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.o: \
+ ../Components/AnimationComponent.h \
+ ../Components/HitBoxComponent.h \
+ ../Components/MovementComponent.h \
+ ../Entities/Entity.h \
  ../Head\ Files/PreCompiledHeaders.h \
  ../Map/TileMap.cpp \
  ../Map/TileMap.h \

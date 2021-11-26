@@ -4,6 +4,10 @@
 #pragma once
 
 #include "../Tile/Tile.h"
+#include "../Entities/Entity.h"
+
+class Entity;
+class Tile;
 
 class TileMap {
 private:
@@ -11,11 +15,13 @@ private:
 
     float gridSizeF;
     unsigned gridSizeU;
-    sf::Vector2u mapSize;
+    sf::Vector2u mapSizeGrid;
+    sf::Vector2f mapSizeWoldF;
     unsigned layers;
     std::vector<std::vector<std::vector<Tile*>>> map; // the map is in form of (X, Y, Layer)
     std::string textureFile;
     sf::Texture tileTexture;
+    sf::RectangleShape collisionBox;
 
 public:
     TileMap(float gridSize, unsigned width, unsigned height, std::string texture_file);
@@ -32,7 +38,9 @@ public:
     void saveFile(const std::string file_name);
     void loadFile(const std::string file_name);
 
+    void collisionChecker(Entity* entity);
+
     void update();
-    void render(sf::RenderTarget& target);
+    void render(sf::RenderTarget& target, Entity* entity = nullptr);
 };
 

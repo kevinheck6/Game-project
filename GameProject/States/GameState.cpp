@@ -91,7 +91,7 @@ GameState::~GameState() {
 
 //Functions
 void GameState::updateView(const float &dt) {
-
+    //Using floor function otherwise we have problems with green lines appearing when we move camera - less precision
     this->mainView.setCenter(std::floor(this->player->getPosition().x), std::floor(this->player->getPosition().y));
 }
 
@@ -129,6 +129,11 @@ void GameState::updatePauseMenuButtons() {
     }
 }
 
+void GameState::updateTileMap(const float &dt) {
+    this->tileMap->update();
+    this->tileMap->collisionChecker(this->player);
+}
+
 void GameState::update(const float& dt) {
     this->updateMousePosition(&this->mainView);
     this->updateKeyTime(dt);
@@ -140,6 +145,8 @@ void GameState::update(const float& dt) {
         this->updatePlayerInput(dt);
 
         this->player->update(dt);
+
+        this->updateTileMap(dt);
 
     } else { // Pause update
         this->pauseMenu->update(this->mousePosWindow);
@@ -180,6 +187,8 @@ mouseText.setString(ss.str());
 target->draw(mouseText);
 
 }
+
+
 
 
 

@@ -20,15 +20,13 @@
 ../Components/HitBoxComponent.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.h
 
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.cpp
-../Head Files/PreCompiledHeaders.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-Player.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
-
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
 Entity.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.h
+../Resources/Button.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
 algorithm
@@ -71,4 +69,48 @@ SFML/Audio.hpp
 -
 SFML/Network.hpp
 -
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.cpp
+../Head Files/PreCompiledHeaders.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
+TileMap.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
+../Tile/Tile.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.h
+../Entities/Entity.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/GraphicsSettings.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.cpp
+../Head Files/PreCompiledHeaders.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
+GameState.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
+State.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
+../GUI/PauseMenu.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.h
+../Map/TileMap.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
+../Entities/Player.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
+../Resources/GraphicsSettings.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/GraphicsSettings.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.cpp
+../Head Files/PreCompiledHeaders.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
+Tile.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.h
 

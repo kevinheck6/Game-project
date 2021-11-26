@@ -92,6 +92,8 @@ void EditorState::initGui() {
                                                      this->stateData->gridSize,
                                                      this->tileMap->getTileTexture(),
                                                      this->font, "Tiles");
+
+
 }
 
 EditorState::EditorState(StateData* state_data)
