@@ -1,0 +1,3 @@
+/home/kevin/CLionProjects/Game-projecttest/GameProject/CMakeFiles/Game-projecttest.dir
+/home/kevin/CLionProjects/Game-projecttest/GameProject/CMakeFiles/edit_cache.dir
+/home/kevin/CLionProjects/Game-projecttest/GameProject/CMakeFiles/rebuild_cache.dir

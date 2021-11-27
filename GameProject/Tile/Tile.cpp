@@ -12,7 +12,7 @@ Tile::Tile() {
 Tile::Tile(unsigned grid_x, unsigned grid_y, float gridSizeF, const sf::Texture& texture, const sf::IntRect& rectangle_texture,
            bool collision, short type) {
     this->tile.setSize(sf::Vector2f(gridSizeF, gridSizeF));
-    this->tile.setFillColor(sf::Color(255,255,255, 255));
+    this->tile.setFillColor(sf::Color::White);
     //this->tile.setOutlineThickness(1.f); // Black lines to see each square
     //this->tile.setOutlineColor(sf::Color::Black);
     this->tile.setPosition(static_cast<float>(grid_x) * gridSizeF, static_cast<float>(grid_y) * gridSizeF );
@@ -51,7 +51,6 @@ const std::string Tile::getString() const {
     std::stringstream stringStream;
     stringStream << this->tile.getTextureRect().left << " " << this->tile.getTextureRect().top << " " <<
     this->collision << " " << this->type;
-
     return stringStream.str();
 }
 

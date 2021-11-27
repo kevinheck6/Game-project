@@ -12,12 +12,6 @@
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
 
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.cpp
-../Head Files/PreCompiledHeaders.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-Entity.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
-
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
 ../Components/MovementComponent.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h

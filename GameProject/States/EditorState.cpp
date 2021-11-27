@@ -65,10 +65,6 @@ void EditorState::initPauseMenu() {
     this->pauseMenu->addButton("SAVE", 200.f, "Save");
 }
 
-void EditorState::initTileMap() {
-    this->tileMap = new TileMap(this->stateData->gridSize, 10, 10,
-                                "../Resources/Images/TextureGround/grassSheet.png");
-}
 
 void EditorState::initGui() {
     //SETTINGS OF SIDEBAR
@@ -84,6 +80,7 @@ void EditorState::initGui() {
     this->selectorRect.setFillColor(sf::Color(255, 255, 255, 150));
     this->selectorRect.setOutlineThickness(2.f);
     this->selectorRect.setOutlineColor(sf::Color::Green);
+
     this->selectorRect.setTexture(this->tileMap->getTileTexture());
     this->selectorRect.setTextureRect(this->textureRect);
 
@@ -94,6 +91,11 @@ void EditorState::initGui() {
                                                      this->font, "Tiles");
 
 
+}
+
+void EditorState::initTileMap() {
+    this->tileMap = new TileMap(this->stateData->gridSize, 10, 10,
+                                "../Resources/Images/TextureGround/grassSheet.png");
 }
 
 EditorState::EditorState(StateData* state_data)
