@@ -8,7 +8,7 @@ class HitBoxComponent {
 private:
     sf::Sprite& sprite;
     sf::RectangleShape hitBox;
-    sf::FloatRect futurePosition;
+    sf::FloatRect nextPosition;
     float offsetX;
     float offsetY;
 public:
@@ -18,15 +18,14 @@ public:
     //Accessors
     const sf::Vector2f& getPosition() const;
     const sf::FloatRect getGlobalBounds() const;
-    const sf::FloatRect& getFuturePosition(const sf::Vector2f& velocity);
+    const sf::FloatRect& getNextPosition(const sf::Vector2f& velocity);
     //Modifiers
     void setPosition(const sf::Vector2f& position);
     void setPosition(const float x, const float y);
     //Functions
-    bool intersection(const sf::FloatRect& fRect);
+    bool intersects(const sf::FloatRect& fRect);
 
     void update();
     void render(sf::RenderTarget& target);
 
 };
-

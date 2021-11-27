@@ -4,46 +4,66 @@
 #include "../Head Files/PreCompiledHeaders.h"
 #include "GameState.h"
 
-//Initializer
 
-void GameState::initDeferredRender() {
-    this->renderTexture.create(this->stateData->graphSettings->resolution.width,
-                               this->stateData->graphSettings->resolution.height);
+void GameState::initDeferredRender()
+{
+    this->renderTexture.create(
+            this->stateData->graphSettings->resolution.width,
+            this->stateData->graphSettings->resolution.height
+    );
 
     this->renderSprite.setTexture(this->renderTexture.getTexture());
-    this->renderSprite.setTextureRect(sf::IntRect(0, 0,
-                                                  this->stateData->graphSettings->resolution.width,
-                                                  this->stateData->graphSettings->resolution.height));
+    this->renderSprite.setTextureRect(
+            sf::IntRect(
+                    0,
+                    0,
+                    this->stateData->graphSettings->resolution.width,
+                    this->stateData->graphSettings->resolution.height
+            )
+    );
 }
 
-void GameState::initView() {
-    this->mainView.setSize(sf::Vector2f(this->stateData->graphSettings->resolution.width,
-                                        this->stateData->graphSettings->resolution.height));
+//Initializer functions
+void GameState::initView()
+{
+    this->mainView.setSize(
+            sf::Vector2f(
+                    static_cast<float>(this->stateData->graphSettings->resolution.width),
+                    static_cast<float>(this->stateData->graphSettings->resolution.height)
+            )
+    );
 
-    std::cout << this->stateData->graphSettings->resolution.width << " " <<  this->stateData->graphSettings->resolution.height;
-
-    this->mainView.setCenter(sf::Vector2f(this->stateData->graphSettings->resolution.width / 2.f,
-                                    this->stateData->graphSettings->resolution.height  / 2.f));
+    this->mainView.setCenter(
+            sf::Vector2f(
+                    static_cast<float>(this->stateData->graphSettings->resolution.width) / 2.f,
+                    static_cast<float>(this->stateData->graphSettings->resolution.height) / 2.f
+            )
+    );
 }
 
-void GameState::initKeyBinds() {
-
+void GameState::initKeyBinds()
+{
     std::ifstream ifs("../Config/GameState_KeyBind.ini");
-    if (ifs.is_open()) {
+
+    if (ifs.is_open())
+    {
         std::string key = "";
         std::string key2 = "";
-        while (ifs >> key >> key2) {
+
+        while (ifs >> key >> key2)
+        {
             this->keyBinds[key] = this->supportedKeys->at(key2);
         }
     }
+
     ifs.close();
 }
 
-void GameState::initFonts() {
+void GameState::initFonts()
+{
     if(!this->font.loadFromFile("../Fonts/Amatic-Bold.ttf")) {
         throw("ERROR - MainMenuState - Could not load");
     }
-
 }
 
 void GameState::initTextures() {
@@ -65,144 +85,117 @@ void GameState::initPlayers() {
 
 void GameState::initTileMap() {
     this->tileMap = new TileMap(this->stateData->gridSize, 10, 10,
-                                "../Resources/Images/TextureGround/grassSheet.png");
-    this->tileMap->loadFile("../cmake-build-debug/SaveMap.mp");
+                                "../Resources/Images/TextureGround/grassSheet.jpg");
+    this->tileMap->loadFile("../Map/SaveMap.mp");
 }
 
-
-//Constructors
+//Constructors / Destructors
 GameState::GameState(StateData* state_data)
-    : State(state_data) {
+        : State(state_data)
+{
     this->initDeferredRender();
     this->initView();
     this->initKeyBinds();
     this->initFonts();
     this->initTextures();
     this->initPauseMenu();
+
     this->initPlayers();
     this->initTileMap();
 }
 
-GameState::~GameState() {
+GameState::~GameState()
+{
     delete this->pauseMenu;
     delete this->player;
     delete this->tileMap;
 }
 
 //Functions
-void GameState::updateView(const float &dt) {
-    //Using floor function otherwise we have problems with green lines appearing when we move camera - less precision
+void GameState::updateView(const float & dt)
+{
     this->mainView.setCenter(std::floor(this->player->getPosition().x), std::floor(this->player->getPosition().y));
 }
 
-void GameState::updateInput(const float &dt) {
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("CLOSE"))) && this->getKeyTime()) {
-        if(!this->pause) {
+void GameState::updateInput(const float & dt)
+{
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("CLOSE"))) && this->getKeyTime())
+    {
+        if (!this->pause)
             this->pauseState();
-            std::cout << "paused";
-        } else {
-         this->unpauseState();
-        }
+        else
+            this->unpauseState();
     }
 }
 
-void GameState::updatePlayerInput(const float &dt) {
-
-    //playerInput
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("MOVE_LEFT")))) {
+void GameState::updatePlayerInput(const float & dt)
+{
+    //Update player input
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("MOVE_LEFT"))))
         this->player->move(-1.f, 0.f, dt);
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("MOVE_RIGHT")))) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("MOVE_RIGHT"))))
         this->player->move(1.f, 0.f, dt);
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("MOVE_UP")))) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("MOVE_UP"))))
         this->player->move(0.f, -1.f, dt);
-    }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("MOVE_DOWN")))) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keyBinds.at("MOVE_DOWN"))))
         this->player->move(0.f, 1.f, dt);
-    }
 }
 
-void GameState::updatePauseMenuButtons() {
-    if(this->pauseMenu->isButtonPressed("EXIT")) {
+void GameState::updatePauseMenuButtons()
+{
+    if (this->pauseMenu->isButtonPressed("QUIT"))
         this->endState();
-    }
 }
 
-void GameState::updateTileMap(const float &dt) {
+void GameState::updateTileMap(const float & dt)
+{
     this->tileMap->update();
-    this->tileMap->collisionChecker(this->player);
+    this->tileMap->collisionChecker(this->player, dt);
 }
 
-void GameState::update(const float& dt) {
+void GameState::update(const float& dt)
+{
     this->updateMousePosition(&this->mainView);
     this->updateKeyTime(dt);
     this->updateInput(dt);
 
-    if(!this->pause) { // Unpause
+    if (!this->pause) //Unpaused update
+    {
         this->updateView(dt);
 
         this->updatePlayerInput(dt);
 
-        this->player->update(dt);
-
         this->updateTileMap(dt);
 
-    } else { // Pause update
+        this->player->update(dt);
+    }
+    else //Paused update
+    {
         this->pauseMenu->update(this->mousePosWindow);
         this->updatePauseMenuButtons();
     }
 }
 
-void GameState::render(sf::RenderTarget* target) {
-    if(!target) {
+void GameState::render(sf::RenderTarget* target)
+{
+    if (!target)
         target = this->window;
-    }
 
     this->renderTexture.clear();
 
     this->renderTexture.setView(this->mainView);
-    //Render map Tile
-    this->tileMap->render(this->renderTexture);
-    //Render player
+    this->tileMap->render(this->renderTexture, this->player);
+
     this->player->render(this->renderTexture);
-    //Render pause menu
-    if(this->pause) {
+
+    if (this->pause) //Pause menu render
+    {
         this->renderTexture.setView(this->renderTexture.getDefaultView());
         this->pauseMenu->render(this->renderTexture);
     }
 
-    //Last Render
+    //FINAL RENDER
     this->renderTexture.display();
-    this->renderSprite.setTexture(this->renderTexture.getTexture());
+    //this->renderSprite.setTexture(this->renderTexture.getTexture());
     target->draw(this->renderSprite);
-
-    sf::Text mouseText;
-mouseText.setPosition(this->mousePosView.x, this->mousePosView.y - 50);
-mouseText.setFont(this->font);
-mouseText.setCharacterSize(30);
-std::stringstream ss;
-ss << this->mousePosView.x << " " << this->mousePosView.y;
-mouseText.setString(ss.str());
-target->draw(mouseText);
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

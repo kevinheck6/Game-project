@@ -2,6 +2,7 @@
 // Created by kevin on 24.10.2021.
 //
 #pragma once
+#pragma once
 
 #include "Entity.h"
 
@@ -25,4 +26,3 @@ public:
     void render(sf::RenderTarget& target);
 
 };
-
