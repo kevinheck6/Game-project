@@ -45,10 +45,10 @@ private:
     void initFonts();
     void initCursorText();
     void initKeyBinds();
-    void initButtons();
     void initPauseMenu();
-    void initTileMap();
+    void initButtons();
     void initGui();
+    void initTileMap();
 
 public:
     EditorState(StateData* state_data);
