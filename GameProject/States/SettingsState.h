@@ -1,6 +1,6 @@
 #pragma once
 
-#include "State.h"
+#include "../States/State.h"
 #include "../Resources/Button.h"
 
 class SettingsState :

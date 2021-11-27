@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include "../Entities/Player.h"
 #include "../Resources/GraphicsSettings.h"
 

@@ -3,9 +3,9 @@
 
 void Entity::initVariables()
 {
-	this->hitboxComponent = NULL;
-	this->movementComponent = NULL;
-	this->animationComponent = NULL;
+	this->hitboxComponent = nullptr;
+	this->movementComponent = nullptr;
+	this->animationComponent = nullptr;
 }
 
 Entity::Entity()

@@ -1,5 +1,4 @@
-#ifndef TILE_H
-#define TILE_H
+#pragma once
 
 enum TileTypes {DEFAULT = 0, DAMAGING, DOODAD};
 
@@ -31,5 +30,3 @@ public:
 	void update();
 	void render(sf::RenderTarget& target);
 };
-
-#endif
