@@ -104,9 +104,6 @@ CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/GraphicsSettings.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.cpp
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.h
 CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o

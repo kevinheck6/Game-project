@@ -1,68 +1,69 @@
 #pragma once
 
+
 #include "../Entities/Player.h"
 #include "../Resources/GraphicsSettings.h"
 
 class Player;
-class GraphSettings;
+class GraphicsSettings;
 class State;
 
-class StateData {
+class StateData
+{
 public:
-    StateData() {};
+	StateData() {};
 
-    //Variables
-    float gridSize;
-    sf::RenderWindow* window;
-    GraphSettings* graphSettings;
-    std::map<std::string, int>* supportedKeys;
-    std::stack<State*>* states;
+	//Variables
+	float gridSize;
+	sf::RenderWindow* window;
+	GraphicsSettings* gfxSettings;
+	std::map<std::string, int>* supportedKeys;
+	std::stack<State*>* states;
 };
 
-class State {
+class State
+{
 private:
 
 protected:
-    StateData* stateData;
-    std::stack<State*>* states;
-    sf::RenderWindow* window;
-    std::map<std::string,int>* supportedKeys;
-    std::map<std::string,int> keyBinds;
-    bool quit;
-    bool pause;
-    float keyTime;
-    float keyTimeMax;
-    float gridSize;
+	StateData* stateData;
+	std::stack<State*>* states;
+	sf::RenderWindow* window;
+	std::map<std::string, int>* supportedKeys;
+	std::map<std::string, int> keybinds;
+	bool quit;
+	bool paused;
+	float keytime;
+	float keytimeMax;
+	float gridSize;
 
-    sf::Vector2i mousePosScreen;
-    sf::Vector2i mousePosWindow;
-    sf::Vector2f mousePosView;
-    sf::Vector2u mousePosGrid;
+	sf::Vector2i mousePosScreen;
+	sf::Vector2i mousePosWindow;
+	sf::Vector2f mousePosView;
+	sf::Vector2i mousePosGrid;
 
-    //Resources
-    std::map<std::string ,sf::Texture> textures;
+	//Resources
+	std::map<std::string, sf::Texture> textures;
 
-    //Functions
-    virtual void initKeyBinds() = 0;
+	//Functions
+	virtual void initKeybinds() = 0;
 
 public:
-    State(StateData* state_data);
-    virtual ~State();
+	State(StateData* state_data);
+	virtual ~State();
 
-    //Accessors
-    const bool& getQuit() const;
-    const bool getKeyTime();
-    //Functions
+	//Accessors
+	const bool& getQuit() const;
+	const bool getKeytime();
 
-    void endState();
-    void pauseState();
-    void unpauseState();
+	//Functions	
+	void endState(); 
+	void pauseState();
+	void unpauseState();
 
-    virtual void updateMousePosition(sf::View* view = nullptr);
-    virtual void updateKeyTime(const float& dt);
-    virtual void updateInput(const float& dt) = 0;
-    virtual void update(const float& dt) = 0;
-    virtual void render(sf::RenderTarget* target = nullptr) = 0;
+	virtual void updateMousePositions(sf::View* view = NULL);
+	virtual void updateKeytime(const float& dt);
+	virtual void updateInput(const float& dt) = 0;
+	virtual void update(const float& dt) = 0;
+	virtual void render(sf::RenderTarget* target = NULL) = 0;
 };
-
-

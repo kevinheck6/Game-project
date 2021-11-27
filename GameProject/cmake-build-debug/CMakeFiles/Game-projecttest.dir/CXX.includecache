@@ -15,28 +15,38 @@
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.cpp
 ../Head Files/PreCompiledHeaders.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-Entity.h
+../Entities/Entity.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
+../Head Files/PreCompiledHeaders.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
+../Components/HitBoxComponent.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.h
 ../Components/MovementComponent.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
 ../Components/AnimationComponent.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.h
-../Components/HitBoxComponent.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.cpp
 ../Head Files/PreCompiledHeaders.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-Player.h
+../Entities/Player.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
 Entity.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
 
+/home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.cpp
+../Head Files/PreCompiledHeaders.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
+../GUI/PauseMenu.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.h
+../Head Files/PreCompiledHeaders.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
 ../Resources/Button.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
 
@@ -44,10 +54,16 @@ Entity.h
 ../States/MainMenuState.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
 
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.cpp
+../Head Files/PreCompiledHeaders.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
+
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
 algorithm
 -
 deque
+-
+iostream
 -
 map
 -
@@ -73,8 +89,6 @@ fstream
 -
 cmath
 -
-iostream
--
 SFML/System.hpp
 -
 SFML/Window.hpp
@@ -89,7 +103,7 @@ SFML/Network.hpp
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.cpp
 ../Head Files/PreCompiledHeaders.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-TileMap.h
+../Map/TileMap.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
@@ -108,19 +122,11 @@ TileMap.h
 ../Head Files/Game.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/Game.h
 
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/main.cpp
-../Head Files/PreCompiledHeaders.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-../Head Files/Game.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/Game.h
-
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.cpp
 ../Head Files/PreCompiledHeaders.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-EditorState.h
+../States/EditorState.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
-MainMenuState.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
 State.h
@@ -131,12 +137,6 @@ State.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.h
 ../Map/TileMap.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
-
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.cpp
-../Head Files/PreCompiledHeaders.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-GameState.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
 State.h
@@ -149,7 +149,7 @@ State.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.cpp
 ../Head Files/PreCompiledHeaders.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-MainMenuState.h
+../States/MainMenuState.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
@@ -157,15 +157,15 @@ GameState.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
 EditorState.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
-../Resources/Button.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
 SettingsState.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.h
+../Resources/Button.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.cpp
 ../Head Files/PreCompiledHeaders.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-SettingsState.h
+../States/SettingsState.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.h
@@ -175,9 +175,7 @@ State.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.cpp
-../Head Files/PreCompiledHeaders.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-State.h
+../States/State.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
@@ -185,6 +183,12 @@ State.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
 ../Resources/GraphicsSettings.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/GraphicsSettings.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.cpp
+../Head Files/PreCompiledHeaders.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
+../Tile/Tile.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.h
 

@@ -1,11 +1,10 @@
-//
-// Created by kevin on 20.11.2021.
-//
+// header.h
 #pragma once
 
 //Core
 #include <algorithm>
 #include <deque>
+#include <iostream>
 #include <map>
 #include <memory>
 #include <set>
@@ -18,7 +17,6 @@
 #include <sstream>
 #include <fstream>
 #include <cmath>
-#include <iostream>
 
 //SFML
 #include <SFML/System.hpp>
@@ -27,11 +25,5 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
 
-
-
-
-class PreCompiledHeaders {
-
-};
 
 

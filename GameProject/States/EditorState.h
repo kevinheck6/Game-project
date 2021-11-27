@@ -1,6 +1,3 @@
-//
-// Created by kevin on 29.10.2021.
-//
 #pragma once
 
 #include "State.h"
@@ -9,63 +6,62 @@
 #include "../Map/TileMap.h"
 
 class State;
-class Button;
+class Gui;
 class PauseMenu;
 class TileMap;
 
 class EditorState :
-        public State {
+	public State
+{
 private:
-    //Variables
-    sf::View mainView;
+	//Variables
+	sf::View view;
 
-    sf::Font font;
-    sf::Text cursorText;
-    PauseMenu* pauseMenu;
+	sf::Font font;
+	sf::Text cursorText;
+	PauseMenu* pmenu;
 
-    std::map<std::string, gui::Button*> buttons;
+	std::map<std::string, gui::Button*> buttons;
 
-    TileMap* tileMap;
+	TileMap* tileMap;
 
-    sf::RectangleShape sideBar;
+	sf::RectangleShape sidebar;
 
-    sf::RectangleShape selectorRect;
+	sf::RectangleShape selectorRect;
 
-    gui::TextureSelector* textureSelector;
+	gui::TextureSelector* textureSelector;
 
-    sf::IntRect textureRect;
-    bool collision;
-    short type;
-    float cameraSpeed;
+	sf::IntRect textureRect;
+	bool collision;
+	short type;
+	float cameraSpeed;
+	int layer;
 
-    //Functions
-    void initVariables();
-    void initView();
-    void initBackground();
-    void initFonts();
-    void initCursorText();
-    void initKeyBinds();
-    void initButtons();
-    void initPauseMenu();
-    void initTileMap();
-    void initGui();
+	//Functions
+	void initVariables();
+	void initView();
+	void initBackground();
+	void initFonts();
+	void initText();
+	void initKeybinds();
+	void initPauseMenu();
+	void initButtons();
+	void initGui();
+	void initTileMap();
 
 public:
-    EditorState(StateData* state_data);
-    virtual ~EditorState();
+	EditorState(StateData* state_data);
+	virtual ~EditorState();
 
-    //Functions
-    void updateInput(const float& dt);
-    void updateEditorInput(const float& dt);
-    void updateButtons();
-    void updateGui(const float& dt);
-    void updatePauseMenu();
-    void update(const float& dt);
-    void renderButtons(sf::RenderTarget& target);
-    void renderGui(sf::RenderTarget &target);
-    void render(sf::RenderTarget* target = nullptr);
-
-
-
+	//Functions
+	void updateInput(const float& dt);
+	void updateEditorInput(const float& dt);
+	void updateButtons();
+	void updateGui(const float& dt);
+	void updatePauseMenuButtons();
+	void update(const float& dt);
+	void renderButtons(sf::RenderTarget& target);
+	void renderGui(sf::RenderTarget& target);
+	void render(sf::RenderTarget* target = NULL);
 };
 

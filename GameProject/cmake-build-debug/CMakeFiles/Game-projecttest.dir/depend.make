@@ -104,9 +104,6 @@ CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o: \
  ../Resources/GraphicsSettings.h \
  ../States/EditorState.cpp \
  ../States/EditorState.h \
- ../States/GameState.h \
- ../States/MainMenuState.h \
- ../States/SettingsState.h \
  ../States/State.h \
  ../Tile/Tile.h
 CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o: \

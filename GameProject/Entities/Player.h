@@ -1,28 +1,31 @@
-//
-// Created by kevin on 24.10.2021.
-//
-#pragma once
-#pragma once
+#ifndef PLAYER_H
+#define PLAYER_H
 
 #include "Entity.h"
 
+class Entity;
+
 class Player :
-        public Entity {
+	public Entity
+{
 private:
-    //Variables
-    bool attacking;
-    //Initializers
-    void initVariables();
-    void initComponents();
+	//Variables
+	bool attacking;
+
+	//Initializer functions
+	void initVariables();
+	void initComponents();
+
 public:
-    Player(float x, float y,sf::Texture& texture_sheet);
-    virtual ~Player();
+	Player(float x, float y, sf::Texture& texture_sheet);
+	virtual ~Player();
 
-    //Functions
-    void updateAttack();
-    void updateAnimations(const float& dt);
-    void update(const float &dt);
+	//Functions
+	void updateAttack();
+	void updateAnimation(const float& dt);
+	void update(const float& dt);
 
-    void render(sf::RenderTarget& target);
-
+	void render(sf::RenderTarget& target);
 };
+
+#endif

@@ -1,23 +1,23 @@
-//
-// Created by kevin on 20.11.2021.
-//
-#pragma once
-class GraphSettings {
+#ifndef GRAPHICSSETTINGS_H
+#define GRAPHICSSETTINGS_H
+
+class GraphicsSettings
+{
 public:
-    GraphSettings();
-    ~GraphSettings();
+	GraphicsSettings();
 
-    //Variable
-    std::string title;
-    sf::VideoMode resolution;
-    bool fullScreen;
-    bool verticalSync;
-    unsigned frameRateLimit;
-    sf::ContextSettings contextSettings;
-    std::vector<sf::VideoMode> videoModes;
+	//Variables
+	std::string title;
+	sf::VideoMode resolution;
+	bool fullscreen;
+	bool verticalSync;
+	unsigned frameRateLimit;
+	sf::ContextSettings contextSettings;
+	std::vector<sf::VideoMode> videoModes;
 
-    //Functions
-    void saveFile(const std::string path);
-    void loadFile(const std::string path);
+	//Functions
+	void saveToFile(const std::string path);
+	void loadFromFile(const std::string path);
 };
 
+#endif // !GRAPHICSSETTINGS_H

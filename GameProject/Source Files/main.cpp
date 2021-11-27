@@ -1,13 +1,12 @@
 #include "../Head Files/PreCompiledHeaders.h"
-#include "../Head Files/Game.h"
+#include"../Head Files/Game.h"
 
-int main() {
-    //initialize random seed
-    std::srand(static_cast<unsigned>(time(nullptr)));
+int main()
+{
+	Game game;
 
-    //initialize game engine;
-    Game game;
+	game.run();
 
-    game.run();
-    return 0;
+	//system("pause");
+	return 0;
 }
