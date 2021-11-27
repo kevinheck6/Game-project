@@ -23,6 +23,13 @@ private:
     sf::Texture tileTexture;
     sf::RectangleShape collisionBox;
 
+    //Culling
+    int fromX;
+    int toX;
+    int fromY;
+    int toY;
+    int layer;
+
 public:
     TileMap(float gridSize, unsigned width, unsigned height, std::string texture_file);
     virtual ~TileMap();
@@ -38,7 +45,7 @@ public:
     void saveFile(const std::string file_name);
     void loadFile(const std::string file_name);
 
-    void collisionChecker(Entity* entity);
+    void collisionChecker(Entity* entity, const float& dt);
 
     void update();
     void render(sf::RenderTarget& target, Entity* entity = nullptr);

@@ -38,8 +38,15 @@ const sf::Vector2f &Tile::getPosition() const {
     return this->tile.getPosition();
 }
 
+const sf::FloatRect Tile::getGlobalBounds() const {
+    return this->tile.getGlobalBounds();
+}
 
 //Functions
+const bool Tile::intersects(const sf::FloatRect bounds) const {
+    return this->tile.getGlobalBounds().intersects(bounds);
+}
+
 const std::string Tile::getString() const {
     std::stringstream stringStream;
     stringStream << this->tile.getTextureRect().left << " " << this->tile.getTextureRect().top << " " <<
@@ -55,6 +62,10 @@ void Tile::update() {
 void Tile::render(sf::RenderTarget &target) {
     target.draw(this->tile);
 }
+
+
+
+
 
 
 

@@ -131,7 +131,7 @@ void GameState::updatePauseMenuButtons() {
 
 void GameState::updateTileMap(const float &dt) {
     this->tileMap->update();
-    this->tileMap->collisionChecker(this->player);
+    this->tileMap->collisionChecker(this->player, dt);
 }
 
 void GameState::update(const float& dt) {
@@ -163,7 +163,7 @@ void GameState::render(sf::RenderTarget* target) {
 
     this->renderTexture.setView(this->mainView);
     //Render map Tile
-    this->tileMap->render(this->renderTexture);
+    this->tileMap->render(this->renderTexture, this->player);
     //Render player
     this->player->render(this->renderTexture);
     //Render pause menu
@@ -173,11 +173,13 @@ void GameState::render(sf::RenderTarget* target) {
     }
 
     //Last Render
+
     this->renderTexture.display();
-    this->renderSprite.setTexture(this->renderTexture.getTexture());
+   // this->renderSprite.setTexture(this->renderTexture.getTexture());
     target->draw(this->renderSprite);
 
-    sf::Text mouseText;
+    /*
+sf::Text mouseText;
 mouseText.setPosition(this->mousePosView.x, this->mousePosView.y - 50);
 mouseText.setFont(this->font);
 mouseText.setCharacterSize(30);
@@ -185,7 +187,7 @@ std::stringstream ss;
 ss << this->mousePosView.x << " " << this->mousePosView.y;
 mouseText.setString(ss.str());
 target->draw(mouseText);
-
+*/
 }
 
 

@@ -10,7 +10,7 @@ private:
 protected:
     sf::RectangleShape tile;
     bool collision;
-    short unsigned type; // Maybe will have to be only short type
+    short type; // Maybe will have to be only short type
 
 public:
     Tile();
@@ -19,10 +19,16 @@ public:
     virtual ~Tile();
 
     //Accessors
-    const sf::Vector2f& getPosition() const;
     const bool& getCollision() const;
-    //Functions
+    const sf::Vector2f& getPosition() const;
+    const sf::FloatRect getGlobalBounds() const;
+    const bool intersects(const sf::FloatRect bounds) const;
     const std::string getString() const;
+
+
+
+    //Functions
+
 
     void update();
     void render(sf::RenderTarget& target);
