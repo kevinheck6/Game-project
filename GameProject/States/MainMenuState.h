@@ -32,5 +32,5 @@ public:
 	void updateButtons();
 	void update(const float& dt);
 	void renderButtons(sf::RenderTarget& target);
-	void render(sf::RenderTarget* target = NULL);
+	void render(sf::RenderTarget* target = nullptr);
 };

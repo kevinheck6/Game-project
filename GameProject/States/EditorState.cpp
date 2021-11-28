@@ -4,7 +4,9 @@
 //Initializer functions
 void EditorState::initVariables()
 {
-	this->textureRect = sf::IntRect(0, 0, static_cast<int>(this->stateData->gridSize), static_cast<int>(this->stateData->gridSize));
+	this->textureRect = sf::IntRect(0, 0,
+                                    static_cast<int>(this->stateData->gridSize),
+                                    static_cast<int>(this->stateData->gridSize));
 	this->collision = false;
 	this->type = TileTypes::DEFAULT;
 	this->cameraSpeed = 100.f;
@@ -43,7 +45,7 @@ void EditorState::initText()
 {
 	this->cursorText.setFont(this->font);
 	this->cursorText.setFillColor(sf::Color::White);
-	this->cursorText.setCharacterSize(12);
+	this->cursorText.setCharacterSize(30);
 	this->cursorText.setPosition(this->mousePosView.x, this->mousePosView.y);
 }
 
@@ -69,8 +71,8 @@ void EditorState::initPauseMenu()
 {
 	this->pmenu = new PauseMenu(*this->window, this->font);
 
-	this->pmenu->addButton("QUIT", 800.f, "Quit");
-	this->pmenu->addButton("SAVE", 500.f, "Save");
+	this->pmenu->addButton("QUIT", 600.f, "Quit");
+	this->pmenu->addButton("SAVE", 200.f, "Save");
 	this->pmenu->addButton("LOAD", 400.f, "Load");
 }
 
@@ -81,25 +83,31 @@ void EditorState::initButtons()
 
 void EditorState::initGui()
 {
-	this->sidebar.setSize(sf::Vector2f(80.f, static_cast<float>(this->stateData->gfxSettings->resolution.height)));
-	this->sidebar.setFillColor(sf::Color(50, 50, 50, 100));
-	this->sidebar.setOutlineColor(sf::Color(200, 200, 200, 150));
+    //SETTINGS OF SIDEBAR
+    this->sidebar.setPosition(0.f,0.f);
+	this->sidebar.setSize(sf::Vector2f(static_cast<float>(this->stateData->gfxSettings->resolution.width),
+            80.f));
+	this->sidebar.setFillColor(sf::Color(50,50,50, 100));
+	this->sidebar.setOutlineColor(sf::Color(sf::Color::White));
 	this->sidebar.setOutlineThickness(1.f);
 
+    //SETTINGS RECTANGLE IN THE MAP
 	this->selectorRect.setSize(sf::Vector2f(this->stateData->gridSize, this->stateData->gridSize));
 
 	this->selectorRect.setFillColor(sf::Color(255, 255, 255, 150));
-	this->selectorRect.setOutlineThickness(1.f);
+	this->selectorRect.setOutlineThickness(2.f);
 	this->selectorRect.setOutlineColor(sf::Color::Green);
 
 	this->selectorRect.setTexture(this->tileMap->getTileSheet());
 	this->selectorRect.setTextureRect(this->textureRect);
 
+    //Editor Screen Texture Position
 	this->textureSelector = new gui::TextureSelector(
-		20.f, 20.f, 1000.f, 500.f,
+		10.f, 10.f, 300.f, 500.f,
 		this->stateData->gridSize, this->tileMap->getTileSheet(),
 		this->font, "Tiles"
 		);
+
 }
 
 void EditorState::initTileMap()
@@ -235,11 +243,11 @@ void EditorState::updateGui(const float& dt)
 		this->selectorRect.setPosition(this->mousePosGrid.x * this->stateData->gridSize, this->mousePosGrid.y * this->stateData->gridSize);
 	}
 
-	this->cursorText.setPosition(this->mousePosView.x + 100.f, this->mousePosView.y - 50.f);
+	this->cursorText.setPosition(this->mousePosView.x + 20.f, this->mousePosView.y - 50.f);
 	std::stringstream ss;
 	ss << this->mousePosView.x << " " << this->mousePosView.y <<
-		"\n" << this->mousePosGrid.x << " " << this->mousePosGrid.y <<
-		"\n" << this->textureRect.left << " " << this->textureRect.top <<
+		"\n" << this->mousePosGrid.x << "    " << this->mousePosGrid.y <<
+		"\n" << this->textureRect.left / 100 << " " << this->textureRect.top / 100 <<
 		"\n" << "Collision: " << this->collision <<
 		"\n" << "Type: " << this->type <<
 		"\n" << "Tiles: " << this->tileMap->getLayerSize(this->mousePosGrid.x, this->mousePosGrid.y, this->layer);

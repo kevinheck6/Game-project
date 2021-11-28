@@ -53,32 +53,33 @@ void SettingsState::initKeybinds()
 void SettingsState::initGui()
 {
 	this->buttons["BACK"] = new gui::Button(
-		1500.f, 880.f, 250.f, 65.f,
-		&this->font, "Back", 50,
-		sf::Color(70, 70, 70, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50),
-		sf::Color(100, 100, 100, 0), sf::Color(150, 150, 150, 0), sf::Color(20, 20, 20, 0));
+            820.f,600.f, 150.f, 50.f,
+            &this->font,"Main Menu",50,
+            sf::Color(250, 250, 250, 250), sf::Color(255,255,0, 250), sf::Color(20, 20, 20, 50),
+            sf::Color(70, 70, 70, 0), sf::Color(150, 150, 150, 0), sf::Color(150, 20, 20, 0));
 
-	this->buttons["APPLY"] = new gui::Button(
-		1300.f, 880.f, 250.f, 65.f,
-		&this->font, "Apply", 50,
-		sf::Color(70, 70, 70, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50),
-		sf::Color(100, 100, 100, 0), sf::Color(150, 150, 150, 0), sf::Color(20, 20, 20, 0));
+    this->buttons["APPLY"] = new gui::Button(
+            420.f,600.f, 150.f, 50.f,
+            &this->font,"Apply Changes",50,
+            sf::Color(250, 250, 250, 250), sf::Color(255,255,0, 250), sf::Color(20, 20, 20, 50),
+            sf::Color(70, 70, 70, 0), sf::Color(150, 150, 150, 0), sf::Color(150, 20, 20, 0));
 
-	std::vector<std::string> modes_str;
+    std::vector<std::string> modes_str;
 	for (auto &i : this->modes)
 	{
 		modes_str.push_back(std::to_string(i.width) + 'x' + std::to_string(i.height));
 	}
 
-	this->dropDownLists["RESOLUTION"] = new gui::DropDownList(800, 450, 200, 50, font, modes_str.data(), modes_str.size());
+	this->dropDownLists["RESOLUTION"] = new gui::DropDownList(200, 190, 200, 50,
+                                                              font, modes_str.data(), modes_str.size());
 }
 
 void SettingsState::initText()
 {
 	this->optionsText.setFont(this->font);
-	this->optionsText.setPosition(sf::Vector2f(100.f, 450.f));
-	this->optionsText.setCharacterSize(30);
-	this->optionsText.setFillColor(sf::Color(255, 255, 255, 200));
+    this->optionsText.setPosition(sf::Vector2f(100.f, 200.f));
+    this->optionsText.setCharacterSize(30.f);
+    this->optionsText.setFillColor(sf::Color(255, 255, 255, 200));
 	
 	this->optionsText.setString(
 		"Resolution \n\nFullscreen \n\nVsync \n\nAntialiasing \n\n "
@@ -142,7 +143,8 @@ void SettingsState::updateGui(const float & dt)
 		//TEST REMOVE LATER
 		this->stateData->gfxSettings->resolution = this->modes[this->dropDownLists["RESOLUTION"]->getActiveElementId()];
 
-		this->window->create(this->stateData->gfxSettings->resolution, this->stateData->gfxSettings->title, sf::Style::Default);
+		this->window->create(this->stateData->gfxSettings->resolution,
+                             this->stateData->gfxSettings->title, sf::Style::Default);
 	}
 
 	//Dropdown lists

@@ -115,11 +115,6 @@ void gui::Button::update(const sf::Vector2i& mousePosWindow)
 		this->shape.setOutlineColor(this->outlineActiveColor);
 		break;
 
-	default:
-		this->shape.setFillColor(sf::Color::Red);
-		this->text.setFillColor(sf::Color::Blue);
-		this->shape.setOutlineColor(sf::Color::Green);
-		break;
 	}
 }
 
@@ -134,7 +129,7 @@ void gui::Button::render(sf::RenderTarget& target)
 gui::DropDownList::DropDownList(float x, float y, float width, float height, 
 	sf::Font& font, std::string list[], 
 	unsigned nrOfElements, unsigned default_index)
-	: font(font), showList(false), keytimeMax(1.f), keytime(0.f)
+	: font(font), showList(false), keytimeMax(2.f), keytime(0.f)
 {
 	//unsigned nrOfElements = sizeof(list) / sizeof(std::string);
 
@@ -242,21 +237,21 @@ void gui::DropDownList::render(sf::RenderTarget & target)
 gui::TextureSelector::TextureSelector(float x, float y, float width, float height, 
 	float gridSize, const sf::Texture* texture_sheet,
 	sf::Font& font, std::string text) 
-	: keytimeMax(1.f), keytime(0.f)
+	: keytimeMax(2.f), keytime(0.f)
 {
 	this->gridSize = gridSize;
 	this->active = false;
 	this->hidden = false;
-	float offset = 100.f;
+	float offset = 0;
 
 	this->bounds.setSize(sf::Vector2f(width, height));
-	this->bounds.setPosition(x + offset, y);
+	this->bounds.setPosition(x + offset, y + 75);
 	this->bounds.setFillColor(sf::Color(50, 50, 50, 100));
 	this->bounds.setOutlineThickness(1.f);
 	this->bounds.setOutlineColor(sf::Color(255, 255, 255, 200));
 
 	this->sheet.setTexture(*texture_sheet);
-	this->sheet.setPosition(x + offset, y);
+	this->sheet.setPosition(x + offset, y + 75);
 
 	if (this->sheet.getGlobalBounds().width > this->bounds.getGlobalBounds().width)
 	{
@@ -278,10 +273,9 @@ gui::TextureSelector::TextureSelector(float x, float y, float width, float heigh
 
 	this->hide_btn = new gui::Button(
 		y, x, 50.f, 50.f,
-		&font, text, 16,
-		sf::Color(255, 255, 255, 200), sf::Color(255, 255, 255, 250), sf::Color(255, 255, 255, 50),
-		sf::Color(70, 70, 70, 200), sf::Color(150, 150, 150, 250), sf::Color(20, 20, 20, 50)
-	);
+		&font, text, 50,
+        sf::Color(250, 250, 250, 250), sf::Color(255,255,0, 250), sf::Color(20, 20, 20, 50),
+        sf::Color(70, 70, 70, 0), sf::Color(150, 150, 150, 0), sf::Color(150, 20, 20, 0));
 }
 
 gui::TextureSelector::~TextureSelector()
