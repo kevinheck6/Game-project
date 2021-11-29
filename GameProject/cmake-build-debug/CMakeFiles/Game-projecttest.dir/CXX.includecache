@@ -22,16 +22,6 @@
 ../Components/AnimationComponent.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.h
 
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.cpp
-../Head Files/PreCompiledHeaders.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-../Entities/Player.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
-
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
-../Entities/Entity.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
-
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
 algorithm
 -
@@ -73,4 +63,18 @@ SFML/Audio.hpp
 -
 SFML/Network.hpp
 -
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.cpp
+../Head Files/PreCompiledHeaders.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
+../Map/TileMap.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
+../Tile/Tile.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.h
+../Entities/Entity.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.h
 

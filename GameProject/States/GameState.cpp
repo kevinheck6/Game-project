@@ -13,7 +13,7 @@ void GameState::initDeferredRender()
 		sf::IntRect(
 			0, 
 			0, 
-			this->stateData->gfxSettings->resolution.width, 
+			this->stateData->gfxSettings->resolution.width,
 			this->stateData->gfxSettings->resolution.height
 		)
 	);

@@ -9,7 +9,7 @@ void EditorState::initVariables()
                                     static_cast<int>(this->stateData->gridSize));
 	this->collision = false;
 	this->type = TileTypes::DEFAULT;
-	this->cameraSpeed = 100.f;
+	this->cameraSpeed = 200.f;
 	this->layer = 0;
 }
 
@@ -103,7 +103,7 @@ void EditorState::initGui()
 
     //Editor Screen Texture Position
 	this->textureSelector = new gui::TextureSelector(
-		10.f, 10.f, 300.f, 500.f,
+		10.f, 10.f, 1100.f, 800.f,
 		this->stateData->gridSize, this->tileMap->getTileSheet(),
 		this->font, "Tiles"
 		);
@@ -112,8 +112,8 @@ void EditorState::initGui()
 
 void EditorState::initTileMap()
 {
-	this->tileMap = new TileMap(this->stateData->gridSize, 1000, 1000,
-                                "../Resources/Images/TextureGround/grassSheet.png");
+	this->tileMap = new TileMap(this->stateData->gridSize, 300, 300,
+                                "../Resources/Images/TextureGround/forest.png");
 }
 
 EditorState::EditorState(StateData* state_data)

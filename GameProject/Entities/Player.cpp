@@ -19,8 +19,8 @@ Player::Player(float x, float y, sf::Texture& texture_sheet)
 
 	this->setPosition(x, y);
 
-    this->createHitboxComponent(this->sprite, 90.f, 70.f, 20.f, 40.f);
-	this->createMovementComponent(350.f, 1500.f, 500.f);
+    this->createHitboxComponent(this->sprite, 100,75.f, 20.f, 40.f);
+	this->createMovementComponent(300.f, 1000.f, 500.f);
 	this->createAnimationComponent(texture_sheet);
 
     this->animationComponent->addAnimation("IDLE", 10.f,
@@ -54,52 +54,43 @@ void Player::updateAnimation(const float & dt)
 {
 	if (this->attacking)
 	{
-		//Set origin depending on direction
-		if (this->sprite.getScale().x > 0.f) //Facing left
-		{
-			this->sprite.setOrigin(96.f, 0.f);
-		}
-		else //Facing right
-		{
-			this->sprite.setOrigin(258.f + 96.f, 0.f);
-		}
+        //Set origin depending on facing direction
+        if(this->sprite.getScale().x > 0.f) { //facing right
+
+            this->sprite.setOrigin(0.f,0.f);
+
+        } else { // Facing left
+
+            this->sprite.setOrigin( 220.f, 0.f);
+        }
 
 		//Animate and check for animation end
-		if (this->animationComponent->play("ATTACK", dt, true))
-		{
-			this->attacking = false;
-
-			if (this->sprite.getScale().x > 0.f) //Facing left
-			{
-				this->sprite.setOrigin(0.f, 0.f);
-			}
-			else //Facing right
-			{
-				this->sprite.setOrigin(258.f, 0.f);
-			}
-		}
-	}
+		if (this->animationComponent->play("ATTACK", dt, true)) {
+            this->attacking = false;
+            if(this->sprite.getScale().x > 0.f) { //facing right
+                this->sprite.setOrigin(0.f,0.f);
+            } else { // Facing left
+                this->sprite.setOrigin(220.f, 0.f);
+            }
+        }
+    }
 	if (this->movementComponent->getState(IDLE))
 	{
 		this->animationComponent->play("IDLE", dt);
 	}
-	else if (this->movementComponent->getState(MOVING_LEFT))
-	{
-		if (this->sprite.getScale().x < 0.f)
-		{
-			this->sprite.setOrigin(0.f, 0.f);
-			this->sprite.setScale(1.f, 1.f);
-		}
+    else if(this->movementComponent->getState(MOVING_RIGHT)) {
+        if (this->sprite.getScale().x < 0.f) {
+            this->sprite.setOrigin(0.f, 0.f);
+            this->sprite.setScale(1.f,1.f);
+        }
+        this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x,
+                                       this->movementComponent->getMaxVelocity());
 
-		this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x, this->movementComponent->getMaxVelocity());
-	}
-	else if (this->movementComponent->getState(MOVING_RIGHT))
-	{
-		if (this->sprite.getScale().x > 0.f)
-		{
-			this->sprite.setOrigin(258.f, 0.f);
-			this->sprite.setScale(-1.f, 1.f);
-		}
+    } else if (this->movementComponent->getState(MOVING_LEFT)) {
+        if (this->sprite.getScale().x > 0.f) {
+            this->sprite.setOrigin(220.f, 0.f);
+            this->sprite.setScale(-1.f, 1.f);
+        }
 
 		this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x, this->movementComponent->getMaxVelocity());
 	}
