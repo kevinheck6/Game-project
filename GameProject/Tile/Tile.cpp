@@ -30,6 +30,7 @@ const bool & Tile::getCollision() const {
 	return collision;
 }
 
+
 const sf::Vector2f & Tile::getPosition() const {
 	return shape.getPosition();
 }

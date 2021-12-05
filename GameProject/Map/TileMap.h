@@ -21,6 +21,8 @@ private:
 	sf::Texture tileSheet;
 	sf::RectangleShape collisionBox;
 
+    bool endGame = 0;
+
 	int fromX;
 	int toX;
 	int fromY;
@@ -42,7 +44,9 @@ public:
 	void saveToFile(const std::string& file_name);
 	void loadFromFile(const std::string& file_name);
 
+    bool updateEndGame() const;
 	void updateCollision(Entity* entity, const float& dt);
+    void updateType(Entity* entity, const float& dt);
 
 	void update();
 	void render(sf::RenderTarget& target, const sf::Vector2i& gridPosition);

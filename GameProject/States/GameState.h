@@ -3,6 +3,7 @@
 #include "../States/State.h"
 #include "../GUI/PauseMenu.h"
 #include "../Map/TileMap.h"
+#include "../Resources/Button.h"
 
 class PauseMenu;
 class Player;
@@ -14,6 +15,8 @@ private:
 	sf::View view;
 	sf::RenderTexture renderTexture;
 	sf::Sprite renderSprite;
+    bool endGame = false;
+    std::map<std::string, gui::Button*> buttons;
 
 	sf::Font font;
 	PauseMenu* pmenu;
@@ -32,17 +35,21 @@ private:
 	void initPauseMenu();
 	void initPlayers();
 	void initTileMap();
+    void initButtons();
 
 public:
 	explicit GameState(StateData* state_data);
 	~GameState() override;
 
 	//Functions
+    void updateEndgame(int endGame);
+    void updateButtons();
 	void updateView(const float& dt);
 	void updateInput(const float& dt) override;
 	void updatePlayerInput(const float& dt);
 	void updatePauseMenuButtons();
 	void updateTileMap(const float& dt);
 	void update(const float& dt) override;
+    void renderButtons(sf::RenderTarget& target);
 	void render(sf::RenderTarget* target) override;
 };

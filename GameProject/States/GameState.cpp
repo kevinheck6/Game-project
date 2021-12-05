@@ -66,12 +66,26 @@ void GameState::initTileMap() {
 	tileMap->loadFromFile("../Map/text.slmp");
 }
 
+void GameState::initButtons() {
+    this->buttons["STATE_EXIT"] = new gui::Button(
+            1000.f,650.f, 150.f, 68.f,
+            &this->font,"Exit game",70,
+            sf::Color(250, 70, 70, 200),
+            sf::Color(250, 250, 250, 250),
+            sf::Color(20, 20, 20, 50),
+
+            sf::Color(70, 70, 70, 0),
+            sf::Color(150, 150, 150, 0),
+            sf::Color(20, 20, 20, 0));
+
+}
 
 GameState::GameState(StateData* state_data)
 	: State(state_data) {
 	initDeferredRender();
 	initView();
 	initKeybinds();
+    initButtons();
 	initFonts();
 	initTextures();
 	initPauseMenu();
@@ -84,9 +98,30 @@ GameState::~GameState() {
 	delete pmenu;
 	delete player;
 	delete tileMap;
+
+    auto it = buttons.begin();
+    for (it = buttons.begin(); it != buttons.end(); ++it) {
+        delete it->second;
+    }
 }
 
 //Functions
+
+void GameState::updateEndgame(int gameState) {
+    this->endGame = gameState;
+    std::cout << endGame;
+}
+
+void GameState::updateButtons() {
+    for (auto &it : buttons) {
+        it.second->update(this->mousePosWindow);
+    }
+
+    if (buttons["STATE_EXIT"]->isPressed()) {
+        endState();
+    }
+}
+
 void GameState::updateView(const float & dt) {
 	view.setCenter(std::floor(player->getPosition().x), std::floor(player->getPosition().y));
 }
@@ -126,12 +161,16 @@ void GameState::updatePauseMenuButtons() {
 void GameState::updateTileMap(const float & dt) {
 	tileMap->update();
 	tileMap->updateCollision(player, dt);
+    tileMap->updateType(player, dt);
+    updateEndgame(tileMap->updateEndGame());
 }
 
 void GameState::update(const float& dt) {
 	updateMousePositions(&view);
 	updateKeytime(dt);
 	updateInput(dt);
+    updateButtons();// crashing
+
 	
 	if (!paused) {
 		updateView(dt);
@@ -143,6 +182,15 @@ void GameState::update(const float& dt) {
 		updatePauseMenuButtons();
 	}
 }
+
+void GameState::renderButtons(sf::RenderTarget &target) {
+    if(this->endGame) {
+        for (auto &it : buttons) {
+            it.second->render(target);
+        }
+    }
+}
+
 
 void GameState::render(sf::RenderTarget* target) {
 	if (!target) {
@@ -165,5 +213,13 @@ void GameState::render(sf::RenderTarget* target) {
 
 	this->renderTexture.display();
 	target->draw(renderSprite);
+    renderButtons(*target);
 }
+
+
+
+
+
+
+
 

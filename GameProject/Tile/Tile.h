@@ -1,7 +1,7 @@
 #pragma once
 
 // It will e the type of tile, each one will have different interactions
-enum TileTypes {DEFAULT = 0, DAMAGING, DOODAD};
+enum TileTypes {DEFAULT = 0, ENDGAME = 1, DOODAD};
 
 class Tile {
 private:

@@ -198,6 +198,10 @@ void TileMap::loadFromFile(const std::string& file_name) {
 	in_file.close();
 }
 
+bool TileMap::updateEndGame() const {
+    return this->endGame;
+}
+
 void TileMap::updateCollision(Entity * entity, const float& dt) {
 	//Bounds of the word size
 	if (entity->getPosition().x < 0.f) {
@@ -299,6 +303,56 @@ void TileMap::updateCollision(Entity * entity, const float& dt) {
 	}
 }
 
+void TileMap::updateType(Entity *entity, const float &dt) {
+    for (int x = fromX; x < toX; x++) {
+        for (int y = fromY; y < toY; y++) {
+            for (auto & k : map[x][y][layer]) {
+                sf::FloatRect playerBounds = entity->getGlobalBounds();
+                sf::FloatRect wallBounds = k->getGlobalBounds();
+                sf::FloatRect nextPositionBounds = entity->getNextPositionBounds(dt);
+
+                if ((k->getType() == 1) && k->intersects(nextPositionBounds)) {
+                    //Bottom collision
+                    if (playerBounds.top < wallBounds.top &&
+                        playerBounds.top + playerBounds.height < wallBounds.top + wallBounds.height &&
+                        playerBounds.left < wallBounds.left + wallBounds.width &&
+                        playerBounds.left + playerBounds.width > wallBounds.left) {
+
+                        endGame = true;
+                    }
+
+                        //Collision for top conner
+                    else if (playerBounds.top > wallBounds.top &&
+                             playerBounds.top + playerBounds.height > wallBounds.top + wallBounds.height &&
+                             playerBounds.left < wallBounds.left + wallBounds.width &&
+                             playerBounds.left + playerBounds.width > wallBounds.left) {
+
+                        endGame = true;
+                    }
+
+                    //Collision for Right conner
+                    if (playerBounds.left < wallBounds.left &&
+                        playerBounds.left + playerBounds.width < wallBounds.left + wallBounds.width &&
+                        playerBounds.top < wallBounds.top + wallBounds.height &&
+                        playerBounds.top + playerBounds.height > wallBounds.top) {
+
+                        endGame = true;
+                    }
+
+                        //Collision for Left conner
+                    else if (playerBounds.left > wallBounds.left &&
+                             playerBounds.left + playerBounds.width > wallBounds.left + wallBounds.width &&
+                             playerBounds.top < wallBounds.top + wallBounds.height &&
+                             playerBounds.top + playerBounds.height > wallBounds.top) {
+
+                        endGame = true;
+                    }
+                }
+            }
+        }
+    }
+}
+
 void TileMap::update() {}
 
 void TileMap::render(sf::RenderTarget & target, const sf::Vector2i& gridPosition) {
@@ -354,3 +408,7 @@ void TileMap::renderDeferred(sf::RenderTarget & target) {
 		deferredRenderStack.pop();
 	}
 }
+
+
+
+
