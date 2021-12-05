@@ -7,3 +7,5 @@ U can create your own Labyrinth and it works in a really simple way, u have the 
 if u want to a tile to colide u type C and all the tiles will be in colide mode, if u want your tile to be the Win Game tile u press the Up command in your keyboard and choose type 1
 
 That's all, enjoy your own maze game 
+
+The set made map you win if u find the special flower)
