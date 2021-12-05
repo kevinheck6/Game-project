@@ -62,6 +62,7 @@ void Player::updateAnimation(const float & dt) {
             sprite.setOrigin(0.f, 0.f);
             sprite.setScale(1.f,1.f);
         }
+
         this->animationComponent->play("WALK", dt, movementComponent->getVelocity().x,
                                        movementComponent->getMaxVelocity());
 
@@ -73,11 +74,16 @@ void Player::updateAnimation(const float & dt) {
 
 		animationComponent->play("WALK", dt, movementComponent->getVelocity().x,
                                  movementComponent->getMaxVelocity());
-	} else if (movementComponent->getState(MOVING_UP)) {
+	} else if (movementComponent->getState(MOVING_UP)) { // If character is moving up animation
 		animationComponent->play("WALK", dt,
                                  movementComponent->getVelocity().y,
                                  movementComponent->getMaxVelocity());
-	}
+	} else if (movementComponent->getState(MOVING_DOWN)) { // If character is moving down animation
+        animationComponent->play("WALK", dt,
+                                 movementComponent->getVelocity().y,
+                                 movementComponent->getMaxVelocity());
+}
+
 }
 
 void Player::update(const float & dt) {

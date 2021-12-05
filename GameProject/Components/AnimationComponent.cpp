@@ -42,8 +42,8 @@ const bool& AnimationComponent::play(const std::string& key, const float & dt, c
 			}
 		}
 	}
-	else {  //Play animation of no other priority animation is set
-		//If this is a priority animation, set it.
+	else {  //Play animation if no priority
+		//check if it's priority animation
 		if (priority) {
 			priorityAnimation = animations[key];
 		}

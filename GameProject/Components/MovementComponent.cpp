@@ -86,10 +86,7 @@ void MovementComponent::move(const float dir_x, const float dir_y, const float& 
 }
 
 void MovementComponent::update(const float & dt) {
-	/*
-	Decelerates the sprite and controls the maximum velocity.
-	Moves the sprite.
-	*/
+	//Moves the sprite.
 
     // Positive x
 	if (velocity.x > 0.f) {
