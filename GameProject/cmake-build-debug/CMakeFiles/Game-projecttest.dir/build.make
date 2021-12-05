@@ -248,22 +248,9 @@ CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.cpp -o CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.s
 
-CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.o: CMakeFiles/Game-projecttest.dir/flags.make
-CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.o: ../States/SettingsState.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.o -c /home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.cpp
-
-CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.cpp > CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.i
-
-CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.cpp -o CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.s
-
 CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.o: CMakeFiles/Game-projecttest.dir/flags.make
 CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.o: ../Map/TileMap.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.o -c /home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.cpp
 
 CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.i: cmake_force
@@ -276,7 +263,7 @@ CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.s: cmake_force
 
 CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.o: CMakeFiles/Game-projecttest.dir/flags.make
 CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.o: ../Head\ Files/PreCompiledHeaders.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.o -c "/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.cpp"
 
 CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.i: cmake_force
@@ -289,7 +276,7 @@ CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.s: cmake_force
 
 CMakeFiles/Game-projecttest.dir/Resources/GraphicsSettings.cpp.o: CMakeFiles/Game-projecttest.dir/flags.make
 CMakeFiles/Game-projecttest.dir/Resources/GraphicsSettings.cpp.o: ../Resources/GraphicsSettings.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Game-projecttest.dir/Resources/GraphicsSettings.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Game-projecttest.dir/Resources/GraphicsSettings.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Game-projecttest.dir/Resources/GraphicsSettings.cpp.o -c /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/GraphicsSettings.cpp
 
 CMakeFiles/Game-projecttest.dir/Resources/GraphicsSettings.cpp.i: cmake_force
@@ -316,7 +303,6 @@ Game__projecttest_OBJECTS = \
 "CMakeFiles/Game-projecttest.dir/Components/HitBoxComponent.cpp.o" \
 "CMakeFiles/Game-projecttest.dir/Tile/Tile.cpp.o" \
 "CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.o" \
-"CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.o" \
 "CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.o" \
 "CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.o" \
 "CMakeFiles/Game-projecttest.dir/Resources/GraphicsSettings.cpp.o"
@@ -338,7 +324,6 @@ Game-projecttest: CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o
 Game-projecttest: CMakeFiles/Game-projecttest.dir/Components/HitBoxComponent.cpp.o
 Game-projecttest: CMakeFiles/Game-projecttest.dir/Tile/Tile.cpp.o
 Game-projecttest: CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.o
-Game-projecttest: CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.o
 Game-projecttest: CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.o
 Game-projecttest: CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.o
 Game-projecttest: CMakeFiles/Game-projecttest.dir/Resources/GraphicsSettings.cpp.o
@@ -348,7 +333,7 @@ Game-projecttest: /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1
 Game-projecttest: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 Game-projecttest: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 Game-projecttest: CMakeFiles/Game-projecttest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable Game-projecttest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kevin/CLionProjects/Game-projecttest/GameProject/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable Game-projecttest"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Game-projecttest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

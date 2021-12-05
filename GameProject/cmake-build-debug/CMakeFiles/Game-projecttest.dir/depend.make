@@ -34,8 +34,7 @@ CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.o: \
  ../Head\ Files/PreCompiledHeaders.h \
  ../Resources/Button.h
 CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.o: \
- ../Head\ Files/PreCompiledHeaders.cpp \
- ../Head\ Files/PreCompiledHeaders.h
+ ../Head\ Files/PreCompiledHeaders.cpp
 CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.o: \
  ../Components/AnimationComponent.h \
  ../Components/HitBoxComponent.h \
@@ -69,7 +68,6 @@ CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o: \
  ../States/EditorState.h \
  ../States/GameState.h \
  ../States/MainMenuState.h \
- ../States/SettingsState.h \
  ../States/State.h \
  ../Tile/Tile.h
 CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o: \
@@ -88,7 +86,6 @@ CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o: \
  ../States/EditorState.h \
  ../States/GameState.h \
  ../States/MainMenuState.h \
- ../States/SettingsState.h \
  ../States/State.h \
  ../Tile/Tile.h
 CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o: \
@@ -136,21 +133,8 @@ CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o: \
  ../States/GameState.h \
  ../States/MainMenuState.cpp \
  ../States/MainMenuState.h \
- ../States/SettingsState.h \
  ../States/State.h \
  ../Tile/Tile.h
-CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.o: \
- ../Components/AnimationComponent.h \
- ../Components/HitBoxComponent.h \
- ../Components/MovementComponent.h \
- ../Entities/Entity.h \
- ../Entities/Player.h \
- ../Head\ Files/PreCompiledHeaders.h \
- ../Resources/Button.h \
- ../Resources/GraphicsSettings.h \
- ../States/SettingsState.cpp \
- ../States/SettingsState.h \
- ../States/State.h
 CMakeFiles/Game-projecttest.dir/States/State.cpp.o: \
  ../Components/AnimationComponent.h \
  ../Components/HitBoxComponent.h \

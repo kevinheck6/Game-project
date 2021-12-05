@@ -489,30 +489,6 @@ States/MainMenuState.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.s
 .PHONY : States/MainMenuState.cpp.s
 
-States/SettingsState.o: States/SettingsState.cpp.o
-.PHONY : States/SettingsState.o
-
-# target to build an object file
-States/SettingsState.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.o
-.PHONY : States/SettingsState.cpp.o
-
-States/SettingsState.i: States/SettingsState.cpp.i
-.PHONY : States/SettingsState.i
-
-# target to preprocess a source file
-States/SettingsState.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.i
-.PHONY : States/SettingsState.cpp.i
-
-States/SettingsState.s: States/SettingsState.cpp.s
-.PHONY : States/SettingsState.s
-
-# target to generate assembly for a file
-States/SettingsState.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.s
-.PHONY : States/SettingsState.cpp.s
-
 States/State.o: States/State.cpp.o
 .PHONY : States/State.o
 
@@ -615,9 +591,6 @@ help:
 	@echo "... States/MainMenuState.o"
 	@echo "... States/MainMenuState.i"
 	@echo "... States/MainMenuState.s"
-	@echo "... States/SettingsState.o"
-	@echo "... States/SettingsState.i"
-	@echo "... States/SettingsState.s"
 	@echo "... States/State.o"
 	@echo "... States/State.i"
 	@echo "... States/State.s"

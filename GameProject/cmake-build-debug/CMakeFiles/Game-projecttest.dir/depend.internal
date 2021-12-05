@@ -35,7 +35,6 @@ CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
 CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.cpp
- /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
 CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.h
@@ -69,7 +68,6 @@ CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.h
 CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o
@@ -88,7 +86,6 @@ CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.h
 CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o
@@ -136,21 +133,8 @@ CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.cpp
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.h
-CMakeFiles/Game-projecttest.dir/States/SettingsState.cpp.o
- /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/GraphicsSettings.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.cpp
- /home/kevin/CLionProjects/Game-projecttest/GameProject/States/SettingsState.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
 CMakeFiles/Game-projecttest.dir/States/State.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.h
