@@ -9,8 +9,7 @@ class Player;
 class TileMap;
 
 class GameState :
-	public State
-{
+	public State {
 private:
 	sf::View view;
 	sf::RenderTexture renderTexture;
@@ -35,15 +34,15 @@ private:
 	void initTileMap();
 
 public:
-	GameState(StateData* state_data);
-	virtual ~GameState();
+	explicit GameState(StateData* state_data);
+	~GameState() override;
 
 	//Functions
 	void updateView(const float& dt);
-	void updateInput(const float& dt);
+	void updateInput(const float& dt) override;
 	void updatePlayerInput(const float& dt);
 	void updatePauseMenuButtons();
 	void updateTileMap(const float& dt);
-	void update(const float& dt);
-	void render(sf::RenderTarget* target = nullptr);
+	void update(const float& dt) override;
+	void render(sf::RenderTarget* target) override;
 };

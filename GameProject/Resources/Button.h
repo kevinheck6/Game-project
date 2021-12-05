@@ -1,12 +1,9 @@
-#ifndef GUI_H
-#define GUI_H
+#pragma once
 
 enum button_states{BTN_IDLE = 0, BTN_HOVER, BTN_ACTIVE};
 
-namespace gui
-{
-	class Button
-	{
+namespace gui {
+	class Button {
 	private:
 		short unsigned buttonState;
 		short unsigned id;
@@ -29,7 +26,7 @@ namespace gui
 
 	public:
 		Button(float x, float y, float width, float height,
-			sf::Font* font, std::string text, unsigned character_size,
+			sf::Font* font, const std::string& text, unsigned character_size,
 			sf::Color text_idle_color, sf::Color text_hover_color, sf::Color text_active_color,
 			sf::Color idle_color, sf::Color hover_color, sf::Color active_color,
 			sf::Color outline_idle_color = sf::Color::Transparent, sf::Color outline_hover_color = sf::Color::Transparent, sf::Color outline_active_color = sf::Color::Transparent,
@@ -37,13 +34,13 @@ namespace gui
 		~Button();
 
 		//Accessors
-		const bool isPressed() const;
-		const std::string getText() const;
+		bool isPressed() const;
+		std::string getText() const;
 		const short unsigned& getId() const;
 
 		//Modifiers
-		void setText(const std::string text);
-		void setId(const short unsigned id);
+		void setText(std::string text);
+		void setId(short unsigned id);
 
 		//Functions
 		void update(const sf::Vector2i& mousePosWindow);
@@ -77,8 +74,7 @@ namespace gui
 		void render(sf::RenderTarget& target);
 	};
 
-	class TextureSelector
-	{
+	class TextureSelector {
 	private:
 		float keytime;
 		const float keytimeMax;
@@ -95,7 +91,7 @@ namespace gui
 	public:
 		TextureSelector(float x, float y, float width, float height, 
 			float gridSize, const sf::Texture* texture_sheet, 
-			sf::Font& font, std::string text);
+			sf::Font& font, const std::string& text);
 		~TextureSelector();
 
 		//Accessors
@@ -103,11 +99,9 @@ namespace gui
 		const sf::IntRect& getTextureRect() const;
 
 		//Functions
-		const bool getKeytime();
+		bool getKeytime();
 		void updateKeytime(const float& dt);
 		void update(const sf::Vector2i& mousePosWindow, const float& dt);
 		void render(sf::RenderTarget& target);
 	};
 }
-
-#endif

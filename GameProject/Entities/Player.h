@@ -1,31 +1,26 @@
-#ifndef PLAYER_H
-#define PLAYER_H
-
+#pragma once
 #include "../Entities/Entity.h"
 
 class Entity;
 
 class Player :
-	public Entity
-{
+	public Entity {
 private:
 	//Variables
-	bool attacking;
+	bool attacking{};
 
 	//Initializer functions
 	void initVariables();
-	void initComponents();
 
 public:
 	Player(float x, float y, sf::Texture& texture_sheet);
-	virtual ~Player();
+	~Player() override;
 
 	//Functions
 	void updateAttack();
 	void updateAnimation(const float& dt);
-	void update(const float& dt);
+	void update(const float& dt) override;
 
-	void render(sf::RenderTarget& target);
+	void render(sf::RenderTarget& target) override;
 };
 
-#endif

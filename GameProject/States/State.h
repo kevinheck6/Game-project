@@ -3,12 +3,11 @@
 #include "../Entities/Player.h"
 #include "../Resources/GraphicsSettings.h"
 
+class State;
 class Player;
 class GraphicsSettings;
-class State;
 
-class StateData
-{
+class StateData {
 public:
 	StateData() {};
 
@@ -20,8 +19,7 @@ public:
 	std::stack<State*>* states;
 };
 
-class State
-{
+class State {
 private:
 
 protected:
@@ -36,7 +34,6 @@ protected:
 	float keytimeMax;
 	float gridSize;
 
-	sf::Vector2i mousePosScreen;
 	sf::Vector2i mousePosWindow;
 	sf::Vector2f mousePosView;
 	sf::Vector2i mousePosGrid;
@@ -53,16 +50,16 @@ public:
 
 	//Accessors
 	const bool& getQuit() const;
-	const bool getKeytime();
+	bool getKeytime();
 
 	//Functions	
 	void endState(); 
 	void pauseState();
 	void unpauseState();
 
-	virtual void updateMousePositions(sf::View* view = NULL);
+	virtual void updateMousePositions(sf::View* view = nullptr);
 	virtual void updateKeytime(const float& dt);
 	virtual void updateInput(const float& dt) = 0;
 	virtual void update(const float& dt) = 0;
-	virtual void render(sf::RenderTarget* target = NULL) = 0;
+	virtual void render(sf::RenderTarget* target = nullptr) = 0;
 };

@@ -1,9 +1,9 @@
 #pragma once
 
+// It will e the type of tile, each one will have different interactions
 enum TileTypes {DEFAULT = 0, DAMAGING, DOODAD};
 
-class Tile
-{
+class Tile {
 private:
 
 protected:
@@ -23,9 +23,9 @@ public:
 	//Functions
 	const bool & getCollision() const;
 	const sf::Vector2f& getPosition() const;
-	const sf::FloatRect getGlobalBounds() const;
-	const bool intersects(const sf::FloatRect bounds) const;
-	const std::string getAsString() const;
+	sf::FloatRect getGlobalBounds() const;
+	bool intersects(sf::FloatRect bounds) const;
+	std::string getAsString() const;
 
 	void update();
 	void render(sf::RenderTarget& target);

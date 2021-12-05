@@ -1,8 +1,7 @@
 
 #include "../States/State.h"
 
-State::State(StateData* state_data)
-{
+State::State(StateData* state_data) {
 	this->stateData = state_data;
 	this->window = state_data->window;
 	this->supportedKeys = state_data->supportedKeys;
@@ -14,64 +13,51 @@ State::State(StateData* state_data)
 	this->gridSize = state_data->gridSize;
 }
 
-State::~State()
-{
-	
-}
+State::~State() = default;
 
 //Accessors
-const bool & State::getQuit() const
-{
-	return this->quit;
+const bool & State::getQuit() const {
+	return quit;
 }
 
-const bool State::getKeytime()
-{
-	if (this->keytime >= this->keytimeMax)
-	{
-		this->keytime = 0.f;
+bool State::getKeytime() {
+	if (keytime >= keytimeMax) {
+		keytime = 0.f;
 		return true;
 	}
-
 	return false;
 }
 
 //Functions
-void State::endState()
-{
-	this->quit = true;
+void State::endState() {
+	quit = true;
 }
 
-void State::pauseState()
-{
-	this->paused = true;
+void State::pauseState() {
+	paused = true;
 }
 
-void State::unpauseState()
-{
-	this->paused = false;
+void State::unpauseState() {
+	paused = false;
 }
 
-void State::updateMousePositions(sf::View* view)
-{
-	this->mousePosScreen = sf::Mouse::getPosition();
-	this->mousePosWindow = sf::Mouse::getPosition(*this->window);
+void State::updateMousePositions(sf::View* view) {
 
-	if(view)
-		this->window->setView(*view);
+	this->mousePosWindow = sf::Mouse::getPosition(*window);
 
-	this->mousePosView = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window));
-	this->mousePosGrid = 
-		sf::Vector2i(
-			static_cast<int>(this->mousePosView.x) / static_cast<int>(this->gridSize),
-			static_cast<int>(this->mousePosView.y) / static_cast<int>(this->gridSize)
-		);
-	
-	this->window->setView(this->window->getDefaultView());
+	if(view) {
+        window->setView(*view);
+    }
+
+	mousePosView = window->mapPixelToCoords(sf::Mouse::getPosition(*window));
+	mousePosGrid = sf::Vector2i(
+			static_cast<int>(mousePosView.x) / static_cast<int>(gridSize),
+			static_cast<int>(mousePosView.y) / static_cast<int>(gridSize));
+	window->setView(window->getDefaultView());
 }
 
-void State::updateKeytime(const float& dt)
-{
-	if (this->keytime < this->keytimeMax)
-		this->keytime += 50.f * dt;
+void State::updateKeytime(const float& dt) {
+	if (keytime < keytimeMax) {
+        keytime += 50.f * dt;
+    }
 }

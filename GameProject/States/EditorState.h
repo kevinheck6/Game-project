@@ -5,32 +5,24 @@
 #include "../GUI/PauseMenu.h"
 #include "../Map/TileMap.h"
 
-class State;
-class Gui;
-class PauseMenu;
 class TileMap;
+class State;
+class PauseMenu;
+
 
 class EditorState :
-	public State
-{
+	public State {
 private:
 	//Variables
 	sf::View view;
-
 	sf::Font font;
 	sf::Text cursorText;
 	PauseMenu* pmenu;
-
 	std::map<std::string, gui::Button*> buttons;
-
 	TileMap* tileMap;
-
 	sf::RectangleShape sidebar;
-
 	sf::RectangleShape selectorRect;
-
 	gui::TextureSelector* textureSelector;
-
 	sf::IntRect textureRect;
 	bool collision;
 	short type;
@@ -43,25 +35,25 @@ private:
 	void initBackground();
 	void initFonts();
 	void initText();
-	void initKeybinds();
+	void initKeybinds() override;
 	void initPauseMenu();
 	void initButtons();
 	void initGui();
 	void initTileMap();
 
 public:
-	EditorState(StateData* state_data);
-	virtual ~EditorState();
+	explicit EditorState(StateData* state_data);
+	~EditorState() override;
 
 	//Functions
-	void updateInput(const float& dt);
+	void updateInput(const float& dt) override;
 	void updateEditorInput(const float& dt);
 	void updateButtons();
 	void updateGui(const float& dt);
 	void updatePauseMenuButtons();
-	void update(const float& dt);
+	void update(const float& dt) override;
 	void renderButtons(sf::RenderTarget& target);
 	void renderGui(sf::RenderTarget& target);
-	void render(sf::RenderTarget* target = NULL);
+	void render(sf::RenderTarget* target) override;
 };
 

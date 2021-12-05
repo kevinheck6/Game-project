@@ -1,31 +1,23 @@
 #include "../Head Files/PreCompiledHeaders.h"
 #include "../States/SettingsState.h"
 
-void SettingsState::initVariables()
-{
-	this->modes = sf::VideoMode::getFullscreenModes();
+void SettingsState::initVariables() {
+	modes = sf::VideoMode::getFullscreenModes();
 }
 
-void SettingsState::initBackground()
-{
-	this->background.setSize(
-		sf::Vector2f
-		(
-			static_cast<float>(this->window->getSize().x),
-			static_cast<float>(this->window->getSize().y)
-		)
-	);
+void SettingsState::initBackground() {
+	background.setSize(sf::Vector2f(
+			static_cast<float>(window->getSize().x),
+			static_cast<float>(window->getSize().y)));
 
-	if (!this->backgroundTexture.loadFromFile("../Resources/Images/Background/MainMenuImage.png"))
-	{
+	if (!backgroundTexture.loadFromFile("../Resources/Images/Background/MainMenuImage.png")) {
 		throw "ERROR::MAIN_MENU_STATE::FAILED_TO_LOAD_BACKGROUND_TEXTURE";
 	}
 
-	this->background.setTexture(&this->backgroundTexture);
+	background.setTexture(&backgroundTexture);
 }
 
-void SettingsState::initFonts()
-{
+void SettingsState::initFonts() {
 	if (!this->font.loadFromFile("../Fonts/Amatic-Bold.ttf"))
 	{
 		throw("ERROR::MAINMENUSTATE::COULD NOT LOAD FONT");

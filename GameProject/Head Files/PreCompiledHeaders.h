@@ -1,7 +1,5 @@
-// header.h
 #pragma once
 
-//Core
 #include <algorithm>
 #include <deque>
 #include <iostream>
@@ -18,7 +16,6 @@
 #include <fstream>
 #include <cmath>
 
-//SFML
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>

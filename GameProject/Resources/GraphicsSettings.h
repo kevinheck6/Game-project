@@ -1,8 +1,6 @@
-#ifndef GRAPHICSSETTINGS_H
-#define GRAPHICSSETTINGS_H
+#pragma once
 
-class GraphicsSettings
-{
+class GraphicsSettings {
 public:
 	GraphicsSettings();
 
@@ -16,8 +14,6 @@ public:
 	std::vector<sf::VideoMode> videoModes;
 
 	//Functions
-	void saveToFile(const std::string path);
-	void loadFromFile(const std::string path);
+	void loadFromFile(const std::string& path);
 };
 
-#endif // !GRAPHICSSETTINGS_H

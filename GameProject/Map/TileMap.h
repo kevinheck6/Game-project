@@ -6,8 +6,7 @@
 class Tile;
 class Entity;
 
-class TileMap
-{
+class TileMap {
 private:
 	void clear();
 
@@ -22,7 +21,6 @@ private:
 	sf::Texture tileSheet;
 	sf::RectangleShape collisionBox;
 
-	//Culling
 	int fromX;
 	int toX;
 	int fromY;
@@ -30,18 +28,19 @@ private:
 	int layer;
 
 public:
-	TileMap(float gridSize, int width, int height, std::string texture_file);
+	TileMap(float gridSize, int width, int height, const std::string& texture_file);
 	virtual ~TileMap();
 
 	//Accessors
 	const sf::Texture* getTileSheet() const;
-	const int getLayerSize(const int x, const int y, const int layer) const;
+	int getLayerSize(int x, int y, int layerL) const;
 
 	//Functions
-	void addTile(const int x, const int y, const int z, const sf::IntRect& texture_rect, const bool& collision, const short& type);
-	void removeTile(const int x, const int y, const int z);
-	void saveToFile(const std::string file_name);
-	void loadFromFile(const std::string file_name);
+	void addTile(int x, int y, int z, const sf::IntRect& texture_rect,
+                 const bool& collision, const short& type);
+	void removeTile(int x, int y, int z);
+	void saveToFile(const std::string& file_name);
+	void loadFromFile(const std::string& file_name);
 
 	void updateCollision(Entity* entity, const float& dt);
 

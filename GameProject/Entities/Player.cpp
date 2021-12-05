@@ -2,122 +2,92 @@
 #include "../Entities/Player.h"
 
 //Initializer functions
-void Player::initVariables()
-{
-	this->attacking = false;
+void Player::initVariables() {
+	attacking = false;
 }
 
-void Player::initComponents()
-{
-
-}
-
-//Constructors / Destructors
-Player::Player(float x, float y, sf::Texture& texture_sheet)
-{
-	this->initVariables();
+Player::Player(float x, float y, sf::Texture& texture_sheet) {
+	initVariables();
 
 	this->setPosition(x, y);
 
-    this->createHitboxComponent(this->sprite, 100,75.f, 20.f, 40.f);
-	this->createMovementComponent(300.f, 1000.f, 500.f);
-	this->createAnimationComponent(texture_sheet);
+    createHitboxComponent(sprite, 100,75.f, 20.f, 40.f);
+	createMovementComponent(300.f, 1000.f, 500.f);
+	createAnimationComponent(texture_sheet);
 
-    this->animationComponent->addAnimation("IDLE", 10.f,
+    animationComponent->addAnimation("IDLE", 10.f,
                                            0, 0,
                                            10, 0, 180, 180);
 
-    this->animationComponent->addAnimation("WALK", 10.f,
+    animationComponent->addAnimation("WALK", 10.f,
                                            2, 1,
                                            7, 1, 180, 180);
 
-    this->animationComponent->addAnimation("ATTACK", 9.f,
+    animationComponent->addAnimation("ATTACK", 9.f,
                                            0, 2,
                                            6, 2, 180, 180);
 }
 
-Player::~Player()
-{
-
-}
+Player::~Player() = default;
 
 //Functions
-void Player::updateAttack()
-{
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-	{
-		this->attacking = true;
+void Player::updateAttack() {
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+		attacking = true;
 	}
 }
 
-void Player::updateAnimation(const float & dt)
-{
-	if (this->attacking)
-	{
+void Player::updateAnimation(const float & dt) {
+	if (attacking) {
         //Set origin depending on facing direction
-        if(this->sprite.getScale().x > 0.f) { //facing right
-
-            this->sprite.setOrigin(0.f,0.f);
-
+        if(sprite.getScale().x > 0.f) { //facing right
+            sprite.setOrigin(0.f,0.f);
         } else { // Facing left
-
-            this->sprite.setOrigin( 220.f, 0.f);
+            sprite.setOrigin( 220.f, 0.f);
         }
-
 		//Animate and check for animation end
-		if (this->animationComponent->play("ATTACK", dt, true)) {
-            this->attacking = false;
-            if(this->sprite.getScale().x > 0.f) { //facing right
-                this->sprite.setOrigin(0.f,0.f);
+		if (animationComponent->play("ATTACK", dt, true)) {
+            attacking = false;
+            if(sprite.getScale().x > 0.f) { //facing right
+                sprite.setOrigin(0.f,0.f);
             } else { // Facing left
-                this->sprite.setOrigin(220.f, 0.f);
+                sprite.setOrigin(220.f, 0.f);
             }
         }
     }
-	if (this->movementComponent->getState(IDLE))
-	{
-		this->animationComponent->play("IDLE", dt);
-	}
-    else if(this->movementComponent->getState(MOVING_RIGHT)) {
-        if (this->sprite.getScale().x < 0.f) {
-            this->sprite.setOrigin(0.f, 0.f);
-            this->sprite.setScale(1.f,1.f);
+	if (movementComponent->getState(IDLE)) {
+		animationComponent->play("IDLE", dt);
+	} else if(movementComponent->getState(MOVING_RIGHT)) {
+        if (sprite.getScale().x < 0.f) {
+            sprite.setOrigin(0.f, 0.f);
+            sprite.setScale(1.f,1.f);
         }
-        this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x,
-                                       this->movementComponent->getMaxVelocity());
+        this->animationComponent->play("WALK", dt, movementComponent->getVelocity().x,
+                                       movementComponent->getMaxVelocity());
 
-    } else if (this->movementComponent->getState(MOVING_LEFT)) {
-        if (this->sprite.getScale().x > 0.f) {
-            this->sprite.setOrigin(220.f, 0.f);
-            this->sprite.setScale(-1.f, 1.f);
+    } else if (movementComponent->getState(MOVING_LEFT)) {
+        if (sprite.getScale().x > 0.f) {
+            sprite.setOrigin(220.f, 0.f);
+            sprite.setScale(-1.f, 1.f);
         }
 
-		this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x, this->movementComponent->getMaxVelocity());
-	}
-	else if (this->movementComponent->getState(MOVING_UP))
-	{
-		this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().y, this->movementComponent->getMaxVelocity());
-	}
-	else if (this->movementComponent->getState(MOVING_DOWN))
-	{
-		this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().y, this->movementComponent->getMaxVelocity());
+		animationComponent->play("WALK", dt, movementComponent->getVelocity().x,
+                                 movementComponent->getMaxVelocity());
+	} else if (movementComponent->getState(MOVING_UP)) {
+		animationComponent->play("WALK", dt,
+                                 movementComponent->getVelocity().y,
+                                 movementComponent->getMaxVelocity());
 	}
 }
 
-void Player::update(const float & dt)
-{
-	this->movementComponent->update(dt);
-	
-	this->updateAttack();
-
-	this->updateAnimation(dt);
-	
-	this->hitboxComponent->update();
+void Player::update(const float & dt) {
+	movementComponent->update(dt);
+    updateAttack();
+    updateAnimation(dt);
+    hitboxComponent->update();
 }
 
-void Player::render(sf::RenderTarget & target)
-{
-	target.draw(this->sprite);
-
-	this->hitboxComponent->render(target);
+void Player::render(sf::RenderTarget & target) {
+	target.draw(sprite);
+    hitboxComponent->render(target);
 }

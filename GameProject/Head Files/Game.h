@@ -1,26 +1,23 @@
 #pragma once
-
 #include "../States/MainMenuState.h"
 
-class Game
-{
+class Game {
 private:
 	//Variables
 	GraphicsSettings gfxSettings;
 	StateData stateData;
-	sf::RenderWindow *window;
-	sf::Event sfEvent;
+	sf::RenderWindow *window{};
+	sf::Event sfEvent{};
 
 	sf::Clock dtClock;
-	float dt;
+	float dt{};
 
 	std::stack<State*> states;
 
 	std::map<std::string, int> supportedKeys;
 
-	float gridSize;
+	float gridSize{};
 
-	//Initialization
 	void initVariables();
 	void initGraphicsSettings();
 	void initWindow();
@@ -29,21 +26,15 @@ private:
 	void initStates();
 
 public:
-	//Constructors/Destructors
 	Game();
 	virtual ~Game();
 
-	//Functions
+	static void endApplication();
 
-	//Regular
-	void endApplication();
-
-	//Update
 	void updateDt();
 	void updateSFMLEvents();
 	void update();
 
-	//Render
 	void render();
 
 	//Core
