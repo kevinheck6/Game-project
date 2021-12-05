@@ -11,7 +11,7 @@ void Game::initVariables() {
 }
 
 void Game::initGraphicsSettings() {
-	gfxSettings.loadFromFile("../Config/Graphics.ini");
+	gfxSettings.loadFromFile("../Config/Graphics_settings.ini");
 }
 
 void Game::initWindow() {
@@ -82,7 +82,7 @@ Game::~Game() {
 
 //Functions
 void Game::endApplication() {
-	std::cout << "Ending Application!" << "\n";
+	std::cout << "Game closed" << "\n";
 }
 
 void Game::updateDt() {

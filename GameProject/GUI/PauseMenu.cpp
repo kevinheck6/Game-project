@@ -3,19 +3,19 @@
 
 PauseMenu::PauseMenu(sf::RenderWindow& window, sf::Font& font)
 	: font(font) {
-	//Init background
+	//Initialize the background
 	background.setSize(
 		sf::Vector2f(static_cast<float>(window.getSize().x),static_cast<float>(window.getSize().y)));
 	background.setFillColor(sf::Color(20, 20, 20, 100));
 
-	//Init container
+	//Initialize the container
 	container.setSize(sf::Vector2f(
             static_cast<float>(window.getSize().x) / 4.f,
             static_cast<float>(window.getSize().y) - 100.f));
 	container.setFillColor(sf::Color(20, 20, 20, 200));
 	container.setPosition(static_cast<float>(window.getSize().x) / 2.f - container.getSize().x / 2.f,30.f);
 
-	//Init text
+	//Initialize the text
 	menuText.setFont(font);
 	menuText.setFillColor(sf::Color(255, 255, 255, 200));
 	menuText.setCharacterSize(60);

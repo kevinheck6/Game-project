@@ -1,5 +1,5 @@
-#include"../Head Files/PreCompiledHeaders.h"
-#include"GraphicsSettings.h"
+#include "../Head Files/PreCompiledHeaders.h"
+#include "../Resources/GraphicsSettings.h"
 
 GraphicsSettings::GraphicsSettings() {
 	title = "DEFAULT";

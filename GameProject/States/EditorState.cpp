@@ -32,7 +32,7 @@ void EditorState::initFonts() {
 }
 
 void EditorState::initText() {
-	cursorText.setFont(this->font);
+	cursorText.setFont(font);
 	cursorText.setFillColor(sf::Color::White);
 	cursorText.setCharacterSize(30);
 	cursorText.setPosition(mousePosView.x, mousePosView.y);
@@ -40,14 +40,14 @@ void EditorState::initText() {
 
 void EditorState::initKeybinds() {
 
-	std::ifstream ifs("../Config/EditorState_KeyBind.ini");
+	std::ifstream ifs("../Config/EditorState_Keys.ini");
 
 	if (ifs.is_open()) {
 		std::string key;
 		std::string key2;
 
 		while (ifs >> key >> key2) {
-			this->keybinds[key] = this->supportedKeys->at(key2);
+			keybinds[key] = supportedKeys->at(key2);
 		}
 	}
 
@@ -55,17 +55,17 @@ void EditorState::initKeybinds() {
 }
 
 void EditorState::initPauseMenu() {
-	this->pmenu = new PauseMenu(*this->window, this->font);
+	pmenu = new PauseMenu(*window, font);
 
-	this->pmenu->addButton("QUIT", 600.f, "Quit");
-	this->pmenu->addButton("SAVE", 200.f, "Save");
-	this->pmenu->addButton("LOAD", 400.f, "Load");
+	pmenu->addButton("EXIT", 600.f, "Quit");
+	pmenu->addButton("SAVE", 200.f, "Save");
+	pmenu->addButton("LOAD", 400.f, "Load");
 }
 
 void EditorState::initButtons() {}
 
 void EditorState::initGui() {
-    //SIDEBAR
+    //Show the SideBar in the Screen
     sidebar.setPosition(0.f,0.f);
 	sidebar.setSize(sf::Vector2f(static_cast<float>(stateData->gfxSettings->resolution.width),
             80.f));
@@ -73,7 +73,7 @@ void EditorState::initGui() {
 	sidebar.setOutlineColor(sf::Color(sf::Color::White));
 	sidebar.setOutlineThickness(1.f);
 
-    //RECTANGLE - MAP
+    //Show the Rectangle in the map
 	selectorRect.setSize(sf::Vector2f(stateData->gridSize, stateData->gridSize));
 
 	selectorRect.setFillColor(sf::Color(255, 255, 255, 150));
@@ -83,7 +83,7 @@ void EditorState::initGui() {
 	selectorRect.setTexture(tileMap->getTileSheet());
 	selectorRect.setTextureRect(textureRect);
 
-    //TEXTURE
+    //Show all the textures to choose
 	this->textureSelector = new gui::TextureSelector(
 		10.f, 10.f,
         1100.f, 800.f,
@@ -127,7 +127,8 @@ EditorState::~EditorState() {
 
 //Functions
 void EditorState::updateInput(const float & dt) {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("CLOSE"))) && this->getKeytime()) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("EXIT")))
+    && this->getKeytime()) {
 		if (!this->paused) {
             this->pauseState();
         }
@@ -138,18 +139,18 @@ void EditorState::updateInput(const float & dt) {
 }
 
 void EditorState::updateEditorInput(const float& dt) {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("MOVE_CAMERA_UP")))) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("CAMERA_UP")))) {
 		view.move(0.f, -cameraSpeed * dt);
-	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("MOVE_CAMERA_DOWN")))) {
+	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("CAMERA_DOWN")))) {
 		view.move(0.f, cameraSpeed * dt);
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("MOVE_CAMERA_LEFT")))) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("CAMERA_LEFT")))) {
 		view.move(-cameraSpeed * dt, 0.f);
-	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("MOVE_CAMERA_RIGHT")))) {
+	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("CAMERA_RIGHT")))) {
 		view.move(cameraSpeed * dt, 0.f);
 	}
 
-	//Add a tile to the tilemap
+	//Add a tile to the tile-map
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && getKeytime()) {
 		if (!sidebar.getGlobalBounds().contains(sf::Vector2f(mousePosWindow))) {
 			if (!this->textureSelector->getActive()) {
@@ -162,7 +163,7 @@ void EditorState::updateEditorInput(const float& dt) {
 			}
 		}
 	}
-	//Remove a tile from the tilemap
+	//Remove a tile from the tile-map
 	else if (sf::Mouse::isButtonPressed(sf::Mouse::Right) && this->getKeytime()) {
 		if (!sidebar.getGlobalBounds().contains(sf::Vector2f(this->mousePosWindow))) {
 			if (!textureSelector->getActive()) {
@@ -172,17 +173,17 @@ void EditorState::updateEditorInput(const float& dt) {
 	}
 
 	//Toggle collision
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("TOGGLE_COLLISION")))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("COLLISION")))
     && getKeytime()) {
 		if (collision) {
             collision = false;
         } else {
             collision = true;
         }
-    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("INCREASE_TYPE")))
+    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("UP_TYPE")))
     && getKeytime()) {
 		++type;
-	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("DECREASE_TYPE")))
+	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("DOWN_TYPE")))
     && getKeytime()){
 		if(type > 0) {
             --type;
@@ -218,7 +219,7 @@ void EditorState::updateGui(const float& dt) {
 }
 
 void EditorState::updatePauseMenuButtons() {
-	if (pmenu->isButtonPressed("QUIT")) {
+	if (pmenu->isButtonPressed("EXIT")) {
         endState();
     }
 	if (pmenu->isButtonPressed("SAVE")) {

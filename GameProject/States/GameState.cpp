@@ -25,7 +25,7 @@ void GameState::initView() {
 }
 
 void GameState::initKeybinds() {
-	std::ifstream ifs("../Config/GameState_KeyBind.ini");
+	std::ifstream ifs("../Config/GameState_Keys.ini");
 
 	if (ifs.is_open()) {
 		std::string key;
@@ -52,7 +52,7 @@ void GameState::initTextures() {
 
 void GameState::initPauseMenu() {
 	pmenu = new PauseMenu(*window, font);
-	pmenu->addButton("QUIT", 500.f, "Quit");
+	pmenu->addButton("EXIT", 500.f, "Exit");
 }
 
 void GameState::initPlayers() {
@@ -92,7 +92,7 @@ void GameState::updateView(const float & dt) {
 }
 
 void GameState::updateInput(const float & dt) {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("CLOSE"))) &&
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("EXIT"))) &&
     getKeytime()) {
 		if (!paused) {
             pauseState();
@@ -103,22 +103,22 @@ void GameState::updateInput(const float & dt) {
 }
 
 void GameState::updatePlayerInput(const float & dt) {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("MOVE_LEFT")))) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("LEFT_MOVEMENT")))) {
         player->move(-1.f, 0.f, dt);
     }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("MOVE_RIGHT")))) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("RIGHT_MOVEMENT")))) {
         player->move(1.f, 0.f, dt);
     }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("MOVE_UP")))) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("UP_MOVEMENT")))) {
         player->move(0.f, -1.f, dt);
     }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("MOVE_DOWN")))) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("DOWN_MOVEMENT")))) {
         player->move(0.f, 1.f, dt);
     }
 }
 
 void GameState::updatePauseMenuButtons() {
-	if (pmenu->isButtonPressed("QUIT")) {
+	if (pmenu->isButtonPressed("EXIT")) {
         endState();
     }
 }

@@ -37,7 +37,7 @@ void MainMenuState::initKeybinds() {
 }
 
 void MainMenuState::initButtons() {
-    this->buttons["GAME_STATE"] = new gui::Button(
+    this->buttons["STATE_INGAME"] = new gui::Button(
             100.f,650.f, 150.f, 68.f,
             &this->font,"New Game", 70,
             sf::Color(250, 70, 70, 200),
@@ -49,7 +49,7 @@ void MainMenuState::initButtons() {
             sf::Color(150, 20, 20, 0));
 
 
-    this->buttons["EDITOR_STATE"] = new gui::Button(
+    this->buttons["STATE_EDITOR"] = new gui::Button(
             800.f,650.f, 150.f, 68.f,
             &this->font,"EDITOR",70,
             sf::Color(250, 70, 70, 200),
@@ -60,7 +60,7 @@ void MainMenuState::initButtons() {
             sf::Color(150, 150, 150, 0),
             sf::Color(20, 20, 20, 0));
 
-    this->buttons["EXIT_STATE"] = new gui::Button(
+    this->buttons["STATE_EXIT"] = new gui::Button(
             1000.f,650.f, 150.f, 68.f,
             &this->font,"Exit game",70,
             sf::Color(250, 70, 70, 200),
@@ -98,17 +98,17 @@ void MainMenuState::updateButtons() {
 		it.second->update(this->mousePosWindow);
 	}
 	//For the game
-	if (buttons["GAME_STATE"]->isPressed()) {
+	if (buttons["STATE_INGAME"]->isPressed()) {
 		states->push(new GameState(stateData));
 	}
 
 	//Editor State
-	if (buttons["EDITOR_STATE"]->isPressed()) {
+	if (buttons["STATE_EDITOR"]->isPressed()) {
 		states->push(new EditorState(stateData));
 	}
 
 	//Exit
-	if (buttons["EXIT_STATE"]->isPressed()) {
+	if (buttons["STATE_EXIT"]->isPressed()) {
 		endState();
 	}
 }
