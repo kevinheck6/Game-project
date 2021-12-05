@@ -6,17 +6,17 @@ private:
 	//Variables
 	GraphicsSettings gfxSettings;
 	StateData stateData;
-	sf::RenderWindow *window{};
-	sf::Event sfEvent{};
+	sf::RenderWindow *window;
+	sf::Event sfEvent;
 
 	sf::Clock dtClock;
-	float dt{};
+	float dt;
 
 	std::stack<State*> states;
 
 	std::map<std::string, int> supportedKeys;
 
-	float gridSize{};
+	float gridSize;
 
 	void initVariables();
 	void initGraphicsSettings();

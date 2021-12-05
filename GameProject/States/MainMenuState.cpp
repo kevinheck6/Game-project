@@ -10,14 +10,14 @@ void MainMenuState::initBackground() {
 			static_cast<float>(window->getSize().y)));
 	
 	if (!backgroundTexture.loadFromFile("../Resources/Images/Background/MainMenuImage.png")) {
-		throw "ERROR::MAIN_MENU_STATE::FAILED_TO_LOAD_BACKGROUND_TEXTURE";
+		throw "ERROR - MainMenuState.cpp - Failed to load the background";
 	}
 	background.setTexture(&backgroundTexture);
 }
 
 void MainMenuState::initFonts() {
 	if (!font.loadFromFile("../Fonts/Amatic-Bold.ttf")) {
-		throw("ERROR::MAINMENUSTATE::COULD NOT LOAD FONT");
+		throw("ERROR - MainMenuState.cpp - Failed to load the Font");
 	}
 }
 

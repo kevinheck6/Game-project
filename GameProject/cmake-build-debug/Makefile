@@ -273,30 +273,6 @@ GUI/PauseMenu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.s
 .PHONY : GUI/PauseMenu.cpp.s
 
-Head_Files/PreCompiledHeaders.o: Head_Files/PreCompiledHeaders.cpp.o
-.PHONY : Head_Files/PreCompiledHeaders.o
-
-# target to build an object file
-Head_Files/PreCompiledHeaders.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.o
-.PHONY : Head_Files/PreCompiledHeaders.cpp.o
-
-Head_Files/PreCompiledHeaders.i: Head_Files/PreCompiledHeaders.cpp.i
-.PHONY : Head_Files/PreCompiledHeaders.i
-
-# target to preprocess a source file
-Head_Files/PreCompiledHeaders.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.i
-.PHONY : Head_Files/PreCompiledHeaders.cpp.i
-
-Head_Files/PreCompiledHeaders.s: Head_Files/PreCompiledHeaders.cpp.s
-.PHONY : Head_Files/PreCompiledHeaders.s
-
-# target to generate assembly for a file
-Head_Files/PreCompiledHeaders.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.s
-.PHONY : Head_Files/PreCompiledHeaders.cpp.s
-
 Map/TileMap.o: Map/TileMap.cpp.o
 .PHONY : Map/TileMap.o
 
@@ -564,9 +540,6 @@ help:
 	@echo "... GUI/PauseMenu.o"
 	@echo "... GUI/PauseMenu.i"
 	@echo "... GUI/PauseMenu.s"
-	@echo "... Head_Files/PreCompiledHeaders.o"
-	@echo "... Head_Files/PreCompiledHeaders.i"
-	@echo "... Head_Files/PreCompiledHeaders.s"
 	@echo "... Map/TileMap.o"
 	@echo "... Map/TileMap.i"
 	@echo "... Map/TileMap.s"

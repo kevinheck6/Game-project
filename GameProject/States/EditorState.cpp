@@ -27,7 +27,7 @@ void EditorState::initBackground() {}
 
 void EditorState::initFonts() {
 	if (!this->font.loadFromFile("../Fonts/Amatic-Bold.ttf")) {
-		throw("ERROR::EDITORSTATE::COULD NOT LOAD FONT");
+		throw("ERROR - EditorState was not able to load the font");
 	}
 }
 
@@ -39,6 +39,7 @@ void EditorState::initText() {
 }
 
 void EditorState::initKeybinds() {
+
 	std::ifstream ifs("../Config/EditorState_KeyBind.ini");
 
 	if (ifs.is_open()) {

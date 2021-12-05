@@ -46,7 +46,7 @@ TileMap::TileMap(float gridSize, int width, int height, const std::string& textu
 	}
 
 	if (!tileSheet.loadFromFile(texture_file)) {
-        std::cout << "ERROR::TILEMAP::FAILED TO LOAD TILETEXTURESHEET::FILENAME: " << texture_file << "\n";
+        std::cout << "ERROR - TileMap.cpp - Fail in load tileSheet - Name of File: " << texture_file << "\n";
     }
 
 	collisionBox.setSize(sf::Vector2f(gridSize, gridSize));
@@ -91,7 +91,6 @@ void TileMap::addTile(const int x, const int y, const int z,
                                         gridSizeF,
                                         tileSheet,
                                         texture_rect, collision, type));
-		std::cout << "DEGBUG: ADDED TILE!" << "\n";	
 	}
 }
 
@@ -104,27 +103,11 @@ void TileMap::removeTile(const int x, const int y, const int z) {
 		if (!map[x][y][z].empty()) {
 			delete map[x][y][z][map[x][y][z].size()-1];
 			map[x][y][z].pop_back();
-			std::cout << "DEGBUG: REMOVED TILE!" << "\n";
 		}
 	}
 }
 
 void TileMap::saveToFile(const std::string& file_name) {
-	/*Saves the entire tilemap to a text-file.
-	Format: 
-	Basic:
-	Size x y
-	gridSize
-	layers
-	texture file
-
-	All tiles:
-	gridPos x y layer 
-	Texture rect x y 
-	collision 
-	type
-	*/
-
 	std::ofstream out_file;
 	
 	out_file.open(file_name);
@@ -147,9 +130,9 @@ void TileMap::saveToFile(const std::string& file_name) {
 			}
 		}
 	} else {
-		std::cout << "ERROR::TILEMAP::COULD NOT SAVE TO FILE::FILENAME: " << file_name << "\n";
+		std::cout << "ERROR - TileMap.cpp - Was not able to Save File - File name: " <<
+        file_name << "\n";
 	}
-
 	out_file.close();
 }
 
@@ -171,10 +154,10 @@ void TileMap::loadFromFile(const std::string& file_name) {
 		bool collision = false;
 		short type = 0;
 
-		//Basics
+		//General information
 		in_file >> size.x >> size.y >> gridSize >> layers >> texture_file;
 
-		//Tiles
+		//Tiles information
 		gridSizeF = static_cast<float>(gridSize);
 		gridSizeI = gridSize;
 		maxSizeWorldGrid.x = size.x;
@@ -195,7 +178,8 @@ void TileMap::loadFromFile(const std::string& file_name) {
 		}
 
 		if (!tileSheet.loadFromFile(texture_file)) {
-            std::cout << "ERROR::TILEMAP::FAILED TO LOAD TILETEXTURESHEET::FILENAME: " << texture_file << "\n";
+            std::cout << "ERROR - TileMap.cpp - Problem at load tileSheet - File Name: " <<
+            texture_file << "\n";
         }
 
 		//Load all tiles
@@ -207,7 +191,8 @@ void TileMap::loadFromFile(const std::string& file_name) {
                                                               type));
 		}
 	} else {
-		std::cout << "ERROR::TILEMAP::COULD NOT LOAD FROM FILE::FILENAME: " << file_name << "\n";
+		std::cout << "ERROR - TileMap.cpp - Problem at load from tileSheet - File Name: " <<
+        file_name << "\n";
 	}
 
 	in_file.close();
@@ -230,7 +215,7 @@ void TileMap::updateCollision(Entity * entity, const float& dt) {
 		entity->stopVelocityY();
 	}
 
-	//TILES
+	//Tile Bounds
 	layer = 0;
 
 	fromX = entity->getGridPosition(gridSizeI).x - 1;
@@ -314,10 +299,7 @@ void TileMap::updateCollision(Entity * entity, const float& dt) {
 	}
 }
 
-void TileMap::update()
-{
-
-}
+void TileMap::update() {}
 
 void TileMap::render(sf::RenderTarget & target, const sf::Vector2i& gridPosition) {
 	layer = 0;
@@ -338,16 +320,14 @@ void TileMap::render(sf::RenderTarget & target, const sf::Vector2i& gridPosition
 	fromY = gridPosition.y - 6;
 	if (fromY < 0) {
         fromY = 0;
-    }
-	else if (fromY > maxSizeWorldGrid.y) {
+    } else if (fromY > maxSizeWorldGrid.y) {
         fromY = maxSizeWorldGrid.y;
     }
 
 	toY = gridPosition.y + 5;
 	if (toY < 0) {
         toY = 0;
-    }
-	else if (toY > maxSizeWorldGrid.y) {
+    } else if (toY > maxSizeWorldGrid.y) {
         toY = maxSizeWorldGrid.y;
     }
 

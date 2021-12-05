@@ -35,44 +35,12 @@ namespace gui {
 
 		//Accessors
 		bool isPressed() const;
-		std::string getText() const;
-		const short unsigned& getId() const;
-
-		//Modifiers
-		void setText(std::string text);
-		void setId(short unsigned id);
 
 		//Functions
 		void update(const sf::Vector2i& mousePosWindow);
 		void render(sf::RenderTarget& target);
 	};
 
-	class DropDownList
-	{
-	private:
-		float keytime;
-		float keytimeMax;
-
-		sf::Font& font;
-		gui::Button* activeElement;
-		std::vector<gui::Button*> list;
-		bool showList;
-
-	public:
-		DropDownList(float x, float y, float width, float height, 
-			sf::Font& font, std::string list[], 
-			unsigned nrOfElements, unsigned default_index = 0);
-		~DropDownList();
-
-		//Accessors
-		const unsigned short& getActiveElementId() const;
-
-		//Functions
-		const bool getKeytime();
-		void updateKeytime(const float& dt);
-		void update(const sf::Vector2i& mousePosWindow, const float& dt);
-		void render(sf::RenderTarget& target);
-	};
 
 	class TextureSelector {
 	private:

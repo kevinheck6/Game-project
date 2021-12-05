@@ -33,8 +33,6 @@ CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.o: \
  ../GUI/PauseMenu.h \
  ../Head\ Files/PreCompiledHeaders.h \
  ../Resources/Button.h
-CMakeFiles/Game-projecttest.dir/Head_Files/PreCompiledHeaders.cpp.o: \
- ../Head\ Files/PreCompiledHeaders.cpp
 CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.o: \
  ../Components/AnimationComponent.h \
  ../Components/HitBoxComponent.h \

@@ -40,13 +40,13 @@ void GameState::initKeybinds() {
 
 void GameState::initFonts() {
 	if (!font.loadFromFile("../Fonts/Amatic-Bold.ttf")) {
-		throw("ERROR::MAINMENUSTATE::COULD NOT LOAD FONT");
+		throw("ERROR - GameState - Was not able to load the Font");
 	}
 }
 
 void GameState::initTextures() {
 	if (!this->textures["PLAYER_SHEET"].loadFromFile("../Resources/Images/Sprites/Player/Idle3.png")) {
-		throw "ERROR::GAME_STATE::COULD_NOT_LOAD_PLAYER_TEXTURE";
+		throw "ERROR - GameState - Was not able to load the Player Texture";
 	}
 }
 
@@ -103,16 +103,16 @@ void GameState::updateInput(const float & dt) {
 }
 
 void GameState::updatePlayerInput(const float & dt) {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_LEFT")))) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("MOVE_LEFT")))) {
         player->move(-1.f, 0.f, dt);
     }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_RIGHT")))) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("MOVE_RIGHT")))) {
         player->move(1.f, 0.f, dt);
     }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_UP")))) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("MOVE_UP")))) {
         player->move(0.f, -1.f, dt);
     }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_DOWN")))) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("MOVE_DOWN")))) {
         player->move(0.f, 1.f, dt);
     }
 }
@@ -164,6 +164,6 @@ void GameState::render(sf::RenderTarget* target) {
 	}
 
 	this->renderTexture.display();
-	target->draw(this->renderSprite);
+	target->draw(renderSprite);
 }
 

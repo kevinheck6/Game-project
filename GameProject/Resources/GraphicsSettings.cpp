@@ -6,7 +6,7 @@ GraphicsSettings::GraphicsSettings() {
 	resolution = sf::VideoMode::getDesktopMode();
 	fullscreen = false;
 	verticalSync = false;
-	frameRateLimit = 120;
+	frameRateLimit = 90;
 	contextSettings.antialiasingLevel = 0;
 	videoModes = sf::VideoMode::getFullscreenModes();
 }
