@@ -85,6 +85,16 @@ void Game::endApplication() {
 	std::cout << "Game closed" << "\n";
 }
 
+
+void Game::playMusic() {
+    if(!music.openFromFile("../Resources/Music .wav")) {
+        throw "ERROR - Game.cpp - Failled to load Music";
+    }
+    music.setVolume(30);
+    music.play();
+    music.setLoop(true);
+}
+
 void Game::updateDt() {
     //dt variable will be updated with the time it will take to render one frame, so it will be constant
 	dt = dtClock.restart().asSeconds();
@@ -125,10 +135,16 @@ void Game::render() {
 }
 
 void Game::run() {
+
+    playMusic();
 	while (window->isOpen()) {
 		updateDt();
 		update();
 		render();
+
 	}
 }
+
+
+
 

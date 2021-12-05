@@ -4,6 +4,7 @@
 class Game {
 private:
 	//Variables
+    sf::Music music;
 	GraphicsSettings gfxSettings;
 	StateData stateData;
 	sf::RenderWindow *window;
@@ -31,6 +32,7 @@ public:
 
 	static void endApplication();
 
+    void playMusic();
 	void updateDt();
 	void updateSFMLEvents();
 	void update();
