@@ -1,6 +1,13 @@
 #include "../Head Files/PreCompiledHeaders.h"
 #include "../States/GameState.h"
 
+void GameState::initBackground() {
+    background.setSize(sf::Vector2f(
+            static_cast<float>(window->getSize().x),
+            static_cast<float>(window->getSize().y)));
+    background.setFillColor(sf::Color::Black);
+}
+
 void GameState::initDeferredRender() {
 	renderTexture.create(
 		stateData->gfxSettings->resolution.width,
@@ -13,7 +20,6 @@ void GameState::initDeferredRender() {
 			static_cast<int>(stateData->gfxSettings->resolution.height)));
 }
 
-//Initializer functions
 void GameState::initView() {
     view.setSize(sf::Vector2f(
 			static_cast<float>(stateData->gfxSettings->resolution.width),
@@ -82,6 +88,8 @@ void GameState::initButtons() {
 
 GameState::GameState(StateData* state_data)
 	: State(state_data) {
+
+    initBackground();
 	initDeferredRender();
 	initView();
 	initKeybinds();
@@ -169,7 +177,7 @@ void GameState::update(const float& dt) {
 	updateMousePositions(&view);
 	updateKeytime(dt);
 	updateInput(dt);
-    updateButtons();// crashing
+    updateButtons();
 
 	
 	if (!paused) {
@@ -186,8 +194,16 @@ void GameState::update(const float& dt) {
 void GameState::renderButtons(sf::RenderTarget &target) {
     if(this->endGame) {
         for (auto &it : buttons) {
+            target.draw(background);
             it.second->render(target);
         }
+        text.setFont(font);
+        text.setString("You Won The Labyrinth");
+        text.setCharacterSize(50);
+        text.setFillColor(sf::Color::White);
+        text.setPosition(window->getSize().x / 2,
+                         window->getSize().y / 2);
+        target.draw(text);
     }
 }
 
@@ -213,8 +229,13 @@ void GameState::render(sf::RenderTarget* target) {
 
 	this->renderTexture.display();
 	target->draw(renderSprite);
+
     renderButtons(*target);
+
 }
+
+
+
 
 
 

@@ -15,10 +15,14 @@ private:
 	sf::View view;
 	sf::RenderTexture renderTexture;
 	sf::Sprite renderSprite;
+
+
+    sf::Text text;
     bool endGame = false;
     std::map<std::string, gui::Button*> buttons;
+    sf::RectangleShape background;
+    sf::Font font;
 
-	sf::Font font;
 	PauseMenu* pmenu;
 
 	Player* player;
@@ -27,10 +31,11 @@ private:
 	TileMap* tileMap;
 
 	//Functions
+    void initBackground();
 	void initDeferredRender();
 	void initView();
 	void initKeybinds();
-	void initFonts();
+    void initFonts();
 	void initTextures();
 	void initPauseMenu();
 	void initPlayers();
