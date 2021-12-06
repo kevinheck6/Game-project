@@ -17,9 +17,8 @@ Entity::~Entity() {
 	delete this->movement;
 }
 
-//Component functions
-
-void Entity::createHitBox(sf::Sprite & sprite, float offset_x, float offset_y,
+//Components
+void Entity::createHitBox(sf::Sprite& sprite, float offset_x, float offset_y,
                           float width, float height) {
     hitBox = new HitBoxComponent(sprite, offset_x, offset_y, width, height);
 }
@@ -29,13 +28,14 @@ void Entity::createMovement(const float maxVelocity, const float acceleration,
     movement = new MovementComponent(sprite, maxVelocity, acceleration, deceleration);
 }
 
-void Entity::createAnimation(sf::Texture & texture_sheet) {
+void Entity::createAnimation(sf::Texture& texture_sheet) {
     animation = new AnimationComponent(sprite, texture_sheet);
 }
 
-const sf::Vector2f & Entity::getPosition() const {
-	if (hitBox)
-		return hitBox->getPosition();
+const sf::Vector2f& Entity::getPosition() const {
+	if (hitBox) {
+        return hitBox->getPosition();
+    }
 
 	return sprite.getPosition();
 }

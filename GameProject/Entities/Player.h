@@ -5,13 +5,6 @@ class Entity;
 
 class Player :
 	public Entity {
-private:
-	//Variables
-	bool isAttacking;
-
-	//Initializer
-	void initVariables();
-
 public:
     //Constructor
 	Player(float x, float y, sf::Texture& texture_sheet);
@@ -19,9 +12,11 @@ public:
 	~Player() override;
 
 	//Functions
-	void updateAttack();
+    //Update
 	void updateAnimation(const float& dt);
 	void update(const float& dt) override;
+
+    //Render
 	void render(sf::RenderTarget& target) override;
 };
 

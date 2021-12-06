@@ -94,18 +94,6 @@ SFML/Network.hpp
 ../Head Files/Game.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/Game.h
 
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/main.cpp
-../Head Files/PreCompiledHeaders.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-../Head Files/Game.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/Game.h
-
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.cpp
-../Head Files/PreCompiledHeaders.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-../States/EditorState.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
-
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
 ../States/State.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
@@ -115,12 +103,6 @@ SFML/Network.hpp
 /home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.h
 ../Map/TileMap.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
-
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.cpp
-../Head Files/PreCompiledHeaders.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-../States/GameState.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
 ../States/State.h
@@ -132,12 +114,6 @@ SFML/Network.hpp
 ../Resources/Button.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
 
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.cpp
-../Head Files/PreCompiledHeaders.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-../States/MainMenuState.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
-
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.h
 ../States/GameState.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
@@ -145,10 +121,6 @@ SFML/Network.hpp
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
 ../Resources/Button.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
-
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.cpp
-../States/State.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
 ../Entities/Player.h

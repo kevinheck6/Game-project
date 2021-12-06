@@ -5,7 +5,7 @@ void GameState::initBackground() {
     background.setSize(sf::Vector2f(
             static_cast<float>(window->getSize().x),
             static_cast<float>(window->getSize().y)));
-    background.setFillColor(sf::Color::Black);
+    background.setFillColor(sf::Color::White);
 }
 
 void GameState::initDeferredRender() {
@@ -175,7 +175,7 @@ void GameState::updateTileMap(const float & dt) {
 
 void GameState::update(const float& dt) {
 	updateMousePositions(&view);
-	updateKeytime(dt);
+    updateTimeKey(dt);
 	updateInput(dt);
     updateButtons();
 
@@ -200,9 +200,9 @@ void GameState::renderButtons(sf::RenderTarget &target) {
         text.setFont(font);
         text.setString("You Won The Labyrinth");
         text.setCharacterSize(50);
-        text.setFillColor(sf::Color::White);
-        text.setPosition(window->getSize().x / 2,
-                         window->getSize().y / 2);
+        text.setFillColor(sf::Color::Black);
+        text.setPosition(static_cast<float>(window->getSize().x) / 2,
+                         static_cast<float>(window->getSize().y) / 2);
         target.draw(text);
     }
 }

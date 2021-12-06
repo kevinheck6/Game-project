@@ -358,6 +358,7 @@ void TileMap::update() {}
 void TileMap::render(sf::RenderTarget & target, const sf::Vector2i& gridPosition) {
 	layer = 0;
 
+    //Set up how many tiles will be show in the screen
     startX = gridPosition.x - 8;
 	if (startX < 0) {
         startX = 0;

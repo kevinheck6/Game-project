@@ -25,7 +25,7 @@ void AnimationComponent::addAnimation(
 	);
 }
 
-const bool& AnimationComponent::play(const std::string& key, const float & dt, const bool priority) {
+const bool& AnimationComponent::play(const std::string& key, const float& dt, const bool priority) {
 	if (priorityAnimation) {  //If there is a priority animation
 		if (priorityAnimation == animations[key]) {
 			if (lastAnimation != animations[key]) {
@@ -63,7 +63,7 @@ const bool& AnimationComponent::play(const std::string& key, const float & dt, c
 	return animations[key]->isDone();
 }
 
-const bool& AnimationComponent::play(const std::string& key, const float & dt, const float& modifier,
+const bool& AnimationComponent::play(const std::string& key, const float& dt, const float& modifier,
                                      const float& modifier_max, const bool priority) {
     //If there is a priority animation
 	if (priorityAnimation) {

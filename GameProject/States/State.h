@@ -9,7 +9,7 @@ class GraphicsSettings;
 
 class StateData {
 public:
-	StateData() {};
+	StateData() = default;;
 
 	//Variables
 	float gridSize{};
@@ -46,7 +46,7 @@ protected:
 
 public:
     //Constructor
-	State(StateData* state_data);
+	explicit State(StateData* state_data);
     //Destructor
 	virtual ~State();
 
@@ -60,7 +60,7 @@ public:
 	void unpauseState();
 
 	virtual void updateMousePositions(sf::View* view = nullptr);
-	virtual void updateKeytime(const float& dt);
+	virtual void updateTimeKey(const float& dt);
 	virtual void updateInput(const float& dt) = 0;
 	virtual void update(const float& dt) = 0;
 	virtual void render(sf::RenderTarget* target = nullptr) = 0;

@@ -56,7 +56,7 @@ void State::updateMousePositions(sf::View* view) {
 	window->setView(window->getDefaultView());
 }
 
-void State::updateKeytime(const float& dt) {
+void State::updateTimeKey(const float& dt) {
 	if (timeKey < timeKeyMax) {
         timeKey += 50.f * dt;
     }
