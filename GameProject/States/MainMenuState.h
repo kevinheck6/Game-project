@@ -17,17 +17,22 @@ private:
 	void initVariables();
 	void initBackground();
 	void initFonts();
-	void initKeybinds() override;
+	void initKeyBinds() override;
 	void initButtons();
 
 public:
+    //Constructor
 	explicit MainMenuState(StateData* state_data);
+    //Destructor
 	~MainMenuState() override;
 
 	//Functions
+    //Update
 	void updateInput(const float& dt) override;
 	void updateButtons();
 	void update(const float& dt) override;
+
+    //Render
 	void renderButtons(sf::RenderTarget& target);
 	void render(sf::RenderTarget* target) override;
 };

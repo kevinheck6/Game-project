@@ -12,28 +12,28 @@ public:
 	StateData() {};
 
 	//Variables
-	float gridSize;
-	sf::RenderWindow* window;
-	GraphicsSettings* gfxSettings;
-	std::map<std::string, int>* supportedKeys;
-	std::stack<State*>* states;
+	float gridSize{};
+	sf::RenderWindow* window{};
+	GraphicsSettings* graphicsSettings{};
+	std::map<std::string, int>* supportedKeys{};
+	std::stack<State*>* states{};
 };
 
 class State {
 private:
 
 protected:
-	StateData* stateData;
+    //Variables
+	StateData* DataForStates;
 	std::stack<State*>* states;
 	sf::RenderWindow* window;
 	std::map<std::string, int>* supportedKeys;
-	std::map<std::string, int> keybinds;
+	std::map<std::string, int> keyBinds;
 	bool quit;
 	bool paused;
-	float keytime;
-	float keytimeMax;
+	float timeKey;
+	float timeKeyMax;
 	float gridSize;
-
 	sf::Vector2i mousePosWindow;
 	sf::Vector2f mousePosView;
 	sf::Vector2i mousePosGrid;
@@ -42,15 +42,17 @@ protected:
 	std::map<std::string, sf::Texture> textures;
 
 	//Functions
-	virtual void initKeybinds() = 0;
+	virtual void initKeyBinds() = 0;
 
 public:
+    //Constructor
 	State(StateData* state_data);
+    //Destructor
 	virtual ~State();
 
 	//Accessors
 	const bool& getQuit() const;
-	bool getKeytime();
+	bool getTimeKey();
 
 	//Functions	
 	void endState(); 

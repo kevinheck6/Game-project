@@ -12,29 +12,25 @@ class TileMap;
 class GameState :
 	public State {
 private:
+    //Variables
 	sf::View view;
 	sf::RenderTexture renderTexture;
 	sf::Sprite renderSprite;
-
-
     sf::Text text;
     bool endGame = false;
     std::map<std::string, gui::Button*> buttons;
     sf::RectangleShape background;
     sf::Font font;
-
-	PauseMenu* pmenu;
-
+	PauseMenu* pauseMenu;
 	Player* player;
 	sf::Texture texture;
-	
 	TileMap* tileMap;
 
 	//Functions
     void initBackground();
 	void initDeferredRender();
 	void initView();
-	void initKeybinds();
+	void initKeyBinds() override;
     void initFonts();
 	void initTextures();
 	void initPauseMenu();
@@ -43,10 +39,13 @@ private:
     void initButtons();
 
 public:
+    //Constructor
 	explicit GameState(StateData* state_data);
+    //Destructor
 	~GameState() override;
 
 	//Functions
+    //Update
     void updateEndgame(int endGame);
     void updateButtons();
 	void updateView(const float& dt);
@@ -55,6 +54,8 @@ public:
 	void updatePauseMenuButtons();
 	void updateTileMap(const float& dt);
 	void update(const float& dt) override;
+
+    //Render
     void renderButtons(sf::RenderTarget& target);
 	void render(sf::RenderTarget* target) override;
 };

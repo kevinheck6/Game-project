@@ -4,15 +4,15 @@
 MovementComponent::MovementComponent(sf::Sprite& sprite, 
 	float maxVelocity, float acceleration, float deceleration)
 	: sprite(sprite),
-	maxVelocity(maxVelocity), acceleration(acceleration), deceleration(deceleration) {
+      velocityMax(maxVelocity), accelerationComponent(acceleration), decelerationComponent(deceleration) {
 	
 }
 
 MovementComponent::~MovementComponent() = default;
 
 //Accessors
-const float & MovementComponent::getMaxVelocity() const {
-	return maxVelocity;
+const float & MovementComponent::getVelocityMax() const {
+	return velocityMax;
 }
 
 const sf::Vector2f & MovementComponent::getVelocity() const {
@@ -62,40 +62,32 @@ bool MovementComponent::getState(const short unsigned state) const {
 	return false;
 }
 
-void MovementComponent::stopVelocity() {
-	/* Stops the velocity in X and Y*/
-
-	velocity.x = 0.f;
-	velocity.y = 0.f;
-}
-
-void MovementComponent::stopVelocityX() {
-	/* Stops the velocity in X */
+void MovementComponent::makeNullVelocityX() {
+	// Stops the velocity in X */
 	velocity.x = 0.f;
 }
 
-void MovementComponent::stopVelocityY() {
-	/* Stops the velocity in Y */
+void MovementComponent::makeNullVelocityY() {
+	// Stops the velocity in Y
 	velocity.y = 0.f;
 }
 
 void MovementComponent::move(const float dir_x, const float dir_y, const float& dt) {
-	/* using the Acceleration for smooth*/
-	velocity.y += acceleration * dir_y * dt;
-    velocity.x += acceleration * dir_x * dt;
+	//using the Acceleration for smooth
+	velocity.y += accelerationComponent * dir_y * dt;
+    velocity.x += accelerationComponent * dir_x * dt;
 }
 
 void MovementComponent::update(const float & dt) {
 	//Moves the sprite.
-
     // Positive x
 	if (velocity.x > 0.f) {
 		//Max velocity
-		if (velocity.x > maxVelocity) {
-            velocity.x = maxVelocity;
+		if (velocity.x > velocityMax) {
+            velocity.x = velocityMax;
         }
 		//Deceleration for X
-		velocity.x -= deceleration * dt;
+		velocity.x -= decelerationComponent * dt;
 		if (velocity.x < 0.f) {
             velocity.x = 0.f;
         }
@@ -103,12 +95,12 @@ void MovementComponent::update(const float & dt) {
         //Negative x
 	else if(velocity.x < 0.f) {
 		//Max velocity
-		if (velocity.x < -maxVelocity) {
-            velocity.x = -maxVelocity;
+		if (velocity.x < -velocityMax) {
+            velocity.x = -velocityMax;
         }
 
 		//Deceleration for X
-		velocity.x += deceleration * dt;
+		velocity.x += decelerationComponent * dt;
 		if (velocity.x > 0.f) {
             velocity.x = 0.f;
         }
@@ -117,12 +109,12 @@ void MovementComponent::update(const float & dt) {
     //Positive y
 	if (velocity.y > 0.f) {
 		//Max velocity
-		if (velocity.y > maxVelocity) {
-            velocity.y = maxVelocity;
+		if (velocity.y > velocityMax) {
+            velocity.y = velocityMax;
         }
 
 		//Deceleration
-		velocity.y -= deceleration * dt;
+		velocity.y -= decelerationComponent * dt;
 		if (velocity.y < 0.f) {
             velocity.y = 0.f;
         }
@@ -130,12 +122,12 @@ void MovementComponent::update(const float & dt) {
     //Negative Y
 	else if (velocity.y < 0.f) {
 		//Max velocity
-		if (velocity.y < -maxVelocity) {
-            velocity.y = -maxVelocity;
+		if (velocity.y < -velocityMax) {
+            velocity.y = -velocityMax;
         }
 
 		//Deceleration for Y
-		velocity.y += deceleration * dt;
+		velocity.y += decelerationComponent * dt;
 		if (velocity.y > 0.f) {
             velocity.y = 0.f;
         }

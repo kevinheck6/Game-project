@@ -1,5 +1,6 @@
 #pragma once
 
+//All the includes so the program run faster and don't have to load it for every different class
 #include <algorithm>
 #include <deque>
 #include <iostream>

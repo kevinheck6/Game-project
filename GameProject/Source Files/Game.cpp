@@ -11,27 +11,27 @@ void Game::initVariables() {
 }
 
 void Game::initGraphicsSettings() {
-	gfxSettings.loadFromFile("../Config/Graphics_settings.ini");
+	graphicsSettings.loadFromFile("../Config/Graphics_settings.ini");
 }
 
 void Game::initWindow() {
-	if(gfxSettings.fullscreen) {
+	if(graphicsSettings.fullScreen) {
         window = new sf::RenderWindow(
-                gfxSettings.resolution,
-                gfxSettings.title,
+                graphicsSettings.resolution,
+                graphicsSettings.title,
                 sf::Style::Fullscreen,
-                gfxSettings.contextSettings);
+                graphicsSettings.contextSettings);
     } else {
         window = new sf::RenderWindow(
-                gfxSettings.resolution,
-                gfxSettings.title,
+                graphicsSettings.resolution,
+                graphicsSettings.title,
                 sf::Style::Titlebar | sf::Style::Close,
-                gfxSettings.contextSettings);
+                graphicsSettings.contextSettings);
 
     }
 
-	window->setFramerateLimit(gfxSettings.frameRateLimit);
-	window->setVerticalSyncEnabled(gfxSettings.verticalSync);
+	window->setFramerateLimit(graphicsSettings.frameRateLimit);
+	window->setVerticalSyncEnabled(graphicsSettings.verticalSync);
 }
 
 void Game::initKeys() {
@@ -50,16 +50,16 @@ void Game::initKeys() {
 
 }
 
-void Game::initStateData() {
-	stateData.window = window;
-	stateData.gfxSettings = &gfxSettings;
-	stateData.supportedKeys = &supportedKeys;
-	stateData.states = &states;
-	stateData.gridSize = gridSize;
+void Game::initDataForStates() {
+    DataForStates.window = window;
+    DataForStates.graphicsSettings = &graphicsSettings;
+    DataForStates.supportedKeys = &supportedKeys;
+    DataForStates.states = &states;
+    DataForStates.gridSize = gridSize;
 }
 
 void Game::initStates() {
-	states.push(new MainMenuState(&stateData));
+	states.push(new MainMenuState(&DataForStates));
 }
 
 Game::Game() {
@@ -67,7 +67,7 @@ Game::Game() {
 	initGraphicsSettings();
 	initWindow();
 	initKeys();
-	initStateData();
+    initDataForStates();
 	initStates();
 }
 
@@ -100,16 +100,16 @@ void Game::updateDt() {
 	dt = dtClock.restart().asSeconds();
 }
 
-void Game::updateSFMLEvents() {
-	while (window->pollEvent(sfEvent)) {
-		if (sfEvent.type == sf::Event::Closed) {
+void Game::updateEvents() {
+	while (window->pollEvent(event)) {
+		if (event.type == sf::Event::Closed) {
             window->close();
         }
 	}
 }
 
 void Game::update() {
-	updateSFMLEvents();
+    updateEvents();
 
 	if (!states.empty()) {
 		if (window->hasFocus()) {

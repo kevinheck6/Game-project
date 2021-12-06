@@ -2,13 +2,12 @@
 #include "../Resources/GraphicsSettings.h"
 
 GraphicsSettings::GraphicsSettings() {
-	title = "DEFAULT";
+	title = "GAMU";
 	resolution = sf::VideoMode::getDesktopMode();
-	fullscreen = false;
+    fullScreen = false;
 	verticalSync = false;
 	frameRateLimit = 90;
 	contextSettings.antialiasingLevel = 0;
-	videoModes = sf::VideoMode::getFullscreenModes();
 }
 
 //Functions
@@ -19,7 +18,7 @@ void GraphicsSettings::loadFromFile(const std::string& path) {
 	if (ifs.is_open()) {
 		std::getline(ifs, title);
 		ifs >> resolution.width >> resolution.height;
-		ifs >> fullscreen;
+		ifs >> fullScreen;
 		ifs >> frameRateLimit;
 		ifs >> verticalSync;
 		ifs >> contextSettings.antialiasingLevel;

@@ -2,9 +2,9 @@
 #include "../Entities/Entity.h"
 
 void Entity::initVariables() {
-    animationComponent = nullptr;
-	hitboxComponent = nullptr;
-	movementComponent = nullptr;
+    animation = nullptr;
+    hitBox = nullptr;
+    movement = nullptr;
 }
 
 Entity::Entity() {
@@ -12,39 +12,39 @@ Entity::Entity() {
 }
 
 Entity::~Entity() {
-    delete this->animationComponent;
-	delete this->hitboxComponent;
-	delete this->movementComponent;
+    delete this->animation;
+	delete this->hitBox;
+	delete this->movement;
 }
 
 //Component functions
 
-void Entity::createHitboxComponent(sf::Sprite & spriteE, float offset_x, float offset_y,
-	float width, float height) {
-	hitboxComponent = new HitBoxComponent(spriteE, offset_x, offset_y, width, height);
+void Entity::createHitBox(sf::Sprite & sprite, float offset_x, float offset_y,
+                          float width, float height) {
+    hitBox = new HitBoxComponent(sprite, offset_x, offset_y, width, height);
 }
 
-void Entity::createMovementComponent(const float maxVelocity, const float acceleration,
-                                     const float deceleration) {
-	movementComponent = new MovementComponent(sprite, maxVelocity, acceleration, deceleration);
+void Entity::createMovement(const float maxVelocity, const float acceleration,
+                            const float deceleration) {
+    movement = new MovementComponent(sprite, maxVelocity, acceleration, deceleration);
 }
 
-void Entity::createAnimationComponent(sf::Texture & texture_sheet) {
-	animationComponent = new AnimationComponent(sprite, texture_sheet);
+void Entity::createAnimation(sf::Texture & texture_sheet) {
+    animation = new AnimationComponent(sprite, texture_sheet);
 }
 
 const sf::Vector2f & Entity::getPosition() const {
-	if (hitboxComponent)
-		return hitboxComponent->getPosition();
+	if (hitBox)
+		return hitBox->getPosition();
 
 	return sprite.getPosition();
 }
 
 sf::Vector2i Entity::getGridPosition(const int gridSizeI) const {
-	if (hitboxComponent) {
+	if (hitBox) {
         return {
-                static_cast<int>(hitboxComponent->getPosition().x) / gridSizeI,
-                static_cast<int>(hitboxComponent->getPosition().y) / gridSizeI
+                static_cast<int>(hitBox->getPosition().x) / gridSizeI,
+                static_cast<int>(hitBox->getPosition().y) / gridSizeI
         };
     } else {
         return {
@@ -55,15 +55,15 @@ sf::Vector2i Entity::getGridPosition(const int gridSizeI) const {
 }
 
 sf::FloatRect Entity::getGlobalBounds() const {
-	if (hitboxComponent) {
-        return hitboxComponent->getGlobalBounds();
+	if (hitBox) {
+        return hitBox->getGlobalBounds();
     }
 	return sprite.getGlobalBounds();
 }
 
-sf::FloatRect Entity::getNextPositionBounds(const float& dt) const {
-	if (hitboxComponent && movementComponent) {
-        return hitboxComponent->getNextPosition(movementComponent->getVelocity() * dt);
+sf::FloatRect Entity::getFuturePositionBounds(const float& dt) const {
+	if (hitBox && movement) {
+        return hitBox->getFuturePosition(movement->getVelocity() * dt);
     } else {
         return {-1.f, -1.f, -1.f, -1.f};
     }
@@ -72,30 +72,30 @@ sf::FloatRect Entity::getNextPositionBounds(const float& dt) const {
 
 //Functions
 void Entity::setPosition(const float x, const float y) {
-	if (hitboxComponent) {
-        hitboxComponent->setPosition(x, y);
+	if (hitBox) {
+        hitBox->setPosition(x, y);
     } else {
         sprite.setPosition(x, y);
     }
 }
 
 void Entity::move(const float dir_x, const float dir_y, const float& dt) {
-	if (movementComponent) {
-        movementComponent->move(dir_x, dir_y, dt);
+	if (movement) {
+        movement->move(dir_x, dir_y, dt);
     }
 }
 
 
 
-void Entity::stopVelocityX() {
-	if (movementComponent) {
-        movementComponent->stopVelocityX();
+void Entity::makeNullVelocityX() {
+	if (movement) {
+        movement->makeNullVelocityX();
     }
 }
 
-void Entity::stopVelocityY() {
-	if (movementComponent) {
-        movementComponent->stopVelocityY();
+void Entity::makeNullVelocityY() {
+	if (movement) {
+        movement->makeNullVelocityY();
     }
 }
 

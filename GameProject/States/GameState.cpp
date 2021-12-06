@@ -10,27 +10,27 @@ void GameState::initBackground() {
 
 void GameState::initDeferredRender() {
 	renderTexture.create(
-		stateData->gfxSettings->resolution.width,
-		stateData->gfxSettings->resolution.height);
+            DataForStates->graphicsSettings->resolution.width,
+            DataForStates->graphicsSettings->resolution.height);
 
 	renderSprite.setTexture(renderTexture.getTexture());
 	renderSprite.setTextureRect(
 		sf::IntRect(0,0,
-			static_cast<int>(stateData->gfxSettings->resolution.width),
-			static_cast<int>(stateData->gfxSettings->resolution.height)));
+			static_cast<int>(DataForStates->graphicsSettings->resolution.width),
+			static_cast<int>(DataForStates->graphicsSettings->resolution.height)));
 }
 
 void GameState::initView() {
     view.setSize(sf::Vector2f(
-			static_cast<float>(stateData->gfxSettings->resolution.width),
-			static_cast<float>(stateData->gfxSettings->resolution.height)));
+			static_cast<float>(DataForStates->graphicsSettings->resolution.width),
+			static_cast<float>(DataForStates->graphicsSettings->resolution.height)));
 
 	view.setCenter(sf::Vector2f(
-			static_cast<float>(stateData->gfxSettings->resolution.width) / 2.f,
-			static_cast<float>(stateData->gfxSettings->resolution.height) / 2.f));
+            static_cast<float>(DataForStates->graphicsSettings->resolution.width) / 2.f,
+            static_cast<float>(DataForStates->graphicsSettings->resolution.height) / 2.f));
 }
 
-void GameState::initKeybinds() {
+void GameState::initKeyBinds() {
 	std::ifstream ifs("../Config/GameState_Keys.ini");
 
 	if (ifs.is_open()) {
@@ -38,7 +38,7 @@ void GameState::initKeybinds() {
 		std::string key2;
 
 		while (ifs >> key >> key2) {
-			keybinds[key] = supportedKeys->at(key2);
+            keyBinds[key] = supportedKeys->at(key2);
 		}
 	}
 	ifs.close();
@@ -57,8 +57,8 @@ void GameState::initTextures() {
 }
 
 void GameState::initPauseMenu() {
-	pmenu = new PauseMenu(*window, font);
-	pmenu->addButton("EXIT", 500.f, "Exit");
+    pauseMenu = new PauseMenu(*window, font);
+	pauseMenu->addButton("EXIT", 500.f, "Exit");
 }
 
 void GameState::initPlayers() {
@@ -66,7 +66,7 @@ void GameState::initPlayers() {
 }
 
 void GameState::initTileMap() {
-	tileMap = new TileMap(stateData->gridSize,
+	tileMap = new TileMap(DataForStates->gridSize,
                           1000, 1000,
                           "../Resources/Images/TextureGround/grassSheet.png");
 	tileMap->loadFromFile("../Map/text.slmp");
@@ -92,7 +92,7 @@ GameState::GameState(StateData* state_data)
     initBackground();
 	initDeferredRender();
 	initView();
-	initKeybinds();
+    initKeyBinds();
     initButtons();
 	initFonts();
 	initTextures();
@@ -103,7 +103,7 @@ GameState::GameState(StateData* state_data)
 }
 
 GameState::~GameState() {
-	delete pmenu;
+	delete pauseMenu;
 	delete player;
 	delete tileMap;
 
@@ -135,8 +135,8 @@ void GameState::updateView(const float & dt) {
 }
 
 void GameState::updateInput(const float & dt) {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("EXIT"))) &&
-    getKeytime()) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyBinds.at("EXIT"))) &&
+            getTimeKey()) {
 		if (!paused) {
             pauseState();
         } else {
@@ -146,22 +146,22 @@ void GameState::updateInput(const float & dt) {
 }
 
 void GameState::updatePlayerInput(const float & dt) {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("LEFT_MOVEMENT")))) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyBinds.at("LEFT_MOVEMENT")))) {
         player->move(-1.f, 0.f, dt);
     }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("RIGHT_MOVEMENT")))) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyBinds.at("RIGHT_MOVEMENT")))) {
         player->move(1.f, 0.f, dt);
     }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("UP_MOVEMENT")))) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyBinds.at("UP_MOVEMENT")))) {
         player->move(0.f, -1.f, dt);
     }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keybinds.at("DOWN_MOVEMENT")))) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyBinds.at("DOWN_MOVEMENT")))) {
         player->move(0.f, 1.f, dt);
     }
 }
 
 void GameState::updatePauseMenuButtons() {
-	if (pmenu->isButtonPressed("EXIT")) {
+	if (pauseMenu->ButtonPressed("EXIT")) {
         endState();
     }
 }
@@ -186,7 +186,7 @@ void GameState::update(const float& dt) {
 		updateTileMap(dt);
 		player->update(dt);
 	} else {
-		pmenu->update(this->mousePosWindow);
+		pauseMenu->update(this->mousePosWindow);
 		updatePauseMenuButtons();
 	}
 }
@@ -216,7 +216,7 @@ void GameState::render(sf::RenderTarget* target) {
 
 	renderTexture.setView(view);
 	tileMap->render(renderTexture, player->getGridPosition(
-            static_cast<int>(stateData->gridSize)));
+            static_cast<int>(DataForStates->gridSize)));
 
 	player->render(renderTexture);
 
@@ -224,7 +224,7 @@ void GameState::render(sf::RenderTarget* target) {
 
 	if (paused) {
 		renderTexture.setView(renderTexture.getDefaultView());
-		pmenu->render(renderTexture);
+		pauseMenu->render(renderTexture);
 	}
 
 	this->renderTexture.display();

@@ -2,14 +2,14 @@
 #include "../States/State.h"
 
 State::State(StateData* state_data) {
-	this->stateData = state_data;
+	this->DataForStates = state_data;
 	this->window = state_data->window;
 	this->supportedKeys = state_data->supportedKeys;
 	this->states = state_data->states;
 	this->quit = false;
 	this->paused = false;
-	this->keytime = 0.f;
-	this->keytimeMax = 10.f;
+	this->timeKey = 0.f;
+	this->timeKeyMax = 10.f;
 	this->gridSize = state_data->gridSize;
 }
 
@@ -20,9 +20,9 @@ const bool & State::getQuit() const {
 	return quit;
 }
 
-bool State::getKeytime() {
-	if (keytime >= keytimeMax) {
-		keytime = 0.f;
+bool State::getTimeKey() {
+	if (timeKey >= timeKeyMax) {
+        timeKey = 0.f;
 		return true;
 	}
 	return false;
@@ -57,7 +57,7 @@ void State::updateMousePositions(sf::View* view) {
 }
 
 void State::updateKeytime(const float& dt) {
-	if (keytime < keytimeMax) {
-        keytime += 50.f * dt;
+	if (timeKey < timeKeyMax) {
+        timeKey += 50.f * dt;
     }
 }

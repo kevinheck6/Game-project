@@ -5,10 +5,10 @@ enum button_states{BTN_IDLE = 0, BTN_HOVER, BTN_ACTIVE};
 namespace gui {
 	class Button {
 	private:
+        //Variables
 		short unsigned buttonState;
-		short unsigned id;
 
-		sf::RectangleShape shape;
+		sf::RectangleShape RectangleShape;
 		sf::Font* font;
 		sf::Text text;
 
@@ -25,12 +25,15 @@ namespace gui {
 		sf::Color outlineActiveColor;
 
 	public:
+        //Constructor
 		Button(float x, float y, float width, float height,
 			sf::Font* font, const std::string& text, unsigned character_size,
 			sf::Color text_idle_color, sf::Color text_hover_color, sf::Color text_active_color,
 			sf::Color idle_color, sf::Color hover_color, sf::Color active_color,
-			sf::Color outline_idle_color = sf::Color::Transparent, sf::Color outline_hover_color = sf::Color::Transparent, sf::Color outline_active_color = sf::Color::Transparent,
-			short unsigned id = 0);
+			sf::Color outline_idle_color = sf::Color::Transparent,
+            sf::Color outline_hover_color = sf::Color::Transparent,
+            sf::Color outline_active_color = sf::Color::Transparent);
+        //Destructor
 		~Button();
 
 		//Accessors
@@ -44,8 +47,8 @@ namespace gui {
 
 	class TextureSelector {
 	private:
-		float keytime;
-		const float keytimeMax;
+		float timeKey;
+		const float timeKeyMax;
 		float gridSize;
 		bool active;
 		bool hidden;
@@ -57,9 +60,12 @@ namespace gui {
 		sf::IntRect textureRect;
 
 	public:
+        //Constructor
 		TextureSelector(float x, float y, float width, float height, 
 			float gridSize, const sf::Texture* texture_sheet, 
 			sf::Font& font, const std::string& text);
+
+        //Destructor
 		~TextureSelector();
 
 		//Accessors
@@ -67,9 +73,14 @@ namespace gui {
 		const sf::IntRect& getTextureRect() const;
 
 		//Functions
-		bool getKeytime();
-		void updateKeytime(const float& dt);
+        //Time
+		bool getTimeKey();
+
+        //Update
+		void updateTimeKey(const float& dt);
 		void update(const sf::Vector2i& mousePosWindow, const float& dt);
+
+        //Render
 		void render(sf::RenderTarget& target);
 	};
 }

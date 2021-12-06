@@ -7,11 +7,10 @@ public:
 	//Variables
 	std::string title;
 	sf::VideoMode resolution;
-	bool fullscreen;
+	bool fullScreen;
 	bool verticalSync;
 	unsigned frameRateLimit;
 	sf::ContextSettings contextSettings;
-	std::vector<sf::VideoMode> videoModes;
 
 	//Functions
 	void loadFromFile(const std::string& path);

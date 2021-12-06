@@ -2,7 +2,7 @@
 #include "../Components/AnimationComponent.h"
 
 AnimationComponent::AnimationComponent(sf::Sprite& sprite, sf::Texture& texture_sheet)
-	:sprite(sprite), textureSheet(texture_sheet), lastAnimation(nullptr), priorityAnimation(nullptr) {
+	: sprite(sprite), texture(texture_sheet), lastAnimation(nullptr), priorityAnimation(nullptr) {
 
 }
 
@@ -19,9 +19,9 @@ void AnimationComponent::addAnimation(
 	float animation_timer,
 	int start_frame_x, int start_frame_y, int frames_x, int frames_y, int width, int height) {
 	this->animations[key] = new Animation(
-		sprite, textureSheet,
-		animation_timer,
-		start_frame_x, start_frame_y, frames_x, frames_y, width, height
+            sprite, texture,
+            animation_timer,
+            start_frame_x, start_frame_y, frames_x, frames_y, width, height
 	);
 }
 
@@ -36,7 +36,7 @@ const bool& AnimationComponent::play(const std::string& key, const float & dt, c
 					lastAnimation = animations[key];
 				}
 			}
-			//If the priority animation is done, remove it
+			//If the priority animation is finished, remove it
 			if (animations[key]->play(dt)) {
 				priorityAnimation = nullptr;
 			}
@@ -76,7 +76,7 @@ const bool& AnimationComponent::play(const std::string& key, const float & dt, c
 					lastAnimation = animations[key];
 				}
 			}
-			//If the priority animation is done, remove it
+			//If the priority animation is finished, remove it
 			if (animations[key]->play(dt, std::abs(modifier / modifier_max))) {
 				priorityAnimation = nullptr;
 			}

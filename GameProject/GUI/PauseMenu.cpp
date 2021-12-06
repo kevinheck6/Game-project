@@ -8,21 +8,21 @@ PauseMenu::PauseMenu(sf::RenderWindow& window, sf::Font& font)
 		sf::Vector2f(static_cast<float>(window.getSize().x),static_cast<float>(window.getSize().y)));
 	background.setFillColor(sf::Color(20, 20, 20, 100));
 
-	//Initialize the container
-	container.setSize(sf::Vector2f(
+	//Initialize the SquareMenu
+	SquareMenu.setSize(sf::Vector2f(
             static_cast<float>(window.getSize().x) / 4.f,
             static_cast<float>(window.getSize().y) - 100.f));
-	container.setFillColor(sf::Color(20, 20, 20, 200));
-	container.setPosition(static_cast<float>(window.getSize().x) / 2.f - container.getSize().x / 2.f,30.f);
+	SquareMenu.setFillColor(sf::Color(20, 20, 20, 200));
+	SquareMenu.setPosition(static_cast<float>(window.getSize().x) / 2.f - SquareMenu.getSize().x / 2.f, 30.f);
 
 	//Initialize the text
-	menuText.setFont(font);
-	menuText.setFillColor(sf::Color(255, 255, 255, 200));
-	menuText.setCharacterSize(60);
-	menuText.setString("PAUSED");
-	menuText.setPosition(
-		container.getPosition().x + container.getSize().x / 2.f -menuText.getGlobalBounds().width / 2.f,
-		container.getPosition().y + 40.f);
+	textInMenu.setFont(font);
+	textInMenu.setFillColor(sf::Color(255, 255, 255, 200));
+	textInMenu.setCharacterSize(60);
+	textInMenu.setString("PAUSED");
+	textInMenu.setPosition(
+            SquareMenu.getPosition().x + SquareMenu.getSize().x / 2.f - textInMenu.getGlobalBounds().width / 2.f,
+            SquareMenu.getPosition().y + 40.f);
 
 }
 
@@ -34,14 +34,14 @@ PauseMenu::~PauseMenu() {
 }
 
 //Functions
-bool PauseMenu::isButtonPressed(const std::string& key) {
+bool PauseMenu::ButtonPressed(const std::string& key) {
 	return buttons[key]->isPressed();
 }
 
 void PauseMenu::addButton(const std::string& key, float y, const std::string& text) {
 	float width = 250.f;
 	float height = 65.f;
-	float x = container.getPosition().x + container.getSize().x / 2.f - width / 2.f;
+	float x = SquareMenu.getPosition().x + SquareMenu.getSize().x / 2.f - width / 2.f;
 
 	buttons[key] = new gui::Button(
 		x, y, width, height,
@@ -64,11 +64,11 @@ void PauseMenu::update(const sf::Vector2i& mousePosWindow) {
 
 void PauseMenu::render(sf::RenderTarget & target) {
 	target.draw(background);
-	target.draw(container);
+	target.draw(SquareMenu);
 
 	for (auto &i : buttons) {
 		i.second->render(target);
 	}
 
-	target.draw(menuText);
+	target.draw(textInMenu);
 }

@@ -21,7 +21,7 @@ void MainMenuState::initFonts() {
 	}
 }
 
-void MainMenuState::initKeybinds() {
+void MainMenuState::initKeyBinds() {
 	std::ifstream ifs("../Config/MainMenuState_KeyBinds.ini");
 
 	if (ifs.is_open()) {
@@ -29,7 +29,7 @@ void MainMenuState::initKeybinds() {
 		std::string key2;
 
 		while (ifs >> key >> key2) {
-			keybinds[key] = supportedKeys->at(key2);
+            keyBinds[key] = supportedKeys->at(key2);
 		}
 	}
 
@@ -77,7 +77,7 @@ MainMenuState::MainMenuState(StateData* state_data)
 	initVariables();
 	initBackground();
 	initFonts();
-	initKeybinds();
+    initKeyBinds();
 	initButtons();
 }
 
@@ -99,12 +99,12 @@ void MainMenuState::updateButtons() {
 	}
 	//For the game
 	if (buttons["STATE_INGAME"]->isPressed()) {
-		states->push(new GameState(stateData));
+		states->push(new GameState(DataForStates));
 	}
 
 	//Editor State
 	if (buttons["STATE_EDITOR"]->isPressed()) {
-		states->push(new EditorState(stateData));
+		states->push(new EditorState(DataForStates));
 	}
 
 	//Exit
