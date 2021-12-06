@@ -359,27 +359,27 @@ void TileMap::render(sf::RenderTarget & target, const sf::Vector2i& gridPosition
 	layer = 0;
 
     //Set up how many tiles will be show in the screen
-    startX = gridPosition.x - 8;
+    startX = gridPosition.x - 4;
 	if (startX < 0) {
         startX = 0;
     } else if (startX > SizeWorldGrid.x)
         startX = SizeWorldGrid.x;
 
-    endX = gridPosition.x + 8;
+    endX = gridPosition.x + 4;
 	if (endX < 0) {
         endX = 0;
     } else if (endX > SizeWorldGrid.x) {
         endX = SizeWorldGrid.x;
     }
 
-    startY = gridPosition.y - 6;
+    startY = gridPosition.y - 4;
 	if (startY < 0) {
         startY = 0;
     } else if (startY > SizeWorldGrid.y) {
         startY = SizeWorldGrid.y;
     }
 
-    endY = gridPosition.y + 5;
+    endY = gridPosition.y + 3;
 	if (endY < 0) {
         endY = 0;
     } else if (endY > SizeWorldGrid.y) {
