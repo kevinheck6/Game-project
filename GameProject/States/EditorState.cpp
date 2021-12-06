@@ -234,7 +234,7 @@ void EditorState::updatePauseMenuButtons() {
 
 void EditorState::update(const float& dt) {
 	updateMousePositions(&view);
-	updateKeytime(dt);
+    updateTimeKey(dt);
 	updateInput(dt);
 
     //Not paused

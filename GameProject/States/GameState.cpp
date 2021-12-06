@@ -175,7 +175,7 @@ void GameState::updateTileMap(const float & dt) {
 
 void GameState::update(const float& dt) {
 	updateMousePositions(&view);
-	updateKeytime(dt);
+    updateTimeKey(dt);
 	updateInput(dt);
     updateButtons();
 
