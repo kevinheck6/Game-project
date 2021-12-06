@@ -90,7 +90,7 @@ void Game::playMusic() {
     if(!music.openFromFile("../Resources/Music .wav")) {
         throw "ERROR - Game.cpp - Failled to load Music";
     }
-    music.setVolume(30);
+    music.setVolume(0);
     music.play();
     music.setLoop(true);
 }

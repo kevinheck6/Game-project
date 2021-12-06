@@ -200,7 +200,7 @@ void GameState::renderButtons(sf::RenderTarget &target) {
         text.setFont(font);
         text.setString("You Won The Labyrinth");
         text.setCharacterSize(50);
-        text.setFillColor(sf::Color::White);
+        text.setFillColor(sf::Color::Black);
         text.setPosition(static_cast<float>(window->getSize().x) / 2,
                          static_cast<float>(window->getSize().y) / 2);
         target.draw(text);
