@@ -78,6 +78,12 @@ SFML/Audio.hpp
 SFML/Network.hpp
 -
 
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.cpp
+../Head Files/PreCompiledHeaders.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
+../Map/TileMap.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
+
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
 ../Tile/Tile.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.h
@@ -146,15 +152,17 @@ SFML/Network.hpp
 ../Resources/Button.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
 
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.cpp
-../States/State.h
-/home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
-
 /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
 ../Entities/Player.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
 ../Resources/GraphicsSettings.h
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/GraphicsSettings.h
+
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.cpp
+../Head Files/PreCompiledHeaders.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
+../Tile/Tile.h
+/home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.h
 
 /home/kevin/CLionProjects/Game-projecttest/GameProject/Tile/Tile.h
 

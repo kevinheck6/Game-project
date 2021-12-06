@@ -9,7 +9,7 @@ class GraphicsSettings;
 
 class StateData {
 public:
-	StateData() {};
+	StateData() = default;;
 
 	//Variables
 	float gridSize{};
@@ -46,7 +46,7 @@ protected:
 
 public:
     //Constructor
-	State(StateData* state_data);
+	explicit State(StateData* state_data);
     //Destructor
 	virtual ~State();
 

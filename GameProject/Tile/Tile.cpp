@@ -31,6 +31,7 @@ const bool & Tile::getCollision() const {
 }
 
 
+
 const sf::Vector2f & Tile::getPosition() const {
 	return shape.getPosition();
 }

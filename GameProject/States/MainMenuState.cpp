@@ -1,7 +1,7 @@
 #include "../Head Files/PreCompiledHeaders.h"
 #include "../States/MainMenuState.h"
 
-//Initializer functions
+//Initializer
 void MainMenuState::initVariables() {}
 
 void MainMenuState::initBackground() {
