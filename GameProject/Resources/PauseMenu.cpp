@@ -1,5 +1,5 @@
 #include "../Head Files/PreCompiledHeaders.h"
-#include "../GUI/PauseMenu.h"
+#include "../Resources/PauseMenu.h"
 
 PauseMenu::PauseMenu(sf::RenderWindow& window, sf::Font& font)
 	: font(font) {

@@ -28,11 +28,6 @@ CMakeFiles/Game-projecttest.dir/Entities/Player.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.cpp
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
-CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.o
- /home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.cpp
- /home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
 CMakeFiles/Game-projecttest.dir/Map/TileMap.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.h
@@ -50,18 +45,23 @@ CMakeFiles/Game-projecttest.dir/Resources/GraphicsSettings.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/GraphicsSettings.cpp
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/GraphicsSettings.h
+CMakeFiles/Game-projecttest.dir/Resources/PauseMenu.cpp.o
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/PauseMenu.cpp
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/PauseMenu.h
 CMakeFiles/Game-projecttest.dir/Source_Files/Game.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/AnimationComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/HitBoxComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/Game.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/GraphicsSettings.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/PauseMenu.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/Game.cpp
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
@@ -74,12 +74,12 @@ CMakeFiles/Game-projecttest.dir/Source_Files/main.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/Game.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/GraphicsSettings.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/PauseMenu.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Source Files/main.cpp
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
@@ -92,11 +92,11 @@ CMakeFiles/Game-projecttest.dir/States/EditorState.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/GraphicsSettings.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/PauseMenu.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.cpp
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
@@ -107,11 +107,11 @@ CMakeFiles/Game-projecttest.dir/States/GameState.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/GraphicsSettings.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/PauseMenu.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.cpp
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/State.h
@@ -122,11 +122,11 @@ CMakeFiles/Game-projecttest.dir/States/MainMenuState.cpp.o
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Components/MovementComponent.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Entity.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Entities/Player.h
- /home/kevin/CLionProjects/Game-projecttest/GameProject/GUI/PauseMenu.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Head Files/PreCompiledHeaders.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Map/TileMap.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/Button.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/GraphicsSettings.h
+ /home/kevin/CLionProjects/Game-projecttest/GameProject/Resources/PauseMenu.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/EditorState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/GameState.h
  /home/kevin/CLionProjects/Game-projecttest/GameProject/States/MainMenuState.cpp

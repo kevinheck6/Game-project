@@ -2,7 +2,7 @@
 
 #include "../States/State.h"
 #include "../Resources/Button.h"
-#include "../GUI/PauseMenu.h"
+#include "../Resources/PauseMenu.h"
 #include "../Map/TileMap.h"
 
 class TileMap;

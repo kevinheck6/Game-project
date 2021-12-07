@@ -309,12 +309,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "GUI/PauseMenu.cpp",
+			"path" : "Resources/PauseMenu.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "GUI/PauseMenu.h",
+			"path" : "Resources/PauseMenu.h",
 			"sourceGroupIndex" : 1
 		},
 		{

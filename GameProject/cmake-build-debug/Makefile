@@ -249,30 +249,6 @@ Entities/Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Entities/Player.cpp.s
 .PHONY : Entities/Player.cpp.s
 
-GUI/PauseMenu.o: GUI/PauseMenu.cpp.o
-.PHONY : GUI/PauseMenu.o
-
-# target to build an object file
-GUI/PauseMenu.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.o
-.PHONY : GUI/PauseMenu.cpp.o
-
-GUI/PauseMenu.i: GUI/PauseMenu.cpp.i
-.PHONY : GUI/PauseMenu.i
-
-# target to preprocess a source file
-GUI/PauseMenu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.i
-.PHONY : GUI/PauseMenu.cpp.i
-
-GUI/PauseMenu.s: GUI/PauseMenu.cpp.s
-.PHONY : GUI/PauseMenu.s
-
-# target to generate assembly for a file
-GUI/PauseMenu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/GUI/PauseMenu.cpp.s
-.PHONY : GUI/PauseMenu.cpp.s
-
 Map/TileMap.o: Map/TileMap.cpp.o
 .PHONY : Map/TileMap.o
 
@@ -344,6 +320,30 @@ Resources/GraphicsSettings.s: Resources/GraphicsSettings.cpp.s
 Resources/GraphicsSettings.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Resources/GraphicsSettings.cpp.s
 .PHONY : Resources/GraphicsSettings.cpp.s
+
+Resources/PauseMenu.o: Resources/PauseMenu.cpp.o
+.PHONY : Resources/PauseMenu.o
+
+# target to build an object file
+Resources/PauseMenu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Resources/PauseMenu.cpp.o
+.PHONY : Resources/PauseMenu.cpp.o
+
+Resources/PauseMenu.i: Resources/PauseMenu.cpp.i
+.PHONY : Resources/PauseMenu.i
+
+# target to preprocess a source file
+Resources/PauseMenu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Resources/PauseMenu.cpp.i
+.PHONY : Resources/PauseMenu.cpp.i
+
+Resources/PauseMenu.s: Resources/PauseMenu.cpp.s
+.PHONY : Resources/PauseMenu.s
+
+# target to generate assembly for a file
+Resources/PauseMenu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game-projecttest.dir/build.make CMakeFiles/Game-projecttest.dir/Resources/PauseMenu.cpp.s
+.PHONY : Resources/PauseMenu.cpp.s
 
 Source_Files/Game.o: Source_Files/Game.cpp.o
 .PHONY : Source_Files/Game.o
@@ -537,9 +537,6 @@ help:
 	@echo "... Entities/Player.o"
 	@echo "... Entities/Player.i"
 	@echo "... Entities/Player.s"
-	@echo "... GUI/PauseMenu.o"
-	@echo "... GUI/PauseMenu.i"
-	@echo "... GUI/PauseMenu.s"
 	@echo "... Map/TileMap.o"
 	@echo "... Map/TileMap.i"
 	@echo "... Map/TileMap.s"
@@ -549,6 +546,9 @@ help:
 	@echo "... Resources/GraphicsSettings.o"
 	@echo "... Resources/GraphicsSettings.i"
 	@echo "... Resources/GraphicsSettings.s"
+	@echo "... Resources/PauseMenu.o"
+	@echo "... Resources/PauseMenu.i"
+	@echo "... Resources/PauseMenu.s"
 	@echo "... Source_Files/Game.o"
 	@echo "... Source_Files/Game.i"
 	@echo "... Source_Files/Game.s"

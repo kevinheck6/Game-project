@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Head Files/PreCompiledHeaders.h"
-#include"../Resources/Button.h"
+#include"Button.h"
 
 class PauseMenu {
 private:
