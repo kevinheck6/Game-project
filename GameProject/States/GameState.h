@@ -13,6 +13,11 @@ class GameState :
 	public State {
 private:
     //Variables
+    sf::Clock clock;
+    sf::Time time;
+    bool check = false;
+    float t;
+
 	sf::View view;
 	sf::RenderTexture renderTexture;
 	sf::Sprite renderSprite;

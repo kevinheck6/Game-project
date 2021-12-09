@@ -89,6 +89,8 @@ void GameState::initButtons() {
 GameState::GameState(StateData* state_data)
 	: State(state_data) {
 
+    clock.restart();
+
     initBackground();
 	initDeferredRender();
 	initView();
@@ -117,7 +119,6 @@ GameState::~GameState() {
 
 void GameState::updateEndgame(int gameState) {
     this->endGame = gameState;
-    std::cout << endGame;
 }
 
 void GameState::updateButtons() {
@@ -179,6 +180,7 @@ void GameState::update(const float& dt) {
 	updateInput(dt);
     updateButtons();
 
+
 	
 	if (!paused) {
 		updateView(dt);
@@ -198,12 +200,21 @@ void GameState::renderButtons(sf::RenderTarget &target) {
             it.second->render(target);
         }
         text.setFont(font);
-        text.setString("You Won The Labyrinth");
+        std::stringstream s;
+        s << "You Won The Labyrinth, Your score: ";
+        time = clock.getElapsedTime();
+        if (!check) {
+            t = time.asSeconds();
+            check = true;
+        }
+        s << t;
+        text.setString(s.str() );
         text.setCharacterSize(50);
         text.setFillColor(sf::Color::Black);
         text.setPosition(static_cast<float>(window->getSize().x) / 2,
                          static_cast<float>(window->getSize().y) / 2);
         target.draw(text);
+
     }
 }
 
