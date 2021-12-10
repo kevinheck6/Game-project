@@ -179,8 +179,6 @@ void GameState::update(const float& dt) {
     updateTimeKey(dt);
 	updateInput(dt);
     updateButtons();
-
-
 	
 	if (!paused) {
 		updateView(dt);

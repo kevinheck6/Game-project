@@ -6,7 +6,7 @@ void EditorState::initVariables() {
 	textureRect = sf::IntRect(0, 0,
                                     static_cast<int>(DataForStates->gridSize),
                                     static_cast<int>(DataForStates->gridSize));
-    collisionTile = false;
+    collisionToggle = false;
 	type = TileTypes::DEFAULT;
     speedOfCamera = 200.f;
 	layer = 0;
@@ -156,7 +156,7 @@ void EditorState::updateEditorInput(const float& dt) {
 			if (!this->textureSelector->getActive()) {
 				tileMap->addTile(mousePosGrid.x, mousePosGrid.y, 0,
                                  textureRect,
-                                 this->collisionTile,
+                                 this->collisionToggle,
                                  this->type);
 			} else {
 				textureRect = textureSelector->getTextureRect();
@@ -172,13 +172,13 @@ void EditorState::updateEditorInput(const float& dt) {
 		}
 	}
 
-	//Toggle collisionTile
+	//Toggle collisionToggle
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyBinds.at("COLLISION")))
         && getTimeKey()) {
-		if (collisionTile) {
-            collisionTile = false;
+		if (collisionToggle) {
+            collisionToggle = false;
         } else {
-            collisionTile = true;
+            collisionToggle = true;
         }
     } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(keyBinds.at("UP_TYPE")))
                && getTimeKey()) {
@@ -208,11 +208,8 @@ void EditorState::updateGui(const float& dt) {
 
 	cursorText.setPosition(this->mousePosView.x + 20.f, this->mousePosView.y - 50.f);
 	std::stringstream ss;
-	ss << this->mousePosView.x << " " << this->mousePosView.y <<
-       "\n" << mousePosGrid.x << "    " << mousePosGrid.y <<
-       "\n" << textureRect.left / 100 << " " << textureRect.top / 100 <<
-       "\n" << "Collision: " << collisionTile <<
-       "\n" << "Type: " << type <<
+	ss <<"\n" << "Collision: " << collisionToggle <<
+        "\n" << "Type: " << type <<
 		"\n" << "Tiles: " << tileMap->getLayerSize(mousePosGrid.x, mousePosGrid.y, layer);
 
 	this->cursorText.setString(ss.str());
@@ -225,8 +222,6 @@ void EditorState::updatePauseMenuButtons() {
 	if (pauseMenu->ButtonPressed("SAVE")) {
         tileMap->saveToFile("../Map/text.slmp");
     }
-
-
 	if (pauseMenu->ButtonPressed("LOAD")) {
         tileMap->loadFromFile("../Map/text.slmp");
     }

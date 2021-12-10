@@ -24,7 +24,7 @@ private:
 	sf::RectangleShape selectorRect;
 	gui::TextureSelector* textureSelector;
 	sf::IntRect textureRect;
-	bool collisionTile;
+	bool collisionToggle;
 	short type;
 	float speedOfCamera;
 	int layer;

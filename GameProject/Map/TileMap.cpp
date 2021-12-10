@@ -258,7 +258,7 @@ void TileMap::updateCollision(Entity * entity, const float& dt) {
 				sf::FloatRect nextPositionBounds = entity->getFuturePositionBounds(dt);
 
 				if (k->getCollision() && k->intersects(nextPositionBounds)) {
-					//Bottom collisionTile
+					//Bottom collisionToggle
 					if (playerBounds.top < wallBounds.top &&
                         playerBounds.top + playerBounds.height < wallBounds.top + wallBounds.height &&
                         playerBounds.left < wallBounds.left + wallBounds.width &&
@@ -312,7 +312,7 @@ void TileMap::updateType(Entity *entity, const float &dt) {
                 sf::FloatRect nextPositionBounds = entity->getFuturePositionBounds(dt);
 
                 if ((k->getType() == 1) && k->intersects(nextPositionBounds)) {
-                    //Bottom collisionTile
+                    //Bottom collisionToggle
                     if (playerBounds.top < wallBounds.top &&
                         playerBounds.top + playerBounds.height < wallBounds.top + wallBounds.height &&
                         playerBounds.left < wallBounds.left + wallBounds.width &&
