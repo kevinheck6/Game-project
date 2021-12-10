@@ -119,6 +119,18 @@ void MainMenuState::update(const float& dt) {
     updateButtons();
 }
 
+void MainMenuState::renderText(sf::RenderTarget& target) {
+    text.setFont(font);
+    std::stringstream s;
+    s << "Welcome to The Labyrinth ";
+    text.setString(s.str() );
+    text.setCharacterSize(100);
+    text.setFillColor(sf::Color::White);
+    text.setPosition(static_cast<float>(window->getSize().x) - 1000,
+                     static_cast<float>(window->getSize().y) - 600);
+    target.draw(text);
+}
+
 void MainMenuState::renderButtons(sf::RenderTarget& target) {
 	for (auto &it : buttons) {
 		it.second->render(target);
@@ -130,6 +142,9 @@ void MainMenuState::render(sf::RenderTarget* target) {
         target = window;
     }
 	target->draw(background);
+    renderText(*target);
 	renderButtons(*target);
 
 }
+
+
