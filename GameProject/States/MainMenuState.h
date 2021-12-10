@@ -12,6 +12,7 @@ private:
 	sf::RectangleShape background;
 	sf::Font font;
 	std::map<std::string, gui::Button*> buttons;
+    sf::Text text;
 
 	//Functions
 	void initVariables();
@@ -33,6 +34,7 @@ public:
 	void update(const float& dt) override;
 
     //Render
+    void renderText(sf::RenderTarget& target);
 	void renderButtons(sf::RenderTarget& target);
 	void render(sf::RenderTarget* target) override;
 };
